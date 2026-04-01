@@ -4,15 +4,19 @@
 
 ## GitHub Pages
 
-Сайт раздаётся **напрямую из ветки `main`** (без Actions-артефактов — так стабильнее).
+Деплой через **GitHub Actions** → ветка **`gh-pages`** (workflow `Deploy to gh-pages`).
 
 1. **Settings → Pages → Build and deployment**.
-2. **Source:** выберите **Deploy from a branch** (не GitHub Actions).
-3. **Branch:** `main`, папка **`/ (root)`**, Save.
+2. **Source:** **Deploy from a branch**.
+3. **Branch:** выберите **`gh-pages`**, папка **`/ (root)`**, Save.
 
-Файл **`.nojekyll`** в корне отключает Jekyll, чтобы не ломалась раздача статики.
+После каждого push в `main` workflow обновляет `gh-pages`. Подождите 1–3 минуты и откройте:
 
-Публичный URL: **https://olezhapth2.github.io/od/** (после сохранения настроек подождите 1–3 минуты).
+**https://olezhapth2.github.io/od/**
+
+В `index.html` добавлен скрипт `<base>` только на `*.github.io`, чтобы CSS и картинки грузились из подпути `/od/` (в т.ч. если URL без завершающего `/`).
+
+Файл **`.nojekyll`** отключает Jekyll.
 
 ## Локальный просмотр
 

@@ -71,6 +71,16 @@ html = f"""<!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+(function(){{
+  var h = location.hostname;
+  if (!h.endsWith('github.io')) return;
+  var parts = location.pathname.split('/').filter(Boolean);
+  if (parts.length >= 1) {{
+    document.write('<base href="' + '/' + parts[0] + '/' + '">');
+  }}
+}})();
+</script>
 <title>Oleg Devyatov — Senior Product Designer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Outfit:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
