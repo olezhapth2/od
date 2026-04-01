@@ -2,13 +2,17 @@
 
 Репозиторий: https://github.com/olezhapth2/od
 
-## GitHub Pages (после первого push)
+## GitHub Pages
 
-1. На GitHub: **Settings → Pages → Build and deployment**.
-2. В поле **Source** выберите **GitHub Actions** (не «Deploy from a branch»).
-3. Дождитесь зелёного workflow **Deploy to GitHub Pages** во вкладке **Actions**.
+Сайт раздаётся **напрямую из ветки `main`** (без Actions-артефактов — так стабильнее).
 
-Публичный URL обычно такой: **https://olezhapth2.github.io/od/** (может открыться через 1–3 минуты после успешного деплоя).
+1. **Settings → Pages → Build and deployment**.
+2. **Source:** выберите **Deploy from a branch** (не GitHub Actions).
+3. **Branch:** `main`, папка **`/ (root)`**, Save.
+
+Файл **`.nojekyll`** в корне отключает Jekyll, чтобы не ломалась раздача статики.
+
+Публичный URL: **https://olezhapth2.github.io/od/** (после сохранения настроек подождите 1–3 минуты).
 
 ## Локальный просмотр
 
