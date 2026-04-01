@@ -1,5 +1,15 @@
 # Портфолио Oleg Devyatov — статический сайт
 
+Репозиторий: https://github.com/olezhapth2/od
+
+## GitHub Pages (после первого push)
+
+1. На GitHub: **Settings → Pages → Build and deployment**.
+2. В поле **Source** выберите **GitHub Actions** (не «Deploy from a branch»).
+3. Дождитесь зелёного workflow **Deploy to GitHub Pages** во вкладке **Actions**.
+
+Публичный URL обычно такой: **https://olezhapth2.github.io/od/** (может открыться через 1–3 минуты после успешного деплоя).
+
 ## Локальный просмотр
 
 ```bash
