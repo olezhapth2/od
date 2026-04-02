@@ -1942,3 +1942,151 @@ footer.site-footer {
     font-size: 13px;
   }
 }
+
+/* --- Figma alignment overrides (hero + skills + projects) --- */
+.topbar--hero {
+  position: static;
+  height: auto;
+  background: transparent;
+  border: 0;
+  backdrop-filter: none;
+  padding: 0;
+  margin-top: 8px;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.topbar--hero .topbar-loc {
+  position: static;
+  transform: none;
+  left: auto;
+  order: 2;
+  font-size: 10px;
+  border: 1px solid var(--line2);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 7px 12px;
+}
+
+.topbar--hero .topbar-right {
+  margin-left: 0;
+  order: 3;
+}
+
+#hero {
+  padding-top: 54px;
+}
+
+#hero .container {
+  min-height: auto;
+}
+
+.hero-head-row {
+  margin-bottom: 24px;
+}
+
+.hero-scroll-outer {
+  min-height: auto;
+  max-height: none;
+}
+
+.hero-scroll-fade {
+  display: none;
+}
+
+.hero-scroll-inner {
+  overflow: hidden;
+  padding: 0;
+  gap: 12px;
+  cursor: default;
+}
+
+.hero-scroll-inner .comp-card--strip {
+  flex: 1 1 0;
+  max-width: none;
+  min-width: 0;
+  scroll-snap-align: none;
+}
+
+.hero-contacts {
+  border-top: 1px solid var(--line);
+  padding-top: 14px;
+  margin-top: 2px;
+}
+
+#skills-matrix .matrix-wrap {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(0, 0, 0, 0.08)), var(--bg-card);
+  padding: 14px;
+}
+
+#skills-matrix .matrix-cats {
+  justify-content: flex-start;
+  gap: 8px;
+  padding: 0 0 12px;
+}
+
+#skills-matrix .matrix-cat {
+  padding: 9px 13px;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+}
+
+#skills-matrix .matrix-grid {
+  gap: 6px;
+}
+
+#skills-matrix .mc {
+  font-size: 9px;
+  padding: 4px 8px;
+  border-radius: 8px;
+}
+
+.proj-grid--6 {
+  gap: 16px;
+}
+
+.proj-card--horiz .proj-img-wrap {
+  aspect-ratio: 16 / 10;
+}
+
+.proj-card--horiz .proj-name {
+  font-size: 28px;
+  line-height: 1.1;
+}
+
+.proj-card--horiz .proj-sub {
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+.proj-card--horiz .proj-desc {
+  font-size: 11px;
+  line-height: 1.45;
+  -webkit-line-clamp: 2;
+}
+
+@media (max-width: 900px) {
+  .topbar--hero {
+    flex-wrap: wrap;
+  }
+
+  .topbar--hero .topbar-loc {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-scroll-inner {
+    overflow-x: auto;
+    padding: 8px calc((100% - var(--hero-cardW)) / 2) 16px;
+    cursor: grab;
+  }
+
+  .hero-scroll-inner .comp-card--strip {
+    flex: 0 0 var(--hero-cardW);
+    max-width: var(--hero-cardW);
+    scroll-snap-align: center;
+  }
+}
