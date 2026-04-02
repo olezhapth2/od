@@ -106,28 +106,26 @@ html = f"""<!DOCTYPE html>
       <div class="popup-ph16"><span data-en>Visual 16:9 · placeholder</span><span data-ru>Визуал 16:9 · заглушка</span></div>
       <div class="popup-ph16"><span data-en>Visual 16:9 · placeholder</span><span data-ru>Визуал 16:9 · заглушка</span></div>
     </div>
-    <a class="pill primary popup-cta" id="pop-cta" href="mailto:olegdevyatow@gmail.com"><span class="material-icons-round">mail</span><span data-en>Discuss this project</span><span data-ru>Обсудить проект</span></a>
+    <a class="pill primary popup-cta" id="pop-cta" href="mailto:olegdevyatow@gmail.com"><span class="material-icons-round">mail</span><span data-en>olegdevyatow@gmail.com</span><span data-ru>olegdevyatow@gmail.com</span></a>
   </div>
 </div>
 
-<div class="lang-bar">
-  <button type="button" class="lang-btn active" onclick="setLang('en')">EN</button>
-  <button type="button" class="lang-btn" onclick="setLang('ru')">RU</button>
+<div class="topbar">
+  <div class="topbar-loc">
+    <span class="material-icons-round">location_on</span>
+    <span class="topbar-loc-text" data-en>Bangkok, Thailand · Open to remote</span>
+    <span class="topbar-loc-text" data-ru>Бангкок, Таиланд · Удалённая работа</span>
+  </div>
+  <div class="topbar-right">
+    <div class="lang-bar">
+      <button type="button" class="lang-btn active" onclick="setLang('en')">EN</button>
+      <button type="button" class="lang-btn" onclick="setLang('ru')">RU</button>
+    </div>
+  </div>
 </div>
-
-<nav>
-  <a class="nav-logo" href="#hero">OD</a>
-  <ul class="nav-links">
-    <li><a href="#skills-matrix" data-en>Skills</a><a href="#skills-matrix" data-ru>Навыки</a></li>
-    <li><a href="#projects" data-en>Projects</a><a href="#projects" data-ru>Проекты</a></li>
-    <li><a href="#experience" data-en>Experience</a><a href="#experience" data-ru>Опыт</a></li>
-    <li><a href="#contact" data-en>Contact</a><a href="#contact" data-ru>Контакты</a></li>
-  </ul>
-</nav>
 
 <section id="hero">
   <div class="container">
-    <div class="hero-label hero-label--top"><span class="material-icons-round">location_on</span><span data-en>Bangkok, Thailand · Open to remote</span><span data-ru>Бангкок, Таиланд · Удалённая работа</span></div>
     <div class="hero-head-row">
       <h1 class="hero-name">Oleg<br>Devyatov</h1>
       <div class="hero-head-text">
@@ -147,10 +145,22 @@ html = f"""<!DOCTYPE html>
     <div class="hero-contacts">
       <a class="pill primary" href="mailto:olegdevyatow@gmail.com"><span class="material-icons-round">mail</span><span data-en>olegdevyatow@gmail.com</span><span data-ru>olegdevyatow@gmail.com</span></a>
       <a class="pill" href="https://t.me/olegdevyatow" target="_blank" rel="noopener noreferrer"><span class="material-icons-round">send</span>Telegram</a>
-      <a class="pill" href="https://www.linkedin.com/in/olegdevyatow" target="_blank" rel="noopener noreferrer"><span class="material-icons-round">work</span>LinkedIn</a>
+      <a class="pill" href="https://www.linkedin.com/in/oleg-devyatow-653584367/" target="_blank" rel="noopener noreferrer"><span class="material-icons-round">work</span>LinkedIn</a>
       <a class="pill" href="https://www.behance.net/reesoonki" target="_blank" rel="noopener noreferrer"><span class="material-icons-round">palette</span>Behance</a>
     </div>
   </div>
+</section>
+
+<section id="projects">
+<div class="container">
+  <div class="sec-tag" data-en>Projects</div>
+  <div class="sec-tag" data-ru>Проекты</div>
+  <h2 class="sec-title" data-en>Selected work</h2>
+  <h2 class="sec-title" data-ru>Избранные работы</h2>
+  <div class="proj-grid proj-grid--6">
+{proj_grid}
+  </div>
+</div>
 </section>
 
 <section id="skills-matrix" class="matrix-section">
@@ -174,18 +184,7 @@ html = f"""<!DOCTYPE html>
       </div>
     </div>
   </div>
-</div>
-</section>
 
-<section id="projects">
-<div class="container">
-  <div class="sec-tag" data-en>Projects</div>
-  <div class="sec-tag" data-ru>Проекты</div>
-  <h2 class="sec-title" data-en>Selected work</h2>
-  <h2 class="sec-title" data-ru>Избранные работы</h2>
-  <div class="proj-grid proj-grid--6">
-{proj_grid}
-  </div>
 </div>
 </section>
 
@@ -206,9 +205,9 @@ html = f"""<!DOCTYPE html>
         <a class="pill" href="https://olegdevyatow.tilda.ws" target="_blank" rel="noopener noreferrer">Tilda archive</a>
       </div>
       <div class="footer-socials">
-        <a class="pill" href="mailto:olegdevyatow@gmail.com"><span class="material-icons-round">mail</span>Email</a>
+        <a class="pill" href="mailto:olegdevyatow@gmail.com"><span class="material-icons-round">mail</span>olegdevyatow@gmail.com</a>
         <a class="pill" href="https://t.me/olegdevyatow" target="_blank" rel="noopener noreferrer"><span class="material-icons-round">send</span>Telegram</a>
-        <a class="pill" href="https://www.linkedin.com/in/olegdevyatow" target="_blank" rel="noopener noreferrer"><span class="material-icons-round">work</span>LinkedIn</a>
+        <a class="pill" href="https://www.linkedin.com/in/oleg-devyatow-653584367/" target="_blank" rel="noopener noreferrer"><span class="material-icons-round">work</span>LinkedIn</a>
         <a class="pill" href="https://www.behance.net/reesoonki" target="_blank" rel="noopener noreferrer"><span class="material-icons-round">palette</span>Behance</a>
       </div>
     </div>
