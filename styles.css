@@ -21,7 +21,7 @@
   --card-shadow-soft: 0 18px 70px rgba(0, 0, 0, 0.55);
   --card-shadow-glow: 0 0 40px rgba(126, 200, 200, 0.12);
   --chip-row-h: 28px;
-  --matrix-fade-lines: 4;
+  --matrix-fade-h: 112px; /* 4 rows * 28px */
 }
 *,
 *::before,
@@ -1446,10 +1446,10 @@ footer.site-footer {
 }
 .matrix-section .matrix-viewport {
   aspect-ratio: unset;
-  max-height: min(calc(var(--chip-row-h) * var(--matrix-fade-lines) + 140px), 320px);
+  max-height: min(calc(var(--matrix-fade-h) + 140px), 320px);
   min-height: 160px;
   overflow-y: auto;
-  padding: 14px 16px calc(var(--chip-row-h) * var(--matrix-fade-lines) + 18px);
+  padding: 14px 16px calc(var(--matrix-fade-h) + 18px);
 }
 .matrix-viewport-outer::after {
   content: "";
@@ -1457,7 +1457,7 @@ footer.site-footer {
   left: 0;
   right: 0;
   bottom: 0;
-  height: max(50px, calc(var(--chip-row-h) * var(--matrix-fade-lines)));
+  height: max(50px, var(--matrix-fade-h));
   background: linear-gradient(
     to bottom,
     rgba(10, 10, 10, 0) 0%,
