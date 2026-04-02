@@ -38,28 +38,26 @@
       <div class="popup-ph16"><span data-en>Visual 16:9 · placeholder</span><span data-ru>Визуал 16:9 · заглушка</span></div>
       <div class="popup-ph16"><span data-en>Visual 16:9 · placeholder</span><span data-ru>Визуал 16:9 · заглушка</span></div>
     </div>
-    <a class="pill primary popup-cta" id="pop-cta" href="mailto:olegdevyatow@gmail.com"><span class="material-icons-round">mail</span><span data-en>Discuss this project</span><span data-ru>Обсудить проект</span></a>
+    <a class="pill primary popup-cta" id="pop-cta" href="mailto:olegdevyatow@gmail.com"><span class="material-icons-round">mail</span><span data-en>olegdevyatow@gmail.com</span><span data-ru>olegdevyatow@gmail.com</span></a>
   </div>
 </div>
 
-<div class="lang-bar">
-  <button type="button" class="lang-btn active" onclick="setLang('en')">EN</button>
-  <button type="button" class="lang-btn" onclick="setLang('ru')">RU</button>
+<div class="topbar">
+  <div class="topbar-loc">
+    <span class="material-icons-round">location_on</span>
+    <span class="topbar-loc-text" data-en>Bangkok, Thailand · Open to remote</span>
+    <span class="topbar-loc-text" data-ru>Бангкок, Таиланд · Удалённая работа</span>
+  </div>
+  <div class="topbar-right">
+    <div class="lang-bar">
+      <button type="button" class="lang-btn active" onclick="setLang('en')">EN</button>
+      <button type="button" class="lang-btn" onclick="setLang('ru')">RU</button>
+    </div>
+  </div>
 </div>
-
-<nav>
-  <a class="nav-logo" href="#hero">OD</a>
-  <ul class="nav-links">
-    <li><a href="#skills-matrix" data-en>Skills</a><a href="#skills-matrix" data-ru>Навыки</a></li>
-    <li><a href="#projects" data-en>Projects</a><a href="#projects" data-ru>Проекты</a></li>
-    <li><a href="#experience" data-en>Experience</a><a href="#experience" data-ru>Опыт</a></li>
-    <li><a href="#contact" data-en>Contact</a><a href="#contact" data-ru>Контакты</a></li>
-  </ul>
-</nav>
 
 <section id="hero">
   <div class="container">
-    <div class="hero-label hero-label--top"><span class="material-icons-round">location_on</span><span data-en>Bangkok, Thailand · Open to remote</span><span data-ru>Бангкок, Таиланд · Удалённая работа</span></div>
     <div class="hero-head-row">
       <h1 class="hero-name">Oleg<br>Devyatov</h1>
       <div class="hero-head-text">
@@ -215,34 +213,10 @@
     <div class="hero-contacts">
       <a class="pill primary" href="mailto:olegdevyatow@gmail.com"><span class="material-icons-round">mail</span><span data-en>olegdevyatow@gmail.com</span><span data-ru>olegdevyatow@gmail.com</span></a>
       <a class="pill" href="https://t.me/olegdevyatow" target="_blank" rel="noopener noreferrer"><span class="material-icons-round">send</span>Telegram</a>
-      <a class="pill" href="https://www.linkedin.com/in/olegdevyatow" target="_blank" rel="noopener noreferrer"><span class="material-icons-round">work</span>LinkedIn</a>
+      <a class="pill" href="https://www.linkedin.com/in/oleg-devyatow-653584367/" target="_blank" rel="noopener noreferrer"><span class="material-icons-round">work</span>LinkedIn</a>
       <a class="pill" href="https://www.behance.net/reesoonki" target="_blank" rel="noopener noreferrer"><span class="material-icons-round">palette</span>Behance</a>
     </div>
   </div>
-</section>
-
-<section id="skills-matrix" class="matrix-section">
-<div class="container">
-  <div class="sec-tag" data-en>Skills matrix</div>
-  <div class="sec-tag" data-ru>Матрица навыков</div>
-  <h2 class="sec-title" data-en>Research · Visual · Leadership · Art</h2>
-  <h2 class="sec-title" data-ru>Исследования · Визуал · Лидерство · Художка</h2>
-  <p class="matrix-lead" data-en>Hover a category to highlight. Click a skill to open the linked case study.</p>
-  <p class="matrix-lead" data-ru>Наведите категорию — подсветка. Клик по навыку — кейс в попапе.</p>
-  <div class="matrix-wrap" id="matrixWrap">
-    <div class="matrix-cats">
-      <button type="button" class="matrix-cat c1" data-cat="1"><span data-en>Research &amp; analytics</span><span data-ru>Исследования и аналитика</span></button>
-      <button type="button" class="matrix-cat c2" data-cat="2"><span data-en>Visualization &amp; UI</span><span data-ru>Визуал и UI</span></button>
-      <button type="button" class="matrix-cat c3" data-cat="3"><span data-en>Project leadership</span><span data-ru>Проекты и лидерство</span></button>
-      <button type="button" class="matrix-cat c4" data-cat="4"><span data-en>Fine art foundation</span><span data-ru>Художественная база</span></button>
-    </div>
-    <div class="matrix-viewport-outer">
-      <div class="matrix-viewport">
-        <div class="matrix-grid" id="matrixGrid"></div>
-      </div>
-    </div>
-  </div>
-</div>
 </section>
 
 <section id="projects">
@@ -349,6 +323,31 @@
       </div>
     </article>
   </div>
+</div>
+</section>
+
+<section id="skills-matrix" class="matrix-section">
+<div class="container">
+  <div class="sec-tag" data-en>Skills matrix</div>
+  <div class="sec-tag" data-ru>Матрица навыков</div>
+  <h2 class="sec-title" data-en>Research · Visual · Leadership · Art</h2>
+  <h2 class="sec-title" data-ru>Исследования · Визуал · Лидерство · Художка</h2>
+  <p class="matrix-lead" data-en>Hover a category to highlight. Click a skill to open the linked case study.</p>
+  <p class="matrix-lead" data-ru>Наведите категорию — подсветка. Клик по навыку — кейс в попапе.</p>
+  <div class="matrix-wrap" id="matrixWrap">
+    <div class="matrix-cats">
+      <button type="button" class="matrix-cat c1" data-cat="1"><span data-en>Research &amp; analytics</span><span data-ru>Исследования и аналитика</span></button>
+      <button type="button" class="matrix-cat c2" data-cat="2"><span data-en>Visualization &amp; UI</span><span data-ru>Визуал и UI</span></button>
+      <button type="button" class="matrix-cat c3" data-cat="3"><span data-en>Project leadership</span><span data-ru>Проекты и лидерство</span></button>
+      <button type="button" class="matrix-cat c4" data-cat="4"><span data-en>Fine art foundation</span><span data-ru>Художественная база</span></button>
+    </div>
+    <div class="matrix-viewport-outer">
+      <div class="matrix-viewport">
+        <div class="matrix-grid" id="matrixGrid"></div>
+      </div>
+    </div>
+  </div>
+
 </div>
 </section>
 
@@ -532,9 +531,9 @@
         <a class="pill" href="https://olegdevyatow.tilda.ws" target="_blank" rel="noopener noreferrer">Tilda archive</a>
       </div>
       <div class="footer-socials">
-        <a class="pill" href="mailto:olegdevyatow@gmail.com"><span class="material-icons-round">mail</span>Email</a>
+        <a class="pill" href="mailto:olegdevyatow@gmail.com"><span class="material-icons-round">mail</span>olegdevyatow@gmail.com</a>
         <a class="pill" href="https://t.me/olegdevyatow" target="_blank" rel="noopener noreferrer"><span class="material-icons-round">send</span>Telegram</a>
-        <a class="pill" href="https://www.linkedin.com/in/olegdevyatow" target="_blank" rel="noopener noreferrer"><span class="material-icons-round">work</span>LinkedIn</a>
+        <a class="pill" href="https://www.linkedin.com/in/oleg-devyatow-653584367/" target="_blank" rel="noopener noreferrer"><span class="material-icons-round">work</span>LinkedIn</a>
         <a class="pill" href="https://www.behance.net/reesoonki" target="_blank" rel="noopener noreferrer"><span class="material-icons-round">palette</span>Behance</a>
       </div>
     </div>
