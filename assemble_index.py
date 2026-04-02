@@ -22,8 +22,16 @@ def first_four_cards(html: str) -> str:
     block = "\n".join(parts[:4])
     return block.replace("comp-card comp-card--strip", "comp-card comp-card--strip hero-comp-card", 4)
 
+def first_n_cards(html: str, n: int) -> str:
+    parts = re.split(r"(?=\n    <div class=\"comp-card comp-card--strip)", html.strip())
+    if len(parts) < n:
+        return html.strip()
+    block = "\n".join(parts[:n])
+    # Mark cards as hero cards so we can style them independently.
+    return block.replace("comp-card comp-card--strip", "comp-card comp-card--strip hero-comp-card", n)
 
-hero_four = first_four_cards(comps_full)
+
+hero_core_cards = first_n_cards(comps_full, 10)
 
 
 def esc(s: str) -> str:
@@ -45,6 +53,7 @@ def proj_article(i: int, p: dict) -> str:
         <div class="proj-body-inner">
           <div class="proj-name" data-en>{p["title_en"]}</div><div class="proj-name" data-ru>{p["title_ru"]}</div>
           <div class="proj-sub" data-en>{p["sub_en"]}</div><div class="proj-sub" data-ru>{p["sub_ru"]}</div>
+          <div class="proj-desc" data-en>{esc(p["b1_en"])}</div><div class="proj-desc" data-ru>{esc(p["b1_ru"])}</div>
         </div>
       </div>
     </article>"""
@@ -128,8 +137,12 @@ html = f"""<!DOCTYPE html>
         <p class="hero-bio" data-ru>9+ лет на пересечении UX-стратегии, дизайн-систем и AI-автоматизации. Продукты полного цикла, масштабирование команд, инструменты, экономящие сотни часов.</p>
       </div>
     </div>
-    <div class="hero-four-grid">
-{hero_four}
+    <div class="hero-scroll-outer">
+      <div class="hero-scroll-fade hero-scroll-fade--l" aria-hidden="true"></div>
+      <div class="hero-scroll-fade hero-scroll-fade--r" aria-hidden="true"></div>
+      <div class="hero-scroll-inner">
+{hero_core_cards}
+      </div>
     </div>
     <div class="hero-contacts">
       <a class="pill primary" href="mailto:olegdevyatow@gmail.com"><span class="material-icons-round">mail</span><span data-en>olegdevyatow@gmail.com</span><span data-ru>olegdevyatow@gmail.com</span></a>
@@ -327,6 +340,51 @@ const MATRIX_CHIPS = [
     btn.addEventListener('focus', enter);
     btn.addEventListener('blur', leave);
   }});
+}})();
+
+(function footerParallax3D(){{
+  const el = document.querySelector('.footer-cta-animated');
+  if (!el) return;
+  el.style.setProperty('--px', '0px');
+  el.style.setProperty('--py', '0px');
+  el.style.setProperty('--rx', '0deg');
+  el.style.setProperty('--ry', '0deg');
+
+  let raf = null;
+  let tx = 0;
+  let ty = 0;
+  let rx = 0;
+  let ry = 0;
+
+  function commit(){{
+    el.style.setProperty('--px', tx.toFixed(2) + 'px');
+    el.style.setProperty('--py', ty.toFixed(2) + 'px');
+    el.style.setProperty('--rx', rx.toFixed(2) + 'deg');
+    el.style.setProperty('--ry', ry.toFixed(2) + 'deg');
+    raf = null;
+  }}
+
+  function onMove(e){{
+    const r = el.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width - 0.5;
+    const y = (e.clientY - r.top) / r.height - 0.5;
+    tx = x * 26;
+    ty = y * 20;
+    rx = (-y) * 7;
+    ry = (x) * 10;
+    if (!raf) raf = requestAnimationFrame(commit);
+  }}
+
+  function reset(){{
+    tx = 0;
+    ty = 0;
+    rx = 0;
+    ry = 0;
+    if (!raf) raf = requestAnimationFrame(commit);
+  }}
+
+  el.addEventListener('pointermove', onMove);
+  el.addEventListener('pointerleave', reset);
 }})();
 </script>
 </body>
