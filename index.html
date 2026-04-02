@@ -784,6 +784,13 @@ const MATRIX_CHIPS = [
   let startX = 0;
   let startScrollLeft = 0;
   let raf = null;
+  let autoRaf = null;
+  let lastT = 0;
+  let idleTimer = null;
+  let isPaused = false;
+  let isUserInteracting = false;
+  const AUTO_SPEED = 18; // px/sec (tune to match Figma)
+  const RESUME_AFTER_MS = 1400;
 
   function update(){
     if (reduce) return;
@@ -810,6 +817,43 @@ const MATRIX_CHIPS = [
     });
   }
 
+  function setPaused(p){
+    isPaused = p;
+    if (isPaused) {
+      if (autoRaf) cancelAnimationFrame(autoRaf);
+      autoRaf = null;
+      lastT = 0;
+      return;
+    }
+    if (!autoRaf && !reduce) autoRaf = requestAnimationFrame(autoTick);
+  }
+
+  function markInteraction(){
+    isUserInteracting = true;
+    setPaused(true);
+    if (idleTimer) clearTimeout(idleTimer);
+    idleTimer = setTimeout(() => {
+      isUserInteracting = false;
+      setPaused(false);
+    }, RESUME_AFTER_MS);
+  }
+
+  function autoTick(t){
+    if (reduce || isPaused || isUserInteracting) { autoRaf = null; return; }
+    if (!lastT) lastT = t;
+    const dt = Math.min(0.05, (t - lastT) / 1000);
+    lastT = t;
+
+    const max = scroller.scrollWidth - scroller.clientWidth;
+    if (max > 0) {
+      scroller.scrollLeft += AUTO_SPEED * dt;
+      // loop seamlessly-ish
+      if (scroller.scrollLeft >= max - 1) scroller.scrollLeft = 0;
+    }
+    update();
+    autoRaf = requestAnimationFrame(autoTick);
+  }
+
   function onScroll(){
     if (reduce) return;
     if (raf) return;
@@ -822,6 +866,13 @@ const MATRIX_CHIPS = [
   // Initial + scroll updates
   update();
   scroller.addEventListener('scroll', onScroll, { passive: true });
+  // Start auto-scroll (pauses on interaction/hover)
+  if (!reduce) autoRaf = requestAnimationFrame(autoTick);
+
+  scroller.addEventListener('pointerenter', () => setPaused(true));
+  scroller.addEventListener('pointerleave', () => { if (!isUserInteracting) setPaused(false); });
+  scroller.addEventListener('wheel', markInteraction, { passive: true });
+  scroller.addEventListener('touchstart', markInteraction, { passive: true });
 
   // Drag to scroll
   scroller.dataset.dragging = '0';
@@ -831,6 +882,7 @@ const MATRIX_CHIPS = [
     dragging = false;
     startX = e.clientX;
     startScrollLeft = scroller.scrollLeft;
+    markInteraction();
   }
 
   function onPointerMove(e){
