@@ -225,6 +225,7 @@
   <div class="sec-tag" data-ru>Проекты</div>
   <h2 class="sec-title" data-en>Selected work</h2>
   <h2 class="sec-title" data-ru>Избранные работы</h2>
+  <p class="matrix-lead" data-en>Click any card to read the full case details in the popup.</p><p class="matrix-lead" data-ru>Клик по карточке — и откроются детали кейса в попапе.</p>
   <div class="proj-grid proj-grid--6">
     <article class="proj-card proj-card--horiz fade-in" id="project-card-1" data-project-id="1"
       onclick="openPop(this)"
@@ -332,8 +333,8 @@
   <div class="sec-tag" data-ru>Матрица навыков</div>
   <h2 class="sec-title" data-en>Research · Visual · Leadership · Art</h2>
   <h2 class="sec-title" data-ru>Исследования · Визуал · Лидерство · Художка</h2>
-  <p class="matrix-lead" data-en>Hover a category to highlight. Click a skill to open the linked case study.</p>
-  <p class="matrix-lead" data-ru>Наведите категорию — подсветка. Клик по навыку — кейс в попапе.</p>
+  <p class="matrix-lead" data-en>Hover to preview. Click a category to open the case in the popup.</p>
+  <p class="matrix-lead" data-ru>Наведи для предпросмотра. Клик по категории — открою кейс в попапе.</p>
   <div class="matrix-wrap" id="matrixWrap">
     <div class="matrix-cats">
       <button type="button" class="matrix-cat c1" data-cat="1"><span data-en>Research &amp; analytics</span><span data-ru>Исследования и аналитика</span></button>
@@ -526,9 +527,11 @@
         <li><span class="edu-years">2016–2019</span><span class="edu-line" data-en>International Market Institute — Management &amp; Marketing</span><span class="edu-line" data-ru>Международный институт рынка — менеджмент и маркетинг</span></li>
         <li><span class="edu-years">2020–2023</span><span class="edu-line" data-en>CONTENTED — Graphic &amp; UX/UI Design</span><span class="edu-line" data-ru>CONTENTED — графический и UX/UI-дизайн</span></li>
       </ul>
+      <div class="footer-block-title footer-portfolio-title" data-en>Previous portfolios</div>
+      <div class="footer-block-title footer-portfolio-title" data-ru>Прошлые портфолио</div>
       <div class="footer-portfolio-btns">
-        <a class="pill" href="https://olegdvtv.notion.site/CONTENTED-b8d2cdd858b24781bdc6bdd7b988fd26" target="_blank" rel="noopener noreferrer">Notion · CONTENTED</a>
-        <a class="pill" href="https://olegdevyatow.tilda.ws" target="_blank" rel="noopener noreferrer">Tilda archive</a>
+        <a class="pill secondary" href="https://olegdvtv.notion.site/CONTENTED-b8d2cdd858b24781bdc6bdd7b988fd26" target="_blank" rel="noopener noreferrer">Notion · CONTENTED</a>
+        <a class="pill secondary" href="https://olegdevyatow.tilda.ws" target="_blank" rel="noopener noreferrer">Tilda archive</a>
       </div>
       <div class="footer-socials">
         <a class="pill" href="mailto:olegdevyatow@gmail.com"><span class="material-icons-round">mail</span>olegdevyatow@gmail.com</a>
@@ -545,6 +548,7 @@
         <p data-en>9+ years in fintech, SaaS, AI products. Brief me — I reply with a clear next step.</p>
         <p data-ru>9+ лет в fintech, SaaS и AI. Кратко опишите задачу — отвечу со следующим шагом.</p>
         <a class="pill primary" href="mailto:olegdevyatow@gmail.com"><span class="material-icons-round">mail</span><span data-en>olegdevyatow@gmail.com</span><span data-ru>olegdevyatow@gmail.com</span></a>
+        <a class="pill secondary" href="#projects"><span class="material-icons-round">open_in_new</span><span data-en>Selected work</span><span data-ru>Избранные работы</span></a>
       </div>
     </div>
   </div>
@@ -766,6 +770,158 @@ const MATRIX_CHIPS = [
 
   el.addEventListener('pointermove', onMove);
   el.addEventListener('pointerleave', reset);
+})();
+
+// Hero carousel 3D-parallax + drag scroll (first screen)
+(function heroCarouselFx(){
+  const scroller = document.querySelector('.hero-scroll-inner');
+  if (!scroller) return;
+  const cards = Array.from(scroller.querySelectorAll('.hero-comp-card'));
+  if (!cards.length) return;
+
+  const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let dragging = false;
+  let startX = 0;
+  let startScrollLeft = 0;
+  let raf = null;
+
+  function update(){
+    if (reduce) return;
+    const r = scroller.getBoundingClientRect();
+    const centerX = r.left + r.width / 2;
+    const denom = Math.max(1, r.width / 2);
+
+    cards.forEach((card) => {
+      const cr = card.getBoundingClientRect();
+      const cardCenterX = cr.left + cr.width / 2;
+      const t = (cardCenterX - centerX) / denom; // approx -1..1
+      const a = Math.min(1, Math.abs(t));
+
+      const scale = Math.max(0.92, 1.06 - a * 0.12);
+      const ty = -8 + a * 8; // lift the center card
+      const rx = a * 3;      // slightly tilt away
+      const ry = t * -12;    // left/right perspective
+
+      card.style.setProperty('--hero-scale', scale.toFixed(3));
+      card.style.setProperty('--hero-ty', ty.toFixed(2) + 'px');
+      card.style.setProperty('--hero-rx', rx.toFixed(2) + 'deg');
+      card.style.setProperty('--hero-ry', ry.toFixed(2) + 'deg');
+      card.style.zIndex = String(1000 - Math.round(a * 300));
+    });
+  }
+
+  function onScroll(){
+    if (reduce) return;
+    if (raf) return;
+    raf = requestAnimationFrame(() => {
+      raf = null;
+      update();
+    });
+  }
+
+  // Initial + scroll updates
+  update();
+  scroller.addEventListener('scroll', onScroll, { passive: true });
+
+  // Drag to scroll
+  scroller.dataset.dragging = '0';
+
+  function onPointerDown(e){
+    if (e.pointerType === 'mouse' && e.button !== 0) return;
+    dragging = false;
+    startX = e.clientX;
+    startScrollLeft = scroller.scrollLeft;
+  }
+
+  function onPointerMove(e){
+    if (e.buttons === 0) return;
+    const dx = e.clientX - startX;
+    if (!dragging && Math.abs(dx) > 6) dragging = true;
+    if (!dragging) return;
+
+    scroller.dataset.dragging = '1';
+    scroller.scrollLeft = startScrollLeft - dx;
+  }
+
+  function onPointerUp(){
+    if (!dragging) return;
+    dragging = false;
+    setTimeout(() => { scroller.dataset.dragging = '0'; }, 40);
+  }
+
+  scroller.addEventListener('pointerdown', onPointerDown);
+  scroller.addEventListener('pointermove', onPointerMove);
+  window.addEventListener('pointerup', onPointerUp);
+
+  // Prevent accidental popup open after drag
+  scroller.addEventListener('click', (e) => {
+    if (scroller.dataset.dragging === '1') {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    setTimeout(() => { scroller.dataset.dragging = '0'; }, 0);
+  }, true);
+
+  // Keep transforms in sync after inertial scroll ends
+  let tLast = 0;
+  scroller.addEventListener('scroll', () => {
+    tLast = Date.now();
+    setTimeout(() => {
+      if (Date.now() - tLast > 120) update();
+    }, 160);
+  }, { passive: true });
+})();
+
+(function matrixParallax3D(){
+  const cats = document.querySelectorAll('.matrix-cat');
+  if (!cats || !cats.length) return;
+
+  const mq = window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  if (!mq) return;
+
+  cats.forEach((el) => {
+    el.style.setProperty('--px', '0px');
+    el.style.setProperty('--py', '0px');
+    el.style.setProperty('--rx', '0deg');
+    el.style.setProperty('--ry', '0deg');
+
+    let raf = null;
+    let tx = 0;
+    let ty = 0;
+    let rx = 0;
+    let ry = 0;
+
+    function commit(){
+      el.style.setProperty('--px', tx.toFixed(2) + 'px');
+      el.style.setProperty('--py', ty.toFixed(2) + 'px');
+      el.style.setProperty('--rx', rx.toFixed(2) + 'deg');
+      el.style.setProperty('--ry', ry.toFixed(2) + 'deg');
+      raf = null;
+    }
+
+    function onMove(e){
+      const r = el.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width - 0.5;
+      const y = (e.clientY - r.top) / r.height - 0.5;
+      tx = x * 24;
+      ty = y * 18;
+      rx = (-y) * 6;
+      ry = x * 9;
+      if (!raf) raf = requestAnimationFrame(commit);
+    }
+
+    function reset(){
+      tx = 0;
+      ty = 0;
+      rx = 0;
+      ry = 0;
+      if (!raf) raf = requestAnimationFrame(commit);
+    }
+
+    el.addEventListener('pointermove', onMove);
+    el.addEventListener('pointerleave', reset);
+    el.addEventListener('blur', reset);
+  });
 })();
 </script>
 </body>
