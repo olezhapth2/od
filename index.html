@@ -27,6 +27,11 @@
   <span class="material-icons-round" aria-hidden="true">arrow_upward</span>
 </button>
 
+<div class="lang-bar lang-bar--fixed" aria-label="Language">
+  <button type="button" class="lang-btn active" onclick="setLang('en')">EN</button>
+  <button type="button" class="lang-btn" onclick="setLang('ru')">RU</button>
+</div>
+
 <div class="blobs"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="blob b4"></div></div>
 
 <div class="popup-ov" id="popup" onclick="closePop(event)">
@@ -50,20 +55,25 @@
 </div>
 
 <section id="hero">
-  <div class="container">
+  <div class="container hero-top">
     <div class="hero-head-row">
       <h1 class="hero-name">Oleg<br>Devyatov</h1>
       <div class="hero-head-text">
         <div class="hero-title" data-en>Senior Product Designer · UX · UI</div>
         <div class="hero-title" data-ru>Продакт-дизайнер · Senior · UX · UI</div>
+        <p class="hero-loc-text" data-en>Bangkok, Thailand · Open to remote</p>
+        <p class="hero-loc-text" data-ru>Бангкок, Таиланд · Удалённая работа</p>
         <p class="hero-bio" data-en>9+ years at the intersection of UX strategy, design systems, and AI workflows. Full-cycle products, scaled teams, internal tools that save hundreds of hours.</p>
         <p class="hero-bio" data-ru>9+ лет на пересечении UX-стратегии, дизайн-систем и AI-автоматизации. Продукты полного цикла, масштабирование команд, инструменты, экономящие сотни часов.</p>
       </div>
     </div>
-    <div class="hero-scroll-outer">
-      <div class="hero-scroll-fade hero-scroll-fade--l" aria-hidden="true"></div>
-      <div class="hero-scroll-fade hero-scroll-fade--r" aria-hidden="true"></div>
-      <div class="hero-scroll-inner">
+  </div>
+  <div class="hero-ribbon" aria-label="Competencies">
+    <div class="hero-ribbon-fade hero-ribbon-fade--l" aria-hidden="true"></div>
+    <div class="hero-ribbon-fade hero-ribbon-fade--r" aria-hidden="true"></div>
+    <div class="hero-marquee-viewport">
+      <div class="hero-marquee" id="heroMarquee">
+        <div class="hero-marquee-row" id="heroMarqueeRow">
 <div class="comp-card comp-card--strip hero-comp-card comp-glow--1 fade-in" onclick="openPop(this)" data-title-en="Product Thinking" data-title-ru="Продуктовое мышление" data-sub-en="Outcomes, not screens" data-sub-ru="Результаты, а не экраны" data-body-en="My marketing degree gave me the business vocabulary before I ever opened a design tool. I work with JTBD, CJM, Impact Mapping — and co-own the roadmap with PM using RICE/ICE. I argue for design decisions through retention and conversion, not aesthetics." data-body-ru="Маркетинговое образование дало мне бизнес-словарь ещё до первого дизайн-инструмента. Работаю с JTBD, CJM, Impact Mapping — и совместно с PM владею роадмапом через RICE/ICE. Защищаю дизайн-решения через retention и конверсию, не через эстетику.">
       <div class="comp-head">
         <div class="comp-ico"><a class="comp-ico-link" href="https://fonts.google.com/icons?q=psychology" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" aria-label="psychology · Google Fonts Icons"><span class="material-icons-round">psychology</span></a></div>
@@ -203,23 +213,6 @@
       <div class="click-hint" data-en>Click to read more</div>
       <div class="click-hint" data-ru>Нажмите для подробностей</div>
     </div>
-      </div>
-    <div class="hero-contacts">
-      <a class="pill primary" href="mailto:olegdevyatow@gmail.com"><span class="material-icons-round">mail</span><span data-en>olegdevyatow@gmail.com</span><span data-ru>olegdevyatow@gmail.com</span></a>
-      <a class="pill" href="https://t.me/olegdevyatow" target="_blank" rel="noopener noreferrer"><span class="material-icons-round" aria-hidden="true">send</span><span data-en>Telegram · @olegdevyatow</span><span data-ru>Telegram · @olegdevyatow</span></a>
-      <a class="pill" href="https://www.linkedin.com/in/oleg-devyatow-653584367/" target="_blank" rel="noopener noreferrer"><span class="material-icons-round" aria-hidden="true">work</span>LinkedIn</a>
-      <a class="pill" href="https://www.behance.net/reesoonki" target="_blank" rel="noopener noreferrer"><span class="material-icons-round" aria-hidden="true">palette</span>Behance</a>
-    </div>
-    <div class="topbar topbar--hero">
-      <div class="topbar-loc">
-        <a class="topbar-ico-link" href="https://fonts.google.com/icons?q=location_on" target="_blank" rel="noopener noreferrer" aria-label="location_on · Google Fonts Icons"><span class="material-icons-round">location_on</span></a>
-        <span class="topbar-loc-text" data-en>Bangkok, Thailand · Open to remote</span>
-        <span class="topbar-loc-text" data-ru>Бангкок, Таиланд · Удалённая работа</span>
-      </div>
-      <div class="topbar-right">
-        <div class="lang-bar">
-          <button type="button" class="lang-btn active" onclick="setLang('en')">EN</button>
-          <button type="button" class="lang-btn" onclick="setLang('ru')">RU</button>
         </div>
       </div>
     </div>
@@ -424,30 +417,58 @@
 
     <div class="exp-year-group">
       <button class="exp-year-btn" onclick="toggleExp(this)">
+        <span class="exp-yr">2026</span>
+        <span class="exp-yr-title" data-en>Course Author · Skillbox</span>
+        <span class="exp-yr-title" data-ru>Автор курса · Skillbox</span>
+        <span class="exp-yr-arrow">+</span>
+      </button>
+      <div class="exp-items"><div class="exp-item">
+          <div class="exp-item-role" data-en>Course Author</div>
+          <div class="exp-item-role" data-ru>Автор курса</div>
+          <div class="exp-item-co"><a href="https://skillbox.ru" target="_blank" rel="noopener noreferrer">Skillbox</a></div>
+          <ul class="exp-bullets"><li data-en>UX/UI design course for Skillbox — curriculum, materials, and live workshop formats.</li><li data-ru>Курс по UX/UI-дизайну для Skillbox — программа, материалы и форматы живых воркшопов.</li></ul>
+        </div></div>
+    </div>
+    <div class="exp-year-group">
+      <button class="exp-year-btn" onclick="toggleExp(this)">
         <span class="exp-yr">2025</span>
-        <span class="exp-yr-title" data-en>Senior Product Designer</span>
-        <span class="exp-yr-title" data-ru>Senior Product Designer</span>
+        <span class="exp-yr-title" data-en>Senior Product Designer · MiraiTech</span>
+        <span class="exp-yr-title" data-ru>Senior Product Designer · MiraiTech</span>
         <span class="exp-yr-arrow">+</span>
       </button>
       <div class="exp-items"><div class="exp-item">
           <div class="exp-item-role" data-en>Senior Product Designer</div>
           <div class="exp-item-role" data-ru>Senior Product Designer</div>
-          <div class="exp-item-co"><a href='https://miraitech.co' target='_blank'>MiraiTech</a> — Fintech & Affiliate Tech</div>
-          <ul class="exp-bullets"><li data-en>Full-cycle product design across 20+ parallel products</li><li data-en>Built and maintained unified design system</li><li data-en>AI pipeline for landing generation (brief → publish: days → hours)</li><li data-en>Cross-functional leadership: PM, dev, marketing, analytics</li><li data-ru>Полный цикл продуктового дизайна на 20+ параллельных продуктах</li><li data-ru>Построение и поддержка единой дизайн-системы</li><li data-ru>AI-пайплайн генерации лендингов (бриф → публикация: дни → часы)</li><li data-ru>Кросс-функциональное лидерство: PM, разработка, маркетинг, аналитика</li></ul>
+          <div class="exp-item-co"><a href="https://miraitech.co" target="_blank" rel="noopener noreferrer">MiraiTech</a> — Fintech &amp; Affiliate Tech</div>
+          <ul class="exp-bullets"><li data-en><strong>Corgday HR CRM</strong> — internal tooling; Slack alert flows that cut manual HR follow-ups.</li><li data-en>Mass AI-generation pipelines for video, photo, and ad creatives at portfolio scale.</li><li data-en>~30 corporate brand styles and ~100 logo directions delivered for the product network.</li><li data-en>Unified design system, handoff, and cross-team rituals across 20+ parallel SKUs.</li><li data-ru><strong>Corgday HR CRM</strong> — внутренний продукт; Slack-алерты и сценарии, сокращающие ручные HR follow-up.</li><li data-ru>Массовые AI-пайплайны генерации видео, фото и рекламных креативов на масштабе портфеля.</li><li data-ru>Около 30 фирменных стилей и ~100 логотипов для сети продуктов.</li><li data-ru>Единая дизайн-система, хэндофф и кросс-командные ритуалы на 20+ параллельных SKU.</li></ul>
         </div></div>
     </div>
     <div class="exp-year-group">
       <button class="exp-year-btn" onclick="toggleExp(this)">
         <span class="exp-yr">2024</span>
-        <span class="exp-yr-title" data-en>Course Author</span>
-        <span class="exp-yr-title" data-ru>Автор курсов</span>
+        <span class="exp-yr-title" data-en>Senior Product Designer · MiraiTech</span>
+        <span class="exp-yr-title" data-ru>Senior Product Designer · MiraiTech</span>
         <span class="exp-yr-arrow">+</span>
       </button>
       <div class="exp-items"><div class="exp-item">
-          <div class="exp-item-role" data-en>Course Author</div>
-          <div class="exp-item-role" data-ru>Автор курсов</div>
-          <div class="exp-item-co"><a href='https://skillbox.ru' target='_blank'>Skillbox</a></div>
-          <ul class="exp-bullets"><li data-en>Developed UX/UI design curriculum</li><li data-en>Created learning materials and online workshops</li><li data-ru>Разработал учебную программу по UX/UI-дизайну</li><li data-ru>Создание учебных материалов и онлайн-воркшопов</li></ul>
+          <div class="exp-item-role" data-en>Senior Product Designer</div>
+          <div class="exp-item-role" data-ru>Senior Product Designer</div>
+          <div class="exp-item-co"><a href="https://miraitech.co" target="_blank" rel="noopener noreferrer">MiraiTech</a> — Fintech &amp; Affiliate Tech</div>
+          <ul class="exp-bullets"><li data-en>Scaled <strong>PNB Agency</strong> ecosystem — <a href="https://pnb.agency" target="_blank" rel="noopener noreferrer">pnb.agency</a> and vibecoded refresh <a href="https://pnb.agency/v2/" target="_blank" rel="noopener noreferrer">pnb.agency/v2/</a>.</li><li data-en>AI landing pipeline: brief → publish in hours; design ops for high-throughput releases.</li><li data-en>White-label and multi-brand surfaces across the affiliate portfolio.</li><li data-ru>Масштабирование экосистемы <strong>PNB Agency</strong> — <a href="https://pnb.agency" target="_blank" rel="noopener noreferrer">pnb.agency</a> и обновление <a href="https://pnb.agency/v2/" target="_blank" rel="noopener noreferrer">pnb.agency/v2/</a>.</li><li data-ru>AI-пайплайн лендингов: бриф → публикация за часы; дизайн-операции под высокий темп релизов.</li><li data-ru>White-label и мультибрендовые поверхности в аффилиат-портфеле.</li></ul>
+        </div></div>
+    </div>
+    <div class="exp-year-group">
+      <button class="exp-year-btn" onclick="toggleExp(this)">
+        <span class="exp-yr">2023</span>
+        <span class="exp-yr-title" data-en>Senior Product Designer · MiraiTech</span>
+        <span class="exp-yr-title" data-ru>Senior Product Designer · MiraiTech</span>
+        <span class="exp-yr-arrow">+</span>
+      </button>
+      <div class="exp-items"><div class="exp-item">
+          <div class="exp-item-role" data-en>Senior Product Designer</div>
+          <div class="exp-item-role" data-ru>Senior Product Designer</div>
+          <div class="exp-item-co"><a href="https://miraitech.co" target="_blank" rel="noopener noreferrer">MiraiTech</a> — Fintech &amp; Affiliate Tech</div>
+          <ul class="exp-bullets"><li data-en>Core products <strong>JAVHD</strong> and <strong>Gate19</strong> — UX/UI, monetization, and growth surfaces.</li><li data-en>White-label flows and shared component library for the 20+ product network.</li><li data-en>Partner &amp; alliance work: <a href="https://adxad.com" target="_blank" rel="noopener noreferrer">adxad.com</a>; ethics kit <a href="https://ethics.a-ai.ru/white-book/" target="_blank" rel="noopener noreferrer">ethics.a-ai.ru/white-book/</a>; multiple alliance-facing web projects.</li><li data-en>PNB ecosystem groundwork — <a href="https://pnb.agency" target="_blank" rel="noopener noreferrer">pnb.agency</a> (plus early v2 explorations).</li><li data-ru>Ключевые продукты <strong>JAVHD</strong> и <strong>Gate19</strong> — UX/UI, монетизация и growth-поверхности.</li><li data-ru>White-label и общая библиотека компонентов для сети из 20+ продуктов.</li><li data-ru>Проекты для альянса: <a href="https://adxad.com" target="_blank" rel="noopener noreferrer">adxad.com</a>; white book <a href="https://ethics.a-ai.ru/white-book/" target="_blank" rel="noopener noreferrer">ethics.a-ai.ru/white-book/</a>; несколько веб-проектов для партнёрского альянса.</li><li data-ru>Задел экосистемы PNB — <a href="https://pnb.agency" target="_blank" rel="noopener noreferrer">pnb.agency</a> (включая ранние итерации v2).</li></ul>
         </div></div>
     </div>
     <div class="exp-year-group">
@@ -902,156 +923,65 @@ const MATRIX_CHIPS = [
   el.addEventListener('pointerleave', reset);
 })();
 
-// Hero carousel 3D-parallax + drag scroll (first screen)
-(function heroCarouselFx(){
-  const scroller = document.querySelector('.hero-scroll-inner');
-  if (!scroller) return;
-  const cards = Array.from(scroller.querySelectorAll('.hero-comp-card'));
-  if (!cards.length) return;
+// Hero: seamless infinite marquee (duplicate row + translateX -50%) + pause on hover; blob tint on card hover
+(function heroMarquee(){
+  const root = document.getElementById('heroMarquee');
+  const row = document.getElementById('heroMarqueeRow');
+  if (!root || !row) return;
+  const clone = row.cloneNode(true);
+  clone.setAttribute('aria-hidden', 'true');
+  root.appendChild(clone);
 
   const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let dragging = false;
-  let startX = 0;
-  let startScrollLeft = 0;
-  let raf = null;
-  let autoRaf = null;
-  let lastT = 0;
-  let idleTimer = null;
-  let isPaused = false;
-  let isUserInteracting = false;
-  const AUTO_SPEED = 18; // px/sec (tune to match Figma)
-  const RESUME_AFTER_MS = 1400;
+  if (reduce) {
+    root.classList.add('hero-marquee--static');
+    return;
+  }
 
-  function update(){
-    if (reduce) return;
-    const r = scroller.getBoundingClientRect();
-    const centerX = r.left + r.width / 2;
-    const denom = Math.max(1, r.width / 2);
+  function measure(){
+    const w = row.scrollWidth;
+    const sec = Math.max(32, Math.min(95, w / 52));
+    root.style.setProperty('--hero-marquee-sec', sec + 's');
+  }
+  measure();
+  window.addEventListener('resize', measure, { passive: true });
 
-    cards.forEach((card) => {
-      const cr = card.getBoundingClientRect();
-      const cardCenterX = cr.left + cr.width / 2;
-      const t = (cardCenterX - centerX) / denom; // approx -1..1
-      const a = Math.min(1, Math.abs(t));
+  const viewport = root.closest('.hero-marquee-viewport');
+  if (viewport) {
+    viewport.addEventListener('mouseenter', () => root.classList.add('is-paused'));
+    viewport.addEventListener('mouseleave', () => root.classList.remove('is-paused'));
+  }
+})();
 
-      const scale = Math.max(0.92, 1.06 - a * 0.12);
-      const ty = -8 + a * 8; // lift the center card
-      const rx = a * 3;      // slightly tilt away
-      const ry = t * -12;    // left/right perspective
-
-      card.style.setProperty('--hero-scale', scale.toFixed(3));
-      card.style.setProperty('--hero-ty', ty.toFixed(2) + 'px');
-      card.style.setProperty('--hero-rx', rx.toFixed(2) + 'deg');
-      card.style.setProperty('--hero-ry', ry.toFixed(2) + 'deg');
-      card.style.zIndex = String(1000 - Math.round(a * 300));
+(function heroBlobGlow(){
+  const blobs = document.querySelectorAll('.blobs .blob');
+  const viewport = document.querySelector('.hero-marquee-viewport');
+  if (!blobs.length) return;
+  const rgb = {
+    'comp-glow--1': '126, 200, 200',
+    'comp-glow--2': '200, 155, 126',
+    'comp-glow--3': '200, 126, 180'
+  };
+  let i = 0;
+  function resetBlobs(){
+    blobs.forEach((el) => {
+      el.style.background = '';
+      el.style.opacity = '';
     });
   }
-
-  function setPaused(p){
-    isPaused = p;
-    if (isPaused) {
-      if (autoRaf) cancelAnimationFrame(autoRaf);
-      autoRaf = null;
-      lastT = 0;
-      return;
-    }
-    if (!autoRaf && !reduce) autoRaf = requestAnimationFrame(autoTick);
-  }
-
-  function markInteraction(){
-    isUserInteracting = true;
-    setPaused(true);
-    if (idleTimer) clearTimeout(idleTimer);
-    idleTimer = setTimeout(() => {
-      isUserInteracting = false;
-      setPaused(false);
-    }, RESUME_AFTER_MS);
-  }
-
-  function autoTick(t){
-    if (reduce || isPaused || isUserInteracting) { autoRaf = null; return; }
-    if (!lastT) lastT = t;
-    const dt = Math.min(0.05, (t - lastT) / 1000);
-    lastT = t;
-
-    const max = scroller.scrollWidth - scroller.clientWidth;
-    if (max > 0) {
-      scroller.scrollLeft += AUTO_SPEED * dt;
-      // loop seamlessly-ish
-      if (scroller.scrollLeft >= max - 1) scroller.scrollLeft = 0;
-    }
-    update();
-    autoRaf = requestAnimationFrame(autoTick);
-  }
-
-  function onScroll(){
-    if (reduce) return;
-    if (raf) return;
-    raf = requestAnimationFrame(() => {
-      raf = null;
-      update();
+  document.querySelectorAll('.hero-comp-card').forEach((card) => {
+    card.addEventListener('mouseenter', () => {
+      let c = rgb['comp-glow--1'];
+      if (card.classList.contains('comp-glow--2')) c = rgb['comp-glow--2'];
+      else if (card.classList.contains('comp-glow--3')) c = rgb['comp-glow--3'];
+      const b = blobs[i % blobs.length];
+      i++;
+      b.style.transition = 'background 0.7s ease, opacity 0.7s ease';
+      b.style.background = 'rgb(' + c + ')';
+      b.style.opacity = '0.32';
     });
-  }
-
-  // Initial + scroll updates
-  update();
-  scroller.addEventListener('scroll', onScroll, { passive: true });
-  // Start auto-scroll (pauses on interaction/hover)
-  if (!reduce) autoRaf = requestAnimationFrame(autoTick);
-
-  scroller.addEventListener('pointerenter', () => setPaused(true));
-  scroller.addEventListener('pointerleave', () => { if (!isUserInteracting) setPaused(false); });
-  scroller.addEventListener('wheel', markInteraction, { passive: true });
-  scroller.addEventListener('touchstart', markInteraction, { passive: true });
-
-  // Drag to scroll
-  scroller.dataset.dragging = '0';
-
-  function onPointerDown(e){
-    if (e.pointerType === 'mouse' && e.button !== 0) return;
-    dragging = false;
-    startX = e.clientX;
-    startScrollLeft = scroller.scrollLeft;
-    markInteraction();
-  }
-
-  function onPointerMove(e){
-    if (e.buttons === 0) return;
-    const dx = e.clientX - startX;
-    if (!dragging && Math.abs(dx) > 6) dragging = true;
-    if (!dragging) return;
-
-    scroller.dataset.dragging = '1';
-    scroller.scrollLeft = startScrollLeft - dx;
-  }
-
-  function onPointerUp(){
-    if (!dragging) return;
-    dragging = false;
-    setTimeout(() => { scroller.dataset.dragging = '0'; }, 40);
-  }
-
-  scroller.addEventListener('pointerdown', onPointerDown);
-  scroller.addEventListener('pointermove', onPointerMove);
-  window.addEventListener('pointerup', onPointerUp);
-
-  // Prevent accidental popup open after drag
-  scroller.addEventListener('click', (e) => {
-    if (scroller.dataset.dragging === '1') {
-      e.preventDefault();
-      e.stopPropagation();
-    }
-    setTimeout(() => { scroller.dataset.dragging = '0'; }, 0);
-  }, true);
-
-  // Keep transforms in sync after inertial scroll ends
-  let tLast = 0;
-  scroller.addEventListener('scroll', () => {
-    tLast = Date.now();
-    setTimeout(() => {
-      if (Date.now() - tLast > 120) update();
-    }, 160);
-  }, { passive: true });
+  });
+  if (viewport) viewport.addEventListener('mouseleave', resetBlobs);
 })();
 
 (function matrixParallax3D(){
