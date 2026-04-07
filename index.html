@@ -281,6 +281,7 @@
   <div class="proj-grid proj-grid--6">
     <article class="proj-card proj-card--horiz fade-in" id="project-card-1" data-project-id="1"
       onclick="openPop(this)"
+      data-gallery="images/project-1.webp,images/ph-1a.svg,images/ph-1b.svg,images/ph-1c.svg,images/ph-1d.svg,images/ph-1e.svg"
       data-title-en="Game UI · In-game Shop" data-title-ru="Game UI · Внутриигровой магазин"
       data-sub-en="Post-apocalyptic shooter · HUD, shop, inventory · 2023–2024" data-sub-ru="Постапокалиптический шутер · HUD, магазин, инвентарь · 2023–2024"
       data-b1-en="Full UI system for a fast-paced shooter: HUD, in-game shop, inventory, queue and trade flows. Built for extreme information density and split-second decisions under pressure." data-b1-ru="Полная UI-система для динамичного шутера: HUD, внутриигровой магазин, инвентарь, очереди и торговля. Рассчитана на высокую плотность информации и решения за доли секунды."
@@ -302,6 +303,7 @@
     </article>
     <article class="proj-card proj-card--horiz fade-in" id="project-card-2" data-project-id="2"
       onclick="openPop(this)"
+      data-gallery="images/project-2.webp,images/ph-2a.svg,images/ph-2b.svg,images/ph-2c.svg,images/ph-2d.svg,images/ph-2e.svg"
       data-external-url="https://pnb.agency"
       data-external-label-en="PNB Agency · ecosystem"
       data-external-label-ru="PNB Agency · экосистема"
@@ -327,6 +329,7 @@
     </article>
     <article class="proj-card proj-card--horiz fade-in" id="project-card-3" data-project-id="3"
       onclick="openPop(this)"
+      data-gallery="images/project-3.webp,images/ph-3a.svg,images/ph-3b.svg,images/ph-3c.svg,images/ph-3d.svg,images/ph-3e.svg"
       data-external-url="https://miraitech.co"
       data-external-label-en="MiraiTech · company site"
       data-external-label-ru="MiraiTech · сайт компании"
@@ -351,6 +354,7 @@
     </article>
     <article class="proj-card proj-card--horiz fade-in" id="project-card-4" data-project-id="4"
       onclick="openPop(this)"
+      data-gallery="images/project-4.webp,images/ph-4a.svg,images/ph-4b.svg,images/ph-4c.svg,images/ph-4d.svg,images/ph-4e.svg"
       data-title-en="Corgday HR CRM" data-title-ru="Corgday HR CRM"
       data-sub-en="Internal HR tooling · Hill and Company · 2022+" data-sub-ru="Внутренний HR · Hill and Company · 2022+"
       data-b1-en="Internal HR CRM to centralize employee data, payroll-related workflows, and performance signals in one calm, legible interface — launched in 2022 for day-to-day HR operations." data-b1-ru="Внутренняя HR CRM для централизации данных сотрудников, зарплатных процессов и сигналов эффективности в одном спокойном, читаемом интерфейсе — запуск в 2022 для ежедневной работы HR."
@@ -372,6 +376,7 @@
     </article>
     <article class="proj-card proj-card--horiz fade-in" id="project-card-5" data-project-id="5"
       onclick="openPop(this)"
+      data-gallery="images/project-5.webp,images/ph-5a.svg,images/ph-5b.svg,images/ph-5c.svg,images/ph-5d.svg,images/ph-5e.svg"
       data-external-url="https://miraitech.co"
       data-external-label-en="MiraiTech · company site"
       data-external-label-ru="MiraiTech · сайт компании"
@@ -396,6 +401,7 @@
     </article>
     <article class="proj-card proj-card--horiz fade-in" id="project-card-6" data-project-id="6"
       onclick="openPop(this)"
+      data-gallery="images/project-6.webp,images/ph-6a.svg,images/ph-6b.svg,images/ph-6c.svg,images/ph-6d.svg,images/ph-6e.svg"
       data-title-en="Adbot" data-title-ru="Adbot"
       data-sub-en="Telegram ad placement · 2021" data-sub-ru="Реклама в Telegram · 2021"
       data-b1-en="End-to-end product for advertisers: create a post, pick channels, pay, then track performance — authors onboard via Telegram bot with cards auto-imported into the service." data-b1-ru="Продукт для рекламодателей: пост → выбор площадок → оплата → аналитика; авторы каналов онбордятся через бота, карточки площадок подтягиваются автоматически."
@@ -417,6 +423,7 @@
     </article>
     <article class="proj-card proj-card--horiz fade-in" id="project-card-7" data-project-id="7"
       onclick="openPop(this)"
+      data-gallery="images/project-2.webp,images/ph-7a.svg,images/ph-7b.svg,images/ph-7c.svg,images/ph-7d.svg,images/ph-7e.svg"
       data-external-url="https://pnb.agency"
       data-external-label-en="PNB Agency · live site"
       data-external-label-ru="PNB Agency · сайт"
@@ -442,6 +449,7 @@
     </article>
     <article class="proj-card proj-card--horiz fade-in" id="project-card-8" data-project-id="8"
       onclick="openPop(this)"
+      data-gallery="images/project-1.webp,images/ph-8a.svg,images/ph-8b.svg,images/ph-8c.svg,images/ph-8d.svg,images/ph-8e.svg"
       data-external-url="https://contented.ru"
       data-external-label-en="CONTENTED · school"
       data-external-label-ru="CONTENTED · школа"
@@ -1317,7 +1325,7 @@ const MATRIX_CHIPS = [
       var span = document.createElement('span');
       span.className = 'sr-word';
       span.textContent = w;
-      span.style.transitionDelay = (i * 70) + 'ms';
+      span.style.transitionDelay = (i * 63) + 'ms';
       el.appendChild(span);
       if (i < words.length - 1) el.appendChild(document.createTextNode(' '));
     });
