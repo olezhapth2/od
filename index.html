@@ -311,7 +311,7 @@
   <div class="proj-grid proj-grid--6">
     <article class="proj-card proj-card--horiz fade-in" id="project-card-2" data-project-id="2"
       onclick="openPop(this)"
-      data-gallery="images/gate19-cover.png,images/gate19-0.png,images/gate19-1.png,images/gate19-2.png,images/gate19-3.png"
+      data-gallery="images/gate19-cover.png,images/gate19-0.png,images/gate19-1.png,images/gate19-2.png,images/gate19-3.png,images/gate19-4.png"
       data-title-en="Gate19" data-title-ru="Gate19"
       data-sub-en="Affiliate platform · 20+ products · MiraiTech · 2022–2025" data-sub-ru="Партнёрская платформа · 20+ продуктов · MiraiTech · 2022–2025"
       data-skill-en="Business-driven design thinking and a scalable design system came together here. Redesigned the payment format flow from first principles using user interviews and funnel data — A/B tested three formats, and the winner became the default across the entire 20-product platform. The unified component library cut frontend handoff time by 60% and enabled White Label launches in under five minutes."
@@ -835,10 +835,15 @@ function setVH() {
 setVH();
 window.addEventListener('resize', setVH);
 
+var _popupSourceEl = null;
 function setLang(l){
   document.body.className = 'lang-' + l;
   document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.textContent === l.toUpperCase()));
   document.documentElement.lang = l;
+  // Re-fill open popup with new language
+  if (_popupSourceEl && document.getElementById('popup').classList.contains('open')) {
+    fillPopupFromEl(_popupSourceEl);
+  }
 }
 
 // Gallery state
@@ -874,7 +879,8 @@ function buildGallery(images) {
 }
 
 function goGallery(i) {
-  galleryIdx = Math.max(0, Math.min(i, galleryImages.length - 1));
+  if (!galleryImages.length) return;
+  galleryIdx = ((i % galleryImages.length) + galleryImages.length) % galleryImages.length;
   document.getElementById('pop-gallery-track').style.transform = 'translateX(-' + (galleryIdx * 100) + '%)';
   document.querySelectorAll('.pop-gallery-dot').forEach(function(d, j) {
     d.classList.toggle('active', j === galleryIdx);
@@ -886,13 +892,21 @@ document.getElementById('pop-gallery-next').addEventListener('click', function(e
 
 // Lightbox
 function setLbImage(i) {
-  galleryIdx = i;
-  var src = galleryImages[i];
+  galleryIdx = ((i % galleryImages.length) + galleryImages.length) % galleryImages.length;
+  var src = galleryImages[galleryIdx];
   document.getElementById('lb-img').src = src;
   document.getElementById('lb-preview').src = src;
-  document.getElementById('lb-counter').textContent = (i + 1) + ' / ' + galleryImages.length;
+  document.getElementById('lb-counter').textContent = (galleryIdx + 1) + ' / ' + galleryImages.length;
   var wrap = document.getElementById('lb-zoom-wrap');
-  if (wrap) wrap.scrollLeft = 0;
+  if (wrap) {
+    // Center the scroll after image loads
+    var img = document.getElementById('lb-img');
+    var doCenter = function() {
+      wrap.scrollLeft = (img.scrollWidth - wrap.clientWidth) / 2;
+    };
+    img.onload = doCenter;
+    doCenter();
+  }
 }
 function openLightbox(i) {
   setLbImage(i);
@@ -954,6 +968,7 @@ function fillPopupFromEl(el) {
 }
 
 function openPop(el) {
+  _popupSourceEl = el;
   fillPopupFromEl(el);
   document.getElementById('popup').classList.add('open');
   document.body.style.overflow = 'hidden';
@@ -969,6 +984,7 @@ function closePop(e) { if (e.target === document.getElementById('popup')) closeP
 function closePopDirect() {
   document.getElementById('popup').classList.remove('open');
   document.body.style.overflow = '';
+  _popupSourceEl = null;
 }
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') {
