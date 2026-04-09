@@ -1773,10 +1773,13 @@ footer.site-footer {
     font-size: var(--fs-min);
   }
   .pop-gallery {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 3 / 1;
   }
   .popup-box--wide {
-    padding: 20px 15px;
+    max-width: 100%;
+  }
+  .popup-box--wide .popup-content-wrap {
+    padding: 16px 15px 20px;
   }
 }
 @media (max-width: 560px) {
@@ -1953,7 +1956,9 @@ button.mc {
   width: 100%;
   min-width: 0;
   max-width: 100%;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 3 / 1;
+  border-radius: 12px 12px 0 0;
+  overflow: hidden;
 }
 .proj-card--horiz .proj-body {
   flex: 1 1 auto;
@@ -2127,14 +2132,34 @@ footer.site-footer {
   border-top: 1px solid var(--line);
 }
 .popup-box--wide {
-  max-width: 720px;
-  padding: 30px;
+  max-width: 900px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.popup-box--wide .pop-gallery {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  flex: none;
+  margin-bottom: 0;
+  border-radius: 12px 12px 0 0;
+  aspect-ratio: 3 / 1;
+}
+.popup-box--wide .popup-close {
+  z-index: 10;
+}
+.popup-box--wide .popup-content-wrap {
+  padding: 24px 30px 30px;
+  overflow-y: auto;
+  flex: 1 1 auto;
 }
 /* Gallery carousel */
 .pop-gallery {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 3 / 1;
   border-radius: 10px;
   overflow: hidden;
   margin-bottom: 20px;
@@ -2362,6 +2387,34 @@ footer.site-footer {
 #hero {
   padding-top: 92px;
   background: linear-gradient(to bottom, #1a1a1a 0%, var(--bg) 30%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-hover-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 0.45s ease;
+  pointer-events: none;
+  z-index: 0;
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.15) 60%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.15) 60%, transparent 100%);
+}
+.hero-hover-bg.active {
+  opacity: 1;
+}
+
+.hero-top {
+  padding-bottom: 50px;
+  position: relative;
+  z-index: 1;
 }
 
 #hero .container {
@@ -2688,11 +2741,13 @@ footer.site-footer {
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
   position: relative;
+  z-index: 1;
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   min-height: clamp(220px, 35vh, 400px);
+  padding-bottom: 50px;
   padding-bottom: var(--space-4);
   margin-top: 50px;
 }
