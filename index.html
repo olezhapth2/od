@@ -96,14 +96,27 @@
 </div>
 
 <section id="hero">
+  <!-- Depth layers -->
+  <div class="hero-depth" id="heroDepth">
+    <div class="hero-orb hero-orb--1"></div>
+    <div class="hero-orb hero-orb--2"></div>
+    <div class="hero-orb hero-orb--3"></div>
+    <div class="hero-orb hero-orb--4"></div>
+    <div class="hero-orb hero-orb--5"></div>
+    <div class="hero-orb hero-orb--6"></div>
+    <div class="hero-mesh"></div>
+  </div>
   <div class="hero-hover-bg" id="heroHoverBg"></div>
-  <div class="hero-corner-glow" id="heroCornerGlow"></div>
+  <!-- Content -->
   <div class="container hero-top">
-    <div class="hero-head-row">
-      <h1 class="hero-name">Oleg<br>Devyatov</h1>
-      <div class="hero-head-text">
-        <div class="hero-title" data-en>Senior Product Designer · UX · UI</div>
-        <div class="hero-title" data-ru>Продакт-дизайнер · Senior · UX · UI</div>
+    <div class="hero-head-block">
+      <div class="hero-label" data-en>Senior Product Designer · UX · UI</div>
+      <div class="hero-label" data-ru>Продакт-дизайнер · Senior · UX · UI</div>
+      <h1 class="hero-name" id="heroName">
+        <span class="hero-name-line" data-text="Oleg">Oleg</span>
+        <span class="hero-name-line" data-text="Devyatov">Devyatov</span>
+      </h1>
+      <div class="hero-meta">
         <p class="hero-loc-text" data-en>Bangkok, Thailand · Open to remote</p>
         <p class="hero-loc-text" data-ru>Бангкок, Таиланд · Удалённая работа</p>
         <p class="hero-bio" data-en>9+ years at the intersection of UX strategy, design systems, and AI workflows. Full-cycle products, scaled teams, internal tools that save hundreds of hours.</p>
@@ -1230,10 +1243,9 @@ const MATRIX_CHIPS = [
   }, {passive: false});
 })();
 
-// Hero: show project cover image on comp-card hover
+// Hero: show project cover on card hover + orb parallax on mouse move
 (function heroHoverBg(){
   var bg = document.getElementById('heroHoverBg');
-  var glow = document.getElementById('heroCornerGlow');
   if (!bg) return;
   var COVERS = {
     '2': 'images/gate19-cover.png',
@@ -1242,22 +1254,6 @@ const MATRIX_CHIPS = [
     '5': 'images/shugarai-cover.png',
     '6': 'images/adbot-cover.png',
     '7': 'images/pnb-cover.png'
-  };
-  var TINTS = {
-    '2': 'rgba(126, 200, 200, 0.08)',
-    '3': 'rgba(200, 155, 126, 0.08)',
-    '4': 'rgba(158, 196, 158, 0.08)',
-    '5': 'rgba(200, 126, 180, 0.08)',
-    '6': 'rgba(126, 180, 200, 0.08)',
-    '7': 'rgba(126, 200, 200, 0.08)'
-  };
-  var GLOWS = {
-    '2': 'rgba(126, 200, 200, 0.10)',
-    '3': 'rgba(200, 155, 126, 0.10)',
-    '4': 'rgba(158, 196, 158, 0.10)',
-    '5': 'rgba(200, 126, 180, 0.10)',
-    '6': 'rgba(126, 180, 200, 0.10)',
-    '7': 'rgba(126, 200, 200, 0.10)'
   };
   var mq = window.matchMedia('(hover: hover) and (pointer: fine)');
   if (!mq.matches) return;
@@ -1269,52 +1265,31 @@ const MATRIX_CHIPS = [
     if (!pid || !COVERS[pid]) return;
     bg.style.backgroundImage = 'url(' + COVERS[pid] + ')';
     bg.classList.add('active');
-    var hero = document.getElementById('hero');
-    if (hero) hero.style.backgroundColor = TINTS[pid] || '';
-    if (glow) {
-      glow.style.background = 'radial-gradient(circle at 0% 0%, ' + (GLOWS[pid] || 'transparent') + ' 0%, transparent 70%)';
-      glow.classList.add('active');
-    }
   }, true);
   document.addEventListener('mouseleave', function(e) {
     var card = e.target.closest('.hero-comp-card');
     if (!card) return;
     bg.classList.remove('active');
-    var hero = document.getElementById('hero');
-    if (hero) hero.style.backgroundColor = '';
-    if (glow) glow.classList.remove('active');
   }, true);
 })();
 
-(function heroBlobGlow(){
-  const blobs = document.querySelectorAll('.blobs .blob');
-  const viewport = document.querySelector('.hero-marquee-viewport');
-  if (!blobs.length) return;
-  const rgb = {
-    'comp-glow--1': '126, 200, 200',
-    'comp-glow--2': '200, 155, 126',
-    'comp-glow--3': '200, 126, 180'
-  };
-  let i = 0;
-  function resetBlobs(){
-    blobs.forEach((el) => {
-      el.style.background = '';
-      el.style.opacity = '';
-    });
-  }
-  document.querySelectorAll('.hero-comp-card').forEach((card) => {
-    card.addEventListener('mouseenter', () => {
-      let c = rgb['comp-glow--1'];
-      if (card.classList.contains('comp-glow--2')) c = rgb['comp-glow--2'];
-      else if (card.classList.contains('comp-glow--3')) c = rgb['comp-glow--3'];
-      const b = blobs[i % blobs.length];
-      i++;
-      b.style.transition = 'background 0.7s ease, opacity 0.7s ease';
-      b.style.background = 'rgb(' + c + ')';
-      b.style.opacity = '0.32';
+// Hero: orb parallax on mouse move
+(function heroParallax(){
+  var depth = document.getElementById('heroDepth');
+  var hero = document.getElementById('hero');
+  if (!depth || !hero) return;
+  var mq = window.matchMedia('(hover: hover) and (pointer: fine)');
+  if (!mq.matches) return;
+  var orbs = depth.querySelectorAll('.hero-orb');
+  hero.addEventListener('mousemove', function(e) {
+    var rect = hero.getBoundingClientRect();
+    var x = (e.clientX - rect.left) / rect.width - 0.5;
+    var y = (e.clientY - rect.top) / rect.height - 0.5;
+    orbs.forEach(function(orb, i) {
+      var speed = (i + 1) * 8;
+      orb.style.transform = 'translate(' + (x * speed) + 'px, ' + (y * speed) + 'px)';
     });
   });
-  if (viewport) viewport.addEventListener('mouseleave', resetBlobs);
 })();
 
 (function matrixParallax3D(){
@@ -1431,40 +1406,6 @@ const MATRIX_CHIPS = [
   els.forEach(function(el){ revealObs.observe(el); });
 })();
 
-/* --- Hero typography: split name into chars, bio into words --- */
-(function heroTypography(){
-  var nameEl = document.querySelector('.hero-name');
-  if (!nameEl) return;
-  var html = nameEl.innerHTML;
-  var charIdx = 0;
-  var result = '';
-  var lines = html.split('<br>');
-  lines.forEach(function(line, li) {
-    for (var i = 0; i < line.length; i++) {
-      var ch = line[i];
-      if (ch === ' ') {
-        result += ' ';
-      } else {
-        var delay = charIdx * 0.04;
-        result += '<span class="char hero-shimmer" style="animation-delay:' + delay + 's,' + delay + 's">' + ch + '</span>';
-        charIdx++;
-      }
-    }
-    if (li < lines.length - 1) result += '<br>';
-  });
-  nameEl.innerHTML = result;
-
-  document.querySelectorAll('.hero-bio').forEach(function(bio) {
-    var text = bio.textContent;
-    var words = text.split(/\s+/);
-    var wordHtml = '';
-    words.forEach(function(w, i) {
-      var delay = 0.6 + i * 0.03;
-      wordHtml += '<span class="word" style="animation-delay:' + delay + 's">' + w + '</span> ';
-    });
-    bio.innerHTML = wordHtml;
-  });
-})();
 </script>
 </body>
 </html>
