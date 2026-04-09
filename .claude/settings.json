@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git commit -m ':*)",
+      "Read(//c/Users/Liza/Downloads/Telegram Desktop/imgod/imgod/**)",
+      "Bash(cp 'C:/Users/Liza/Downloads/Telegram Desktop/imgod/imgod/Gate_0.png' c:/Users/Liza/Desktop/443322/images/gate19-cover.png)",
+      "Bash(cp 'C:/Users/Liza/Downloads/Telegram Desktop/imgod/imgod/gate.png' c:/Users/Liza/Desktop/443322/images/gate19-0.png)",
+      "Bash(cp 'C:/Users/Liza/Downloads/Telegram Desktop/imgod/imgod/gate-1.png' c:/Users/Liza/Desktop/443322/images/gate19-1.png)",
+      "Bash(cp 'C:/Users/Liza/Downloads/Telegram Desktop/imgod/imgod/gate-2.png' c:/Users/Liza/Desktop/443322/images/gate19-2.png)",
+      "Bash(cp 'C:/Users/Liza/Downloads/Telegram Desktop/imgod/imgod/gate-3.png' c:/Users/Liza/Desktop/443322/images/gate19-3.png)",
+      "Bash(python3 -c ':*)",
+      "Bash(python -c ':*)",
+      "Bash(pip install:*)"
+    ]
+  }
+}
