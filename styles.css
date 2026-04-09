@@ -1627,10 +1627,23 @@ footer.site-footer {
 .popup-ov.open .popup-box {
   transform: translateY(0) scale(1);
 }
+.popup-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--line);
+}
+.popup-header-text {
+  flex: 1;
+  min-width: 0;
+}
 .popup-close {
-  position: absolute;
-  top: 15px;
-  right: 15px;
+  flex-shrink: 0;
   background: rgba(255, 255, 255, 0.06);
   border: none;
   border-radius: 50%;
@@ -1641,6 +1654,10 @@ footer.site-footer {
   justify-content: center;
   cursor: pointer;
   color: var(--text-main);
+  transition: background 0.2s;
+}
+.popup-close:hover {
+  background: rgba(255, 255, 255, 0.12);
 }
 .popup-img {
   width: 100%;
@@ -1652,16 +1669,17 @@ footer.site-footer {
 }
 .popup-title {
   font-family: var(--font-hero);
-  font-size: clamp(22px, 3vw, 30px);
+  font-size: clamp(18px, 3vw, 26px);
   font-weight: 700;
   color: var(--text-hi);
-  margin-bottom: 5px;
+  margin-bottom: 2px;
+  line-height: 1.2;
 }
 .popup-meta {
   font-family: var(--font-mono);
   font-size: var(--fs-min);
   color: var(--text-dim);
-  margin-bottom: 10px;
+  margin-bottom: 0;
 }
 .popup-body {
   font-family: var(--font-body);
@@ -1767,13 +1785,6 @@ footer.site-footer {
     border-radius: 0;
     position: relative;
     top: auto;
-  }
-  .popup-box--wide .popup-close {
-    top: 10px;
-    right: 10px;
-    width: 36px;
-    height: 36px;
-    background: rgba(0,0,0,0.6);
   }
   .popup-box--wide .popup-content-wrap {
     padding: 16px 16px 24px;
@@ -2081,16 +2092,10 @@ footer.site-footer {
   overflow: hidden;
 }
 .popup-box--wide .pop-gallery {
-  position: sticky;
-  top: 0;
-  z-index: 2;
   flex: none;
   margin-bottom: 0;
-  border-radius: 12px 12px 0 0;
+  border-radius: 0;
   aspect-ratio: 2.8 / 1;
-}
-.popup-box--wide .popup-close {
-  z-index: 10;
 }
 .popup-box--wide .popup-content-wrap {
   padding: 24px 30px 30px;
@@ -2250,7 +2255,7 @@ footer.site-footer {
 .lb-zoom-img {
   height: 100%;
   width: auto;
-  min-width: 300vw;
+  min-width: 200vw;
   object-fit: cover;
   display: block;
 }
@@ -2265,9 +2270,9 @@ footer.site-footer {
   position: relative;
 }
 .lb-preview-img {
-  height: 60px;
+  height: 50px;
   width: auto;
-  max-width: 50vw;
+  max-width: calc(100vw - 120px);
   object-fit: contain;
   border-radius: 4px;
   opacity: 0.7;
@@ -2705,4 +2710,62 @@ footer.site-footer {
 }
 .proj-card--horiz.proj-card:hover {
   transform: perspective(900px) rotateX(var(--rx)) rotateY(var(--ry));
+}
+
+/* === Mobile performance: kill heavy animations === */
+@media (max-width: 900px), (hover: none) {
+  /* Kill orb float + parallax */
+  .hero-orb {
+    animation: orbFadeIn 1s ease forwards !important;
+  }
+  .hero-mesh {
+    display: none;
+  }
+  /* Kill spinning conic gradient on cards */
+  .proj-card::before,
+  .comp-card::before {
+    display: none !important;
+  }
+  /* Kill 3D hover transforms */
+  .proj-card:hover,
+  .comp-card:hover {
+    transform: none !important;
+  }
+  /* Kill card glow keyframes */
+  .comp-glow--1,
+  .comp-glow--2,
+  .comp-glow--3 {
+    animation: none !important;
+  }
+  /* Kill backdrop-filter (very heavy on mobile GPU) */
+  .comp-card {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: var(--bg-card) !important;
+  }
+  .hero-label {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  /* Kill hero name gradient shift */
+  .hero-name-line {
+    animation: heroLineIn 0.6s ease forwards !important;
+    background: none !important;
+    -webkit-text-fill-color: unset;
+    color: var(--text-hi);
+  }
+  /* Simplify fade-in to instant */
+  .fade-in {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  /* Keep carousel transforms functional but simpler */
+  .hero-marquee-row .comp-card--strip {
+    filter: none !important;
+  }
+  .hero-marquee-row .comp-card--strip.carousel-active {
+    filter: none !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3) !important;
+  }
 }
