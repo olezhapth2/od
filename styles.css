@@ -1326,9 +1326,9 @@ section:nth-child(even) {
   padding: 0;
 }
 .matrix-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
   align-content: flex-start;
 }
 .matrix-grid .mc[data-cat="1"] {
@@ -1802,6 +1802,12 @@ footer.site-footer {
   .pop-gallery {
     aspect-ratio: 4 / 3;
   }
+  .popup-box--skill .pop-gallery {
+    aspect-ratio: 3 / 1;
+    margin: -20px -15px 16px;
+    width: calc(100% + 30px);
+    border-radius: 10px 10px 0 0;
+  }
   .popup-box--wide {
     padding: 20px 15px;
   }
@@ -1836,6 +1842,11 @@ footer.site-footer {
     flex: 0 1 100%;
     padding: 15px 20px;
     font-size: var(--fs-min);
+  }
+  .matrix-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
   }
 }
 
@@ -2239,6 +2250,35 @@ footer.site-footer {
   margin-bottom: 15px;
 }
 .popup-block:empty { display: none; }
+
+/* Skill description block */
+.popup-skill-block {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 16px 20px;
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: 1.7;
+  color: var(--text-main);
+  margin-bottom: 16px;
+}
+.popup-skill-block:empty { display: none; }
+
+/* Skill popup mode: 3:1 cover, no gallery controls */
+.popup-box--skill .pop-gallery {
+  aspect-ratio: 3 / 1;
+  border-radius: 10px 10px 0 0;
+  margin: -30px -30px 20px;
+  width: calc(100% + 60px);
+}
+.popup-box--skill .pop-gallery-btn,
+.popup-box--skill .pop-gallery-dots {
+  display: none;
+}
+.popup-box--skill .popup-scroll {
+  display: none;
+}
 .popup-cta {
   width: 100%;
   justify-content: center;
@@ -2362,6 +2402,11 @@ footer.site-footer {
     flex: 0 1 100%;
     padding: 15px 20px;
     font-size: var(--fs-min);
+  }
+  .matrix-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
   }
 }
 
@@ -2602,8 +2647,6 @@ footer.site-footer {
 }
 
 #skills-matrix .matrix-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
   gap: 5px;
 }
 
