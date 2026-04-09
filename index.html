@@ -48,19 +48,13 @@
       </a>
     </div>
 
-    <div class="site-header-mid">
-      <button type="button" class="hdr-btn hdr-btn--fun" id="btnFont" aria-label="Change font" title="Random font">
-        <span class="material-icons-round" aria-hidden="true">text_fields</span>
-        <span class="hdr-btn-label">Aa</span>
-      </button>
-      <button type="button" class="hdr-btn hdr-btn--fun" id="btnPalette" aria-label="Change palette" title="Random palette">
-        <span class="material-icons-round" aria-hidden="true">palette</span>
-        <span class="hdr-btn-label" data-en>Color</span><span class="hdr-btn-label" data-ru>Цвет</span>
-      </button>
-    </div>
-    <div class="site-header-right lang-bar" aria-label="Language">
-      <button type="button" class="lang-btn active" onclick="setLang('en')">EN</button>
-      <button type="button" class="lang-btn" onclick="setLang('ru')">RU</button>
+    <div class="site-header-right" aria-label="Controls">
+      <button type="button" class="fun-circle" id="btnFont" aria-label="Change font" title="Change font">Aa</button>
+      <button type="button" class="fun-circle fun-circle--color" id="btnPalette" aria-label="Change palette" title="Change palette"><span class="fun-color-dot"></span></button>
+      <div class="lang-bar">
+        <button type="button" class="lang-btn active" onclick="setLang('en')">EN</button>
+        <button type="button" class="lang-btn" onclick="setLang('ru')">RU</button>
+      </div>
     </div>
   </div>
 </header>
@@ -766,53 +760,19 @@
       <h2 class="sec-title scroll-reveal" data-ru>Инструменты, с которыми&nbsp;работаю</h2>
     </div>
   </div>
-  <div class="tools-grid">
-    <div class="tool-group">
-      <div class="tool-group-title" data-en>Design</div><div class="tool-group-title" data-ru>Дизайн</div>
-      <div class="tool-chips">
-        <span class="tool-chip">Figma</span>
-        <span class="tool-chip">Photoshop</span>
-        <span class="tool-chip">Illustrator</span>
-        <span class="tool-chip">After Effects</span>
-        <span class="tool-chip">Principle</span>
-        <span class="tool-chip">ProtoPie</span>
-      </div>
-    </div>
-    <div class="tool-group">
-      <div class="tool-group-title" data-en>Research & Analytics</div><div class="tool-group-title" data-ru>Исследования и аналитика</div>
-      <div class="tool-chips">
-        <span class="tool-chip">Amplitude</span>
-        <span class="tool-chip">Mixpanel</span>
-        <span class="tool-chip">Hotjar</span>
-        <span class="tool-chip">Google Analytics</span>
-        <span class="tool-chip">Maze</span>
-        <span class="tool-chip">Optimal Workshop</span>
-      </div>
-    </div>
-    <div class="tool-group">
-      <div class="tool-group-title" data-en>AI & Automation</div><div class="tool-group-title" data-ru>AI и автоматизация</div>
-      <div class="tool-chips">
-        <span class="tool-chip">Cursor</span>
-        <span class="tool-chip">Claude</span>
-        <span class="tool-chip">ChatGPT</span>
-        <span class="tool-chip">Midjourney</span>
-        <span class="tool-chip">n8n</span>
-        <span class="tool-chip">ComfyUI</span>
-        <span class="tool-chip">Runway</span>
-      </div>
-    </div>
-    <div class="tool-group">
-      <div class="tool-group-title" data-en>Dev & Handoff</div><div class="tool-group-title" data-ru>Разработка и передача</div>
-      <div class="tool-chips">
-        <span class="tool-chip">HTML/CSS</span>
-        <span class="tool-chip">Git</span>
-        <span class="tool-chip">Storybook</span>
-        <span class="tool-chip">Notion</span>
-        <span class="tool-chip">Linear</span>
-        <span class="tool-chip">Jira</span>
-        <span class="tool-chip">Miro</span>
-      </div>
-    </div>
+  <p class="tools-list">Figma · Photoshop · Illustrator · After Effects · Principle · ProtoPie · Amplitude · Mixpanel · Hotjar · Google Analytics · Maze · Cursor · Claude · ChatGPT · Midjourney · n8n · ComfyUI · Runway · HTML/CSS · Git · Storybook · Notion · Linear · Jira · Miro</p>
+  <div class="tools-logos">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" width="32" height="32" loading="lazy">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-original.svg" alt="Photoshop" width="32" height="32" loading="lazy">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg" alt="Illustrator" width="32" height="32" loading="lazy">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aftereffects/aftereffects-original.svg" alt="After Effects" width="32" height="32" loading="lazy">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google Analytics" width="32" height="32" loading="lazy">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" width="32" height="32" loading="lazy">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" width="32" height="32" loading="lazy">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" width="32" height="32" loading="lazy">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/storybook/storybook-original.svg" alt="Storybook" width="32" height="32" loading="lazy">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/notion/notion-original.svg" alt="Notion" width="32" height="32" loading="lazy">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg" alt="Jira" width="32" height="32" loading="lazy">
   </div>
 </div>
 </section>
@@ -984,15 +944,9 @@ function openPop(el) {
 }
 
 function openProjectById(pid) {
-  const el = document.getElementById('project-card-' + pid);
+  var el = document.getElementById('project-card-' + pid);
   if (!el) return;
-  var sect = document.getElementById('projects');
-  if (sect) {
-    sect.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    setTimeout(function() { openPop(el); }, 400);
-  } else {
-    openPop(el);
-  }
+  openPop(el);
 }
 
 function closePop(e) { if (e.target === document.getElementById('popup')) closePopDirect(); }
@@ -1310,9 +1264,11 @@ const MATRIX_CHIPS = [
 
   // Drag/swipe
   var dragMoved = false;
+  var dragTarget = null;
   viewport.addEventListener('pointerdown', function(e) {
     isDragging = true;
     dragMoved = false;
+    dragTarget = e.target;
     dragStartX = e.clientX;
     dragStartScroll = targetX;
     viewport.setPointerCapture(e.pointerId);
@@ -1323,17 +1279,18 @@ const MATRIX_CHIPS = [
     if (Math.abs(dx) > 5) dragMoved = true;
     targetX = dragStartScroll + dx;
   });
-  viewport.addEventListener('pointerup', function(e) {
+  viewport.addEventListener('pointerup', function() {
     isDragging = false;
-    if (!dragMoved) {
-      var card = e.target.closest('.hero-comp-card');
+    if (!dragMoved && dragTarget) {
+      var card = dragTarget.closest('.hero-comp-card');
       if (card) {
         var pid = card.getAttribute('data-project-id');
         if (pid) openProjectById(pid);
       }
     }
+    dragTarget = null;
   });
-  viewport.addEventListener('pointercancel', function() { isDragging = false; });
+  viewport.addEventListener('pointercancel', function() { isDragging = false; dragTarget = null; });
 
   // Pause on hover (desktop)
   viewport.addEventListener('mouseenter', function() { paused = true; });
@@ -1519,13 +1476,21 @@ const MATRIX_CHIPS = [
     { hero: '"Playfair Display", Georgia, serif', body: '"IBM Plex Sans", sans-serif', mono: '"IBM Plex Mono", monospace' },
     { hero: '"Space Grotesk", sans-serif', body: '"Outfit", sans-serif', mono: '"DM Mono", monospace' },
     { hero: '"Georgia", serif', body: '"Space Grotesk", sans-serif', mono: '"IBM Plex Mono", monospace' },
-    { hero: '"Outfit", sans-serif', body: '"IBM Plex Sans", sans-serif', mono: '"DM Mono", monospace' }
+    { hero: '"Outfit", sans-serif', body: '"IBM Plex Sans", sans-serif', mono: '"DM Mono", monospace' },
+    { hero: 'Impact, "Arial Black", sans-serif', body: '"Courier New", monospace', mono: '"Courier New", monospace' },
+    { hero: '"Comic Sans MS", cursive, sans-serif', body: '"Comic Sans MS", cursive, sans-serif', mono: '"Lucida Console", monospace' },
+    { hero: '"Times New Roman", serif', body: '"Trebuchet MS", sans-serif', mono: '"Consolas", monospace' },
+    { hero: 'system-ui, sans-serif', body: 'system-ui, sans-serif', mono: 'ui-monospace, monospace' }
   ];
   var PALS = [
     { bg: '#0f0f0f', card: '#262626', hi: '#f5f5f5', main: '#a3a3a3', dim: '#525252', line: '#333', g1: '126,200,200', g2: '200,155,126', g3: '200,126,180' },
     { bg: '#0d1117', card: '#1c2333', hi: '#e6edf3', main: '#8b949e', dim: '#484f58', line: '#30363d', g1: '130,180,220', g2: '220,170,100', g3: '180,130,210' },
     { bg: '#141218', card: '#2b2930', hi: '#e8def8', main: '#a89db8', dim: '#524b60', line: '#3a3540', g1: '168,133,248', g2: '240,180,120', g3: '220,120,160' },
-    { bg: '#0f1410', card: '#1e2a20', hi: '#e8f5e9', main: '#a0b8a2', dim: '#506052', line: '#2e3e30', g1: '130,200,140', g2: '200,180,120', g3: '180,140,200' }
+    { bg: '#0f1410', card: '#1e2a20', hi: '#e8f5e9', main: '#a0b8a2', dim: '#506052', line: '#2e3e30', g1: '130,200,140', g2: '200,180,120', g3: '180,140,200' },
+    { bg: '#1a0a0a', card: '#2e1a1a', hi: '#ffd7d7', main: '#c08080', dim: '#6a4040', line: '#3e2020', g1: '255,120,120', g2: '255,180,80', g3: '255,140,200' },
+    { bg: '#0a0a1a', card: '#18183a', hi: '#d0d8ff', main: '#8088cc', dim: '#404880', line: '#282858', g1: '100,140,255', g2: '160,120,255', g3: '80,200,255' },
+    { bg: '#1a1400', card: '#302a10', hi: '#fff8e0', main: '#c0b070', dim: '#706030', line: '#3e3818', g1: '255,220,100', g2: '255,180,60', g3: '200,160,80' },
+    { bg: '#0f0f0f', card: '#1a1a1a', hi: '#ffffff', main: '#909090', dim: '#505050', line: '#2a2a2a', g1: '255,255,255', g2: '200,200,200', g3: '160,160,160' }
   ];
   var btnF = document.getElementById('btnFont');
   var btnP = document.getElementById('btnPalette');
