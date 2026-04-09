@@ -97,12 +97,13 @@
 
 <section id="hero">
   <div class="hero-hover-bg" id="heroHoverBg"></div>
+  <div class="hero-corner-glow" id="heroCornerGlow"></div>
   <div class="container hero-top">
     <div class="hero-head-row">
+      <h1 class="hero-name">Oleg<br>Devyatov</h1>
       <div class="hero-head-text">
         <div class="hero-title" data-en>Senior Product Designer · UX · UI</div>
         <div class="hero-title" data-ru>Продакт-дизайнер · Senior · UX · UI</div>
-        <h1 class="hero-name">Oleg<br>Devyatov</h1>
         <p class="hero-loc-text" data-en>Bangkok, Thailand · Open to remote</p>
         <p class="hero-loc-text" data-ru>Бангкок, Таиланд · Удалённая работа</p>
         <p class="hero-bio" data-en>9+ years at the intersection of UX strategy, design systems, and AI workflows. Full-cycle products, scaled teams, internal tools that save hundreds of hours.</p>
@@ -1190,8 +1191,10 @@ const MATRIX_CHIPS = [
   requestAnimationFrame(tick);
 
   // Drag/swipe
+  var dragMoved = false;
   viewport.addEventListener('pointerdown', function(e) {
     isDragging = true;
+    dragMoved = false;
     dragStartX = e.clientX;
     dragStartScroll = targetX;
     viewport.setPointerCapture(e.pointerId);
@@ -1199,9 +1202,19 @@ const MATRIX_CHIPS = [
   viewport.addEventListener('pointermove', function(e) {
     if (!isDragging) return;
     var dx = dragStartX - e.clientX;
+    if (Math.abs(dx) > 5) dragMoved = true;
     targetX = dragStartScroll + dx;
   });
-  viewport.addEventListener('pointerup', function() { isDragging = false; });
+  viewport.addEventListener('pointerup', function(e) {
+    isDragging = false;
+    if (!dragMoved) {
+      var card = e.target.closest('.hero-comp-card');
+      if (card) {
+        var pid = card.getAttribute('data-project-id');
+        if (pid) openProjectById(pid);
+      }
+    }
+  });
   viewport.addEventListener('pointercancel', function() { isDragging = false; });
 
   // Pause on hover (desktop)
@@ -1220,14 +1233,31 @@ const MATRIX_CHIPS = [
 // Hero: show project cover image on comp-card hover
 (function heroHoverBg(){
   var bg = document.getElementById('heroHoverBg');
+  var glow = document.getElementById('heroCornerGlow');
   if (!bg) return;
+  var COVERS = {
+    '2': 'images/gate19-cover.png',
+    '3': 'images/javhd-cover.png',
+    '4': 'images/corgday-cover.png',
+    '5': 'images/shugarai-cover.png',
+    '6': 'images/adbot-cover.png',
+    '7': 'images/pnb-cover.png'
+  };
+  var TINTS = {
+    '2': 'rgba(126, 200, 200, 0.08)',
+    '3': 'rgba(200, 155, 126, 0.08)',
+    '4': 'rgba(158, 196, 158, 0.08)',
+    '5': 'rgba(200, 126, 180, 0.08)',
+    '6': 'rgba(126, 180, 200, 0.08)',
+    '7': 'rgba(126, 200, 200, 0.08)'
+  };
   var GLOWS = {
-    '2': 'rgba(126, 200, 200, 0.18)',
-    '3': 'rgba(200, 155, 126, 0.18)',
-    '4': 'rgba(158, 196, 158, 0.18)',
-    '5': 'rgba(200, 126, 180, 0.18)',
-    '6': 'rgba(126, 180, 200, 0.18)',
-    '7': 'rgba(126, 200, 200, 0.18)'
+    '2': 'rgba(126, 200, 200, 0.10)',
+    '3': 'rgba(200, 155, 126, 0.10)',
+    '4': 'rgba(158, 196, 158, 0.10)',
+    '5': 'rgba(200, 126, 180, 0.10)',
+    '6': 'rgba(126, 180, 200, 0.10)',
+    '7': 'rgba(126, 200, 200, 0.10)'
   };
   var mq = window.matchMedia('(hover: hover) and (pointer: fine)');
   if (!mq.matches) return;
@@ -1236,19 +1266,23 @@ const MATRIX_CHIPS = [
     var card = e.target.closest('.hero-comp-card');
     if (!card) return;
     var pid = card.getAttribute('data-project-id');
-    var color = GLOWS[pid] || 'rgba(126, 200, 200, 0.18)';
-    var rect = card.getBoundingClientRect();
-    var hero = document.getElementById('hero');
-    var heroRect = hero.getBoundingClientRect();
-    var cx = rect.left + rect.width / 2 - heroRect.left;
-    var cy = rect.top + rect.height / 2 - heroRect.top;
-    bg.style.background = 'radial-gradient(600px circle at ' + cx + 'px ' + cy + 'px, ' + color + ' 0%, transparent 70%)';
+    if (!pid || !COVERS[pid]) return;
+    bg.style.backgroundImage = 'url(' + COVERS[pid] + ')';
     bg.classList.add('active');
+    var hero = document.getElementById('hero');
+    if (hero) hero.style.backgroundColor = TINTS[pid] || '';
+    if (glow) {
+      glow.style.background = 'radial-gradient(circle at 0% 0%, ' + (GLOWS[pid] || 'transparent') + ' 0%, transparent 70%)';
+      glow.classList.add('active');
+    }
   }, true);
   document.addEventListener('mouseleave', function(e) {
     var card = e.target.closest('.hero-comp-card');
     if (!card) return;
     bg.classList.remove('active');
+    var hero = document.getElementById('hero');
+    if (hero) hero.style.backgroundColor = '';
+    if (glow) glow.classList.remove('active');
   }, true);
 })();
 
@@ -1395,6 +1429,41 @@ const MATRIX_CHIPS = [
   }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
 
   els.forEach(function(el){ revealObs.observe(el); });
+})();
+
+/* --- Hero typography: split name into chars, bio into words --- */
+(function heroTypography(){
+  var nameEl = document.querySelector('.hero-name');
+  if (!nameEl) return;
+  var html = nameEl.innerHTML;
+  var charIdx = 0;
+  var result = '';
+  var lines = html.split('<br>');
+  lines.forEach(function(line, li) {
+    for (var i = 0; i < line.length; i++) {
+      var ch = line[i];
+      if (ch === ' ') {
+        result += ' ';
+      } else {
+        var delay = charIdx * 0.04;
+        result += '<span class="char hero-shimmer" style="animation-delay:' + delay + 's,' + delay + 's">' + ch + '</span>';
+        charIdx++;
+      }
+    }
+    if (li < lines.length - 1) result += '<br>';
+  });
+  nameEl.innerHTML = result;
+
+  document.querySelectorAll('.hero-bio').forEach(function(bio) {
+    var text = bio.textContent;
+    var words = text.split(/\s+/);
+    var wordHtml = '';
+    words.forEach(function(w, i) {
+      var delay = 0.6 + i * 0.03;
+      wordHtml += '<span class="word" style="animation-delay:' + delay + 's">' + w + '</span> ';
+    });
+    bio.innerHTML = wordHtml;
+  });
 })();
 </script>
 </body>
