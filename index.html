@@ -74,14 +74,6 @@
 
     <div class="popup-skill-block" id="pop-skill"></div>
 
-    <div class="popup-actions">
-      <a class="pill secondary popup-project" id="pop-project" href="#projects" style="display:none" onclick="event.stopPropagation()">
-        <span class="material-icons-round">open_in_new</span>
-        <span data-en>View project</span><span data-ru>К проекту</span>
-      </a>
-      <a class="popup-external pill secondary" id="pop-external" href="#" target="_blank" rel="noopener noreferrer" style="display:none" onclick="event.stopPropagation()"><span class="material-icons-round">open_in_new</span><span data-en>Open link</span><span data-ru>Открыть ссылку</span></a>
-    </div>
-
     <div class="popup-scroll" id="pop-scroll">
       <div class="popup-block" id="pop-b1"></div>
       <div class="popup-block" id="pop-b2"></div>
@@ -121,7 +113,7 @@
     <div class="hero-marquee-viewport">
       <div class="hero-marquee" id="heroMarquee">
         <div class="hero-marquee-row" id="heroMarqueeRow">
-<div class="comp-card comp-card--strip hero-comp-card comp-glow--1 fade-in" onclick="openPop(this)" data-project-id="2" data-title-en="Product Thinking" data-title-ru="Продуктовое мышление" data-sub-en="Outcomes, not screens" data-sub-ru="Результаты, а не экраны" data-body-en="My marketing degree gave me the business vocabulary before I ever opened a design tool. I work with JTBD, CJM, Impact Mapping — and co-own the roadmap with PM using RICE/ICE. I argue for design decisions through retention and conversion, not aesthetics." data-body-ru="Маркетинговое образование дало мне бизнес-словарь ещё до первого дизайн-инструмента. Работаю с JTBD, CJM, Impact Mapping — и совместно с PM владею роадмапом через RICE/ICE. Защищаю дизайн-решения через retention и конверсию, не через эстетику.">
+<div class="comp-card comp-card--strip hero-comp-card comp-glow--1 fade-in" onclick="openProjectById('2')" data-project-id="2" data-title-en="Product Thinking" data-title-ru="Продуктовое мышление" data-sub-en="Outcomes, not screens" data-sub-ru="Результаты, а не экраны" data-body-en="My marketing degree gave me the business vocabulary before I ever opened a design tool. I work with JTBD, CJM, Impact Mapping — and co-own the roadmap with PM using RICE/ICE. I argue for design decisions through retention and conversion, not aesthetics." data-body-ru="Маркетинговое образование дало мне бизнес-словарь ещё до первого дизайн-инструмента. Работаю с JTBD, CJM, Impact Mapping — и совместно с PM владею дорожной картой через RICE/ICE. Защищаю дизайн-решения через удержание и конверсию, не через эстетику.">
       <div class="comp-head">
         <div class="comp-ico"><a class="comp-ico-link" href="https://fonts.google.com/icons?q=psychology" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" aria-label="psychology · Google Fonts Icons"><span class="material-icons-round">psychology</span></a></div>
         <div><div class="comp-title" data-en>Product Thinking</div><div class="comp-title" data-ru>Продуктовое мышление</div>
@@ -129,13 +121,13 @@
       </div>
       <div class="comp-tags"><span class="ctag" data-ru>9+ лет</span><span class="ctag" data-en>9+ yrs</span><span class="ctag" data-ru>20+ продуктов</span><span class="ctag" data-en>20+ products</span><span class="ctag" data-ru>Fintech·SaaS·AI</span><span class="ctag" data-en>Fintech·SaaS·AI</span></div>
       <p class="comp-preview" data-en>Marketing degree before any design tool. JTBD, CJM, Impact Mapping — roadmap co-owned with PM via RICE/ICE.</p>
-      <p class="comp-preview" data-ru>Маркетинговое образование до первого дизайн-инструмента. JTBD, CJM, Impact Mapping — роадмап совместно с PM через RICE/ICE.</p>
-      <div class="comp-proj"><span class="carr">→</span><a class="proj-ref" href="#projects" onclick="openProjectById(2); return false;">Gate19</a><span data-en> — A/B tested payment format flow. Winning format became default across 20-product platform.</span><span data-ru> — A/B-тест флоу форматов оплаты. Победивший формат стал дефолтным для 20-продуктовой платформы.</span></div>
+      <p class="comp-preview" data-ru>Маркетинговое образование до первого дизайн-инструмента. JTBD, CJM, Impact Mapping — дорожная карта совместно с PM через RICE/ICE.</p>
+      <div class="comp-proj"><span class="carr">→</span><a class="proj-ref" href="#projects" onclick="openProjectById(2); return false;">Gate19</a><span data-en> — A/B tested payment format flow. Winning format became default across 20-product platform.</span><span data-ru> — A/B-тест сценариев оплаты. Победивший формат стал стандартным для 20-продуктовой платформы.</span></div>
       <div class="click-hint" data-en>Click to read more</div>
       <div class="click-hint" data-ru>Нажмите для подробностей</div>
     </div>
 
-    <div class="comp-card comp-card--strip hero-comp-card comp-glow--2 fade-in" onclick="openPop(this)" data-project-id="3" data-title-en="UX Research" data-title-ru="UX-исследования" data-sub-en="Marketing brain + designer eye" data-sub-ru="Мышление маркетолога + взгляд дизайнера" data-body-en="I studied marketing before UX — so I understand mental models users arrive with. Qualitative interviews, usability tests, heatmaps. Success metric is set before design starts, not after." data-body-ru="Изучал маркетинг до UX — понимаю ментальные модели пользователей. Качественные интервью, юзабилити-тесты, тепловые карты. Метрику успеха ставлю до начала дизайна.">
+    <div class="comp-card comp-card--strip hero-comp-card comp-glow--2 fade-in" onclick="openProjectById('3')" data-project-id="3" data-title-en="UX Research" data-title-ru="UX-исследования" data-sub-en="Marketing brain + designer eye" data-sub-ru="Мышление маркетолога + взгляд дизайнера" data-body-en="I studied marketing before UX — so I understand mental models users arrive with. Qualitative interviews, usability tests, heatmaps. Success metric is set before design starts, not after." data-body-ru="Изучал маркетинг до UX — понимаю ментальные модели пользователей. Качественные интервью, юзабилити-тесты, тепловые карты. Метрику успеха ставлю до начала дизайна.">
       <div class="comp-head">
         <div class="comp-ico"><a class="comp-ico-link" href="https://fonts.google.com/icons?q=biotech" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" aria-label="biotech · Google Fonts Icons"><span class="material-icons-round">biotech</span></a></div>
         <div><div class="comp-title" data-en>UX Research</div><div class="comp-title" data-ru>UX-исследования</div>
@@ -149,49 +141,49 @@
       <div class="click-hint" data-ru>Нажмите для подробностей</div>
     </div>
 
-    <div class="comp-card comp-card--strip hero-comp-card comp-glow--3 fade-in" onclick="openPop(this)" data-project-id="4" data-title-en="Information Architecture" data-title-ru="Информационная архитектура" data-sub-en="Complex systems that feel simple" data-sub-ru="Сложные системы, которые чувствуются просто" data-body-en="Dense data and complex workflows are where many designers struggle. I find them interesting. Empty states, error handling, progressive disclosure — designed with the same care as the happy path. I design for edge cases, not just for Dribbble." data-body-ru="Плотные данные и сложные воркфлоу — зона, где многие дизайнеры теряются. Мне интересно именно здесь. Empty states, error handling — с той же тщательностью, что и happy path.">
+    <div class="comp-card comp-card--strip hero-comp-card comp-glow--3 fade-in" onclick="openProjectById('4')" data-project-id="4" data-title-en="Information Architecture" data-title-ru="Информационная архитектура" data-sub-en="Complex systems that feel simple" data-sub-ru="Сложные системы, которые чувствуются просто" data-body-en="Dense data and complex workflows are where many designers struggle. I find them interesting. Empty states, error handling, progressive disclosure — designed with the same care as the happy path. I design for edge cases, not just for Dribbble." data-body-ru="Плотные данные и сложные рабочие процессы — зона, где многие дизайнеры теряются. Мне интересно именно здесь. Пустые состояния, обработка ошибок, постепенное раскрытие — с той же тщательностью, что и основной сценарий.">
       <div class="comp-head">
         <div class="comp-ico"><a class="comp-ico-link" href="https://fonts.google.com/icons?q=account_tree" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" aria-label="account_tree · Google Fonts Icons"><span class="material-icons-round">account_tree</span></a></div>
         <div><div class="comp-title" data-en>Information Architecture</div><div class="comp-title" data-ru>Информационная архитектура</div>
         <div class="comp-sub" data-en>Complex systems that feel simple</div><div class="comp-sub" data-ru>Сложные системы, которые чувствуются просто</div></div>
       </div>
-      <div class="comp-tags"><span class="ctag" data-ru>CRM·SaaS·Дашборды</span><span class="ctag" data-en>CRM·SaaS·Dashboards</span><span class="ctag" data-ru>−40% follow-ups</span><span class="ctag" data-en>−40% follow-ups</span></div>
+      <div class="comp-tags"><span class="ctag" data-ru>CRM·SaaS·Панели</span><span class="ctag" data-en>CRM·SaaS·Dashboards</span><span class="ctag" data-ru>−40% ручное отслеживание</span><span class="ctag" data-en>−40% follow-ups</span></div>
       <p class="comp-preview" data-en>Dense data, complex workflows. Empty states, error handling, progressive disclosure — same care as happy path.</p>
-      <p class="comp-preview" data-ru>Плотные данные, сложные воркфлоу. Empty states, error handling — с той же тщательностью, что и happy path.</p>
-      <div class="comp-proj"><span class="carr">→</span><a class="proj-ref" href="#projects" onclick="openProjectById(4); return false;">Corgday HR CRM</a><span data-en> — restructured IA around actual HR workflows. Slack-alert reduced manual follow-ups 40%.</span><span data-ru> — реструктурировал ИА вокруг реальных HR-процессов. Slack-алерт сократил ручные follow-up на 40%.</span></div>
+      <p class="comp-preview" data-ru>Плотные данные, сложные процессы. Пустые состояния, обработка ошибок — с той же тщательностью, что и основной сценарий.</p>
+      <div class="comp-proj"><span class="carr">→</span><a class="proj-ref" href="#projects" onclick="openProjectById(4); return false;">Corgday HR CRM</a><span data-en> — restructured IA around actual HR workflows. Slack-alert reduced manual follow-ups 40%.</span><span data-ru> — перестроил информационную архитектуру вокруг реальных HR-процессов. Уведомления через Slack сократили ручное отслеживание на 40%.</span></div>
       <div class="click-hint" data-en>Click to read more</div>
       <div class="click-hint" data-ru>Нажмите для подробностей</div>
     </div>
 
-    <div class="comp-card comp-card--strip hero-comp-card comp-glow--1 fade-in" onclick="openPop(this)" data-project-id="2" data-title-en="Design Systems" data-title-ru="Дизайн-системы" data-sub-en="One library. 20 products. 5 minutes." data-sub-ru="Одна библиотека. 20 продуктов. 5 минут." data-body-en="A design system is only as good as the time it saves. I built one that became the operational backbone for an entire product portfolio — tokens, Atomic Design, documented component states, and a handoff setup developers actually use." data-body-ru="Дизайн-система стоит ровно столько, сколько времени она экономит. Я построил такую, которая стала операционным хребтом целого продуктового портфеля — токены, Atomic Design, задокументированные состояния компонентов.">
+    <div class="comp-card comp-card--strip hero-comp-card comp-glow--1 fade-in" onclick="openProjectById('2')" data-project-id="2" data-title-en="Design Systems" data-title-ru="Дизайн-системы" data-sub-en="One library. 20 products. 5 minutes." data-sub-ru="Одна библиотека. 20 продуктов. 5 минут." data-body-en="A design system is only as good as the time it saves. I built one that became the operational backbone for an entire product portfolio — tokens, Atomic Design, documented component states, and a handoff setup developers actually use." data-body-ru="Дизайн-система стоит ровно столько, сколько времени она экономит. Я построил такую, которая стала операционным хребтом целого продуктового портфеля — токены, Atomic Design, задокументированные состояния компонентов.">
       <div class="comp-head">
         <div class="comp-ico"><a class="comp-ico-link" href="https://fonts.google.com/icons?q=hub" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" aria-label="hub · Google Fonts Icons"><span class="material-icons-round">hub</span></a></div>
         <div><div class="comp-title" data-en>Design Systems</div><div class="comp-title" data-ru>Дизайн-системы</div>
         <div class="comp-sub" data-en>One library. 20 products. 5 minutes.</div><div class="comp-sub" data-ru>Одна библиотека. 20 продуктов. 5 минут.</div></div>
       </div>
-      <div class="comp-tags"><span class="ctag" data-ru>−60% хэндофф</span><span class="ctag" data-en>−60% handoff</span><span class="ctag" data-ru>White Label → 5 min</span><span class="ctag" data-en>White Label → 5 min</span><span class="ctag" data-ru>1 library, 20 products</span><span class="ctag" data-en>1 library, 20 products</span></div>
+      <div class="comp-tags"><span class="ctag" data-ru>−60% передача макетов</span><span class="ctag" data-en>−60% handoff</span><span class="ctag" data-ru>White Label → 5 min</span><span class="ctag" data-en>White Label → 5 min</span><span class="ctag" data-ru>1 библиотека, 20 продуктов</span><span class="ctag" data-en>1 library, 20 products</span></div>
       <p class="comp-preview" data-en>Built a system that became the operational backbone — tokens, Atomic Design, documented component states.</p>
       <p class="comp-preview" data-ru>Построил систему, ставшую операционным хребтом — токены, Atomic Design, задокументированные состояния.</p>
-      <div class="comp-proj"><span class="carr">→</span><a class="proj-ref" href="#projects" onclick="openProjectById(2); return false;">Gate19</a><span data-en> — unified library for 20+ products: −60% handoff, product launch under 1 week, White Label in 5 min.</span><span data-ru> — единая библиотека для 20+ продуктов: −60% хэндофф, запуск продукта за неделю, White Label за 5 минут.</span></div>
+      <div class="comp-proj"><span class="carr">→</span><a class="proj-ref" href="#projects" onclick="openProjectById(2); return false;">Gate19</a><span data-en> — unified library for 20+ products: −60% handoff, product launch under 1 week, White Label in 5 min.</span><span data-ru> — единая библиотека для 20+ продуктов: −60% к времени передачи макетов, запуск продукта за неделю, White Label за 5 минут.</span></div>
       <div class="click-hint" data-en>Click to read more</div>
       <div class="click-hint" data-ru>Нажмите для подробностей</div>
     </div>
 
-    <div class="comp-card comp-card--strip hero-comp-card comp-glow--2 fade-in" onclick="openPop(this)" data-project-id="7" data-title-en="AI-Augmented Workflow" data-title-ru="AI-усиленный дизайн-процесс" data-sub-en="Building pipelines, not using tools" data-sub-ru="Строю пайплайны, не использую инструменты" data-body-en="Most designers say they &#39;use AI.&#39; I build production pipelines with it. Cursor agents, n8n workflows, generative models — integrated into real production cycles. Rolled out to the design team as built-in competency." data-body-ru="Большинство дизайнеров «используют AI». Я строю производственные пайплайны с ним. Cursor-агенты, n8n-воркфлоу — в реальных производственных циклах. Внедрил в дизайн-команду как встроенную компетенцию.">
+    <div class="comp-card comp-card--strip hero-comp-card comp-glow--2 fade-in" onclick="openProjectById('7')" data-project-id="7" data-title-en="AI-Augmented Workflow" data-title-ru="AI-усиленный дизайн-процесс" data-sub-en="Building pipelines, not using tools" data-sub-ru="Строю конвейеры, не использую инструменты" data-body-en="Most designers say they &#39;use AI.&#39; I build production pipelines with it. Cursor agents, n8n workflows, generative models — integrated into real production cycles. Rolled out to the design team as built-in competency." data-body-ru="Большинство дизайнеров «используют AI». Я строю производственные конвейеры. Cursor-агенты, n8n-автоматизации — в реальных производственных циклах. Внедрил в дизайн-команду как встроенную компетенцию.">
       <div class="comp-head">
         <div class="comp-ico"><a class="comp-ico-link" href="https://fonts.google.com/icons?q=smart_toy" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" aria-label="smart_toy · Google Fonts Icons"><span class="material-icons-round">smart_toy</span></a></div>
         <div><div class="comp-title" data-en>AI-Augmented Workflow</div><div class="comp-title" data-ru>AI-усиленный дизайн-процесс</div>
-        <div class="comp-sub" data-en>Building pipelines, not using tools</div><div class="comp-sub" data-ru>Строю пайплайны, не использую инструменты</div></div>
+        <div class="comp-sub" data-en>Building pipelines, not using tools</div><div class="comp-sub" data-ru>Строю конвейеры, а не просто использую инструменты</div></div>
       </div>
       <div class="comp-tags"><span class="ctag" data-ru>Бриф→публикация: дни→часы</span><span class="ctag" data-en>Brief→publish: days→hours</span><span class="ctag" data-ru>~5× итерации</span><span class="ctag" data-en>~5× iterations</span><span class="ctag" data-ru>20+ продуктов</span><span class="ctag" data-en>20+ products</span></div>
       <p class="comp-preview" data-en>Cursor agents, n8n workflows, generative models — in real production cycles. Rolled out to the whole team.</p>
-      <p class="comp-preview" data-ru>Cursor-агенты, n8n-воркфлоу, генеративные модели — в реальных производственных циклах. Внедрён в всю команду.</p>
-      <div class="comp-proj"><span class="carr">→</span><a class="proj-ref" href="#projects" onclick="openProjectById(7); return false;">MiraiTech (PNB Agency)</a><span data-en> — AI pipeline: days → hours, live on 20+ products, ~5× faster creative iterations.</span><span data-ru> — AI-пайплайн: дни → часы, на 20+ продуктах, ~5× быстрее итерации по креативам.</span></div>
+      <p class="comp-preview" data-ru>Cursor-агенты, n8n-автоматизации, генеративные модели — в реальных производственных циклах. Внедрены для всей команды.</p>
+      <div class="comp-proj"><span class="carr">→</span><a class="proj-ref" href="#projects" onclick="openProjectById(7); return false;">MiraiTech (PNB Agency)</a><span data-en> — AI pipeline: days → hours, live on 20+ products, ~5× faster creative iterations.</span><span data-ru> — AI-конвейер: дни → часы, на 20+ продуктах, ~5× быстрее итерации по креативам.</span></div>
       <div class="click-hint" data-en>Click to read more</div>
       <div class="click-hint" data-ru>Нажмите для подробностей</div>
     </div>
 
-    <div class="comp-card comp-card--strip hero-comp-card comp-glow--3 fade-in" onclick="openPop(this)" data-project-id="5" data-title-en="Agentive UX" data-title-ru="Agentive UX" data-sub-en="When AI acts, UX becomes about trust" data-sub-ru="Когда AI действует — UX про доверие" data-body-en="Agentive UX is the discipline most product teams don&#39;t know they need yet. When an AI acts — generates, decides, executes — design shifts to: does the user understand? Can they intervene? Transparency and controllability are the new interaction primitives." data-body-ru="Agentive UX — дисциплина, о которой большинство команд ещё не знают что она им нужна. Когда AI действует сам — дизайн-задача смещается: понимает ли пользователь что происходит? Прозрачность и управляемость — новые примитивы.">
+    <div class="comp-card comp-card--strip hero-comp-card comp-glow--3 fade-in" onclick="openProjectById('5')" data-project-id="5" data-title-en="Agentive UX" data-title-ru="Agentive UX" data-sub-en="When AI acts, UX becomes about trust" data-sub-ru="Когда AI действует — UX про доверие" data-body-en="Agentive UX is the discipline most product teams don&#39;t know they need yet. When an AI acts — generates, decides, executes — design shifts to: does the user understand? Can they intervene? Transparency and controllability are the new interaction primitives." data-body-ru="Agentive UX — дисциплина, о которой большинство команд ещё не знают что она им нужна. Когда AI действует сам — дизайн-задача смещается: понимает ли пользователь что происходит? Прозрачность и управляемость — новые примитивы.">
       <div class="comp-head">
         <div class="comp-ico"><a class="comp-ico-link" href="https://fonts.google.com/icons?q=gamepad" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" aria-label="gamepad · Google Fonts Icons"><span class="material-icons-round">gamepad</span></a></div>
         <div><div class="comp-title" data-en>Agentive UX</div><div class="comp-title" data-ru>Agentive UX</div>
@@ -200,63 +192,63 @@
       <div class="comp-tags"><span class="ctag" data-ru>AI generation flows</span><span class="ctag" data-en>AI generation flows</span><span class="ctag" data-ru>Agent control UI</span><span class="ctag" data-en>Agent control UI</span><span class="ctag" data-ru>Human-in-the-loop</span><span class="ctag" data-en>Human-in-the-loop</span></div>
       <p class="comp-preview" data-en>When AI acts — generates, decides, executes — design shifts to transparency, controllability, graceful failure.</p>
       <p class="comp-preview" data-ru>Когда AI действует сам — дизайн смещается к прозрачности, управляемости и восстановлению после ошибок.</p>
-      <div class="comp-proj"><span class="carr">→</span><a class="proj-ref" href="#projects" onclick="openProjectById(5); return false;">ShugarAi</a><span data-en> — generation flows, real-time agent control, user-directed AI character behavior.</span><span data-ru> — флоу генерации, управление агентом в реальном времени, пользователь направляет поведение AI-персонажа.</span></div>
+      <div class="comp-proj"><span class="carr">→</span><a class="proj-ref" href="#projects" onclick="openProjectById(5); return false;">ShugarAi</a><span data-en> — generation flows, real-time agent control, user-directed AI character behavior.</span><span data-ru> — сценарии генерации, управление агентом в реальном времени, пользователь направляет поведение AI-персонажа.</span></div>
       <div class="click-hint" data-en>Click to read more</div>
       <div class="click-hint" data-ru>Нажмите для подробностей</div>
     </div>
 
-    <div class="comp-card comp-card--strip hero-comp-card comp-glow--1 fade-in" onclick="openPop(this)" data-project-id="7" data-title-en="Design Ops" data-title-ru="Design Ops" data-sub-en="Systems, not just talent" data-sub-ru="Системы, а не только талант" data-body-en="Design Ops is what happens when you take operations seriously inside a design team. At MiraiTech I built this from scratch: standardized library, handoff protocols, review cadences, quality gates. The −60% handoff time wasn&#39;t a side effect — it was the goal." data-body-ru="Design Ops — это когда операции внутри дизайн-команды воспринимаются всерьёз. В MiraiTech я построил это с нуля: стандартизированная библиотека, протоколы хэндоффа, ритуалы ревью, quality gates. −60% — это была цель, и мы её измеряли.">
+    <div class="comp-card comp-card--strip hero-comp-card comp-glow--1 fade-in" onclick="openProjectById('7')" data-project-id="7" data-title-en="Design Ops" data-title-ru="Design Ops" data-sub-en="Systems, not just talent" data-sub-ru="Системы, а не только талант" data-body-en="Design Ops is what happens when you take operations seriously inside a design team. At MiraiTech I built this from scratch: standardized library, handoff protocols, review cadences, quality gates. The −60% handoff time wasn&#39;t a side effect — it was the goal." data-body-ru="Design Ops — это когда операции внутри дизайн-команды воспринимаются всерьёз. В MiraiTech я построил это с нуля: стандартизированная библиотека, протоколы передачи макетов, ритуалы ревью, контрольные точки качества. −60% — это была цель, и мы её измеряли.">
       <div class="comp-head">
         <div class="comp-ico"><a class="comp-ico-link" href="https://fonts.google.com/icons?q=settings_suggest" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" aria-label="settings_suggest · Google Fonts Icons"><span class="material-icons-round">settings_suggest</span></a></div>
         <div><div class="comp-title" data-en>Design Ops</div><div class="comp-title" data-ru>Design Ops</div>
         <div class="comp-sub" data-en>Systems, not just talent</div><div class="comp-sub" data-ru>Системы, а не только талант</div></div>
       </div>
-      <div class="comp-tags"><span class="ctag" data-ru>−60% хэндофф</span><span class="ctag" data-en>−60% handoff</span><span class="ctag" data-ru>20+ параллельных</span><span class="ctag" data-en>20+ parallel</span><span class="ctag" data-ru>AI stack rollout</span><span class="ctag" data-en>AI stack rollout</span></div>
+      <div class="comp-tags"><span class="ctag" data-ru>−60% передача макетов</span><span class="ctag" data-en>−60% handoff</span><span class="ctag" data-ru>20+ параллельных</span><span class="ctag" data-en>20+ parallel</span><span class="ctag" data-ru>Внедрение AI</span><span class="ctag" data-en>AI stack rollout</span></div>
       <p class="comp-preview" data-en>Built from scratch at MiraiTech: standardized library, handoff protocols, review cadences, quality gates.</p>
-      <p class="comp-preview" data-ru>Построил с нуля в MiraiTech: стандартизированная библиотека, протоколы хэндоффа, ритуалы ревью, quality gates.</p>
-      <div class="comp-proj"><span class="carr">→</span><a class="proj-ref" href="#projects" onclick="openProjectById(7); return false;">MiraiTech</a><span data-en> — design ops for 20+ concurrent products, −60% handoff, full AI stack rollout.</span><span data-ru> — дизайн-операции для 20+ параллельных продуктов, −60% хэндофф, внедрение AI-стека.</span></div>
+      <p class="comp-preview" data-ru>Построил с нуля в MiraiTech: стандартизированная библиотека, протоколы передачи макетов, ритуалы ревью, контрольные точки качества.</p>
+      <div class="comp-proj"><span class="carr">→</span><a class="proj-ref" href="#projects" onclick="openProjectById(7); return false;">MiraiTech</a><span data-en> — design ops for 20+ concurrent products, −60% handoff, full AI stack rollout.</span><span data-ru> — дизайн-процессы для 20+ параллельных продуктов, −60% к времени передачи, внедрение AI-инструментов.</span></div>
       <div class="click-hint" data-en>Click to read more</div>
       <div class="click-hint" data-ru>Нажмите для подробностей</div>
     </div>
 
-    <div class="comp-card comp-card--strip hero-comp-card comp-glow--2 fade-in" onclick="openPop(this)" data-project-id="3" data-title-en="Ecosystem Design" data-title-ru="Проектирование экосистем" data-sub-en="The whole journey, not the prettiest screen" data-sub-ru="Весь путь, а не самый красивый экран" data-body-en="Complete product ecosystems where every decision in onboarding affects retention three weeks later. The discipline is knowing which stage is the actual bottleneck — and designing backwards from the metric that matters most." data-body-ru="Полные продуктовые экосистемы, где каждое решение в онбординге влияет на retention три недели спустя. Дисциплина — знать, какой этап является реальным узким местом, и проектировать от метрики.">
+    <div class="comp-card comp-card--strip hero-comp-card comp-glow--2 fade-in" onclick="openProjectById('3')" data-project-id="3" data-title-en="Ecosystem Design" data-title-ru="Проектирование экосистем" data-sub-en="The whole journey, not the prettiest screen" data-sub-ru="Весь путь, а не самый красивый экран" data-body-en="Complete product ecosystems where every decision in onboarding affects retention three weeks later. The discipline is knowing which stage is the actual bottleneck — and designing backwards from the metric that matters most." data-body-ru="Полные продуктовые экосистемы, где каждое решение в онбординге влияет на удержание три недели спустя. Дисциплина — знать, какой этап является реальным узким местом, и проектировать от метрики.">
       <div class="comp-head">
         <div class="comp-ico"><a class="comp-ico-link" href="https://fonts.google.com/icons?q=language" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" aria-label="language · Google Fonts Icons"><span class="material-icons-round">language</span></a></div>
         <div><div class="comp-title" data-en>Ecosystem Design</div><div class="comp-title" data-ru>Проектирование экосистем</div>
         <div class="comp-sub" data-en>The whole journey, not the prettiest screen</div><div class="comp-sub" data-ru>Весь путь, а не самый красивый экран</div></div>
       </div>
-      <div class="comp-tags"><span class="ctag" data-ru>Вход→Активация→Retention</span><span class="ctag" data-en>Entry→Activation→Retention</span><span class="ctag" data-ru>3+ экосистемы</span><span class="ctag" data-en>3+ ecosystems</span></div>
+      <div class="comp-tags"><span class="ctag" data-ru>Вход→Активация→Удержание</span><span class="ctag" data-en>Entry→Activation→Retention</span><span class="ctag" data-ru>3+ экосистемы</span><span class="ctag" data-en>3+ ecosystems</span></div>
       <p class="comp-preview" data-en>Designed complete ecosystems where every onboarding decision affects retention three weeks later.</p>
-      <p class="comp-preview" data-ru>Проектировал полные экосистемы, где каждое решение в онбординге влияет на retention три недели спустя.</p>
-      <div class="comp-proj"><span class="carr">→</span><a class="proj-ref" href="#projects" onclick="openProjectById(3); return false;">JAVHD</a><span data-en> — full ecosystem: acquisition → activation → streaming → retention loops → re-engagement.</span><span data-ru> — полная экосистема: привлечение → активация → стриминг → retention → реактивация.</span></div>
+      <p class="comp-preview" data-ru>Проектировал полные экосистемы, где каждое решение в онбординге влияет на удержание три недели спустя.</p>
+      <div class="comp-proj"><span class="carr">→</span><a class="proj-ref" href="#projects" onclick="openProjectById(3); return false;">JAVHD</a><span data-en> — full ecosystem: acquisition → activation → streaming → retention loops → re-engagement.</span><span data-ru> — полная экосистема: привлечение → активация → стриминг → удержание → реактивация.</span></div>
       <div class="click-hint" data-en>Click to read more</div>
       <div class="click-hint" data-ru>Нажмите для подробностей</div>
     </div>
 
-    <div class="comp-card comp-card--strip hero-comp-card comp-glow--3 fade-in" onclick="openPop(this)" data-project-id="7" data-title-en="Cross-functional Leadership" data-title-ru="Кросс-функциональное лидерство" data-sub-en="Fluent in PM, engineering, analytics" data-sub-ru="Говорю на языке PM, разработки, аналитики" data-body-en="The best design work happened because I was in the room when the product decision was made. I run design reviews that end in decisions, not lists of feedback. Design leadership means the team makes better decisions when you&#39;re not there." data-body-ru="Лучшая работа случилась потому что я был в комнате когда принималось продуктовое решение. Дизайн-ревью заканчиваются решениями, а не списком правок. Лидерство — когда команда принимает лучшие решения без тебя в комнате.">
+    <div class="comp-card comp-card--strip hero-comp-card comp-glow--3 fade-in" onclick="openProjectById('7')" data-project-id="7" data-title-en="Cross-functional Leadership" data-title-ru="Кросс-функциональное лидерство" data-sub-en="Fluent in PM, engineering, analytics" data-sub-ru="Говорю на языке PM, разработки, аналитики" data-body-en="The best design work happened because I was in the room when the product decision was made. I run design reviews that end in decisions, not lists of feedback. Design leadership means the team makes better decisions when you&#39;re not there." data-body-ru="Лучшая работа случилась потому что я был в комнате когда принималось продуктовое решение. Дизайн-ревью заканчиваются решениями, а не списком правок. Лидерство — когда команда принимает лучшие решения без тебя в комнате.">
       <div class="comp-head">
         <div class="comp-ico"><a class="comp-ico-link" href="https://fonts.google.com/icons?q=groups" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" aria-label="groups · Google Fonts Icons"><span class="material-icons-round">groups</span></a></div>
         <div><div class="comp-title" data-en>Cross-functional Leadership</div><div class="comp-title" data-ru>Кросс-функциональное лидерство</div>
         <div class="comp-sub" data-en>Fluent in PM, engineering, analytics</div><div class="comp-sub" data-ru>Говорю на языке PM, разработки, аналитики</div></div>
       </div>
-      <div class="comp-tags"><span class="ctag" data-ru>3 года в кросс-команде</span><span class="ctag" data-en>3 yrs cross-team</span><span class="ctag" data-ru>Roadmap co-owner</span><span class="ctag" data-en>Roadmap co-owner</span></div>
+      <div class="comp-tags"><span class="ctag" data-ru>3 года в кросс-команде</span><span class="ctag" data-en>3 yrs cross-team</span><span class="ctag" data-ru>Совладелец дорожной карты</span><span class="ctag" data-en>Roadmap co-owner</span></div>
       <p class="comp-preview" data-en>In the room when product decisions are made. Design reviews that end in decisions, not feedback lists.</p>
       <p class="comp-preview" data-ru>В комнате когда принимаются продуктовые решения. Дизайн-ревью заканчиваются решениями, а не списком правок.</p>
-      <div class="comp-proj"><span class="carr">→</span><a class="proj-ref" href="#projects" onclick="openProjectById(7); return false;">MiraiTech · 3 years</a><span data-en> — cross-product team, roadmap co-ownership with PM, executive presentations backed by metrics.</span><span data-ru> — кросс-продуктовая команда, совместное владение роадмапом с PM, презентации топ-менеджменту с метриками.</span></div>
+      <div class="comp-proj"><span class="carr">→</span><a class="proj-ref" href="#projects" onclick="openProjectById(7); return false;">MiraiTech · 3 years</a><span data-en> — cross-product team, roadmap co-ownership with PM, executive presentations backed by metrics.</span><span data-ru> — кросс-продуктовая команда, совместное владение дорожной картой с PM, презентации топ-менеджменту с метриками.</span></div>
       <div class="click-hint" data-en>Click to read more</div>
       <div class="click-hint" data-ru>Нажмите для подробностей</div>
     </div>
 
-    <div class="comp-card comp-card--strip hero-comp-card comp-glow--1 fade-in" onclick="openPop(this)" data-project-id="8" data-title-en="Mentorship & Education" data-title-ru="Менторство и образование" data-sub-en="Teaching made me a sharper designer" data-sub-ru="Преподавание сделало меня лучшим дизайнером" data-body-en="Built and taught design curricula at two of Russia&#39;s largest online design schools since 2020. Mentoring forces precision — when a junior asks &#39;why does this feel wrong?&#39;, you have to name the principle and show the fix. That process made me a better designer." data-body-ru="С 2020 года разрабатываю и преподаю программы по дизайну в двух крупнейших онлайн-школах России. Менторство требует точности — когда джуниор спрашивает «почему это не работает?», нужно назвать принцип и показать исправление.">
+    <div class="comp-card comp-card--strip hero-comp-card comp-glow--1 fade-in" onclick="openProjectById('8')" data-project-id="8" data-title-en="Mentorship & Education" data-title-ru="Менторство и образование" data-sub-en="Teaching made me a sharper designer" data-sub-ru="Преподавание сделало меня лучшим дизайнером" data-body-en="Built and taught design curricula at two of Russia&#39;s largest online design schools since 2020. Mentoring forces precision — when a junior asks &#39;why does this feel wrong?&#39;, you have to name the principle and show the fix. That process made me a better designer." data-body-ru="С 2020 года разрабатываю и преподаю программы по дизайну в двух крупнейших онлайн-школах России. Менторство требует точности — когда джуниор спрашивает «почему это не работает?», нужно назвать принцип и показать исправление.">
       <div class="comp-head">
         <div class="comp-ico"><a class="comp-ico-link" href="https://fonts.google.com/icons?q=school" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" aria-label="school · Google Fonts Icons"><span class="material-icons-round">school</span></a></div>
         <div><div class="comp-title" data-en>Mentorship & Education</div><div class="comp-title" data-ru>Менторство и образование</div>
         <div class="comp-sub" data-en>Teaching made me a sharper designer</div><div class="comp-sub" data-ru>Преподавание сделало меня лучшим дизайнером</div></div>
       </div>
-      <div class="comp-tags"><span class="ctag" data-ru>1000+ студентов</span><span class="ctag" data-en>1000+ students</span><span class="ctag" data-ru>CONTENTED·Skillbox</span><span class="ctag" data-en>CONTENTED·Skillbox</span><span class="ctag" data-ru>Junior→Middle</span><span class="ctag" data-en>Junior→Middle</span></div>
+      <div class="comp-tags"><span class="ctag" data-ru>1000+ студентов</span><span class="ctag" data-en>1000+ students</span><span class="ctag" data-ru>CONTENTED·Skillbox</span><span class="ctag" data-en>CONTENTED·Skillbox</span><span class="ctag" data-ru>Начинающий→Средний</span><span class="ctag" data-en>Junior→Middle</span></div>
       <p class="comp-preview" data-en>Built and taught curricula at two of Russia's largest design schools since 2020.</p>
       <p class="comp-preview" data-ru>С 2020 года разрабатываю и преподаю программы в двух крупнейших школах дизайна России.</p>
-      <div class="comp-proj"><span class="carr">→</span><a class="proj-ref" href="#projects" onclick="openProjectById(8); return false;">CONTENTED + Skillbox</a><span data-en> — curricula for thousands of students, junior mentor onboarding, public workshops.</span><span data-ru> — программы для тысяч студентов, адаптация junior-менторов, публичные воркшопы.</span></div>
+      <div class="comp-proj"><span class="carr">→</span><a class="proj-ref" href="#projects" onclick="openProjectById(8); return false;">CONTENTED + Skillbox</a><span data-en> — curricula for thousands of students, junior mentor onboarding, public workshops.</span><span data-ru> — программы для тысяч студентов, адаптация начинающих менторов, публичные мастер-классы.</span></div>
       <div class="click-hint" data-en>Click to read more</div>
       <div class="click-hint" data-ru>Нажмите для подробностей</div>
     </div>
@@ -286,9 +278,11 @@
       data-gallery="images/project-1.webp,images/ph-1a.svg,images/ph-1b.svg,images/ph-1c.svg,images/ph-1d.svg,images/ph-1e.svg"
       data-title-en="Game UI · In-game Shop" data-title-ru="Game UI · Внутриигровой магазин"
       data-sub-en="Post-apocalyptic shooter · HUD, shop, inventory · 2023–2024" data-sub-ru="Постапокалиптический шутер · HUD, магазин, инвентарь · 2023–2024"
+      data-skill-en="Applied deep visual language — composition, color scripting, and texture systems — to build a game UI that players parse in split seconds. Every rarity gradient, HUD element, and offer strip was designed for maximum readability under pressure, with a colorblind-safe palette and scalable components for future content drops."
+      data-skill-ru="Визуальный язык — композиция, цветовое сценарирование и текстурные системы — для создания игрового UI, считываемого за доли секунды. Каждый градиент редкости, элемент HUD и полоса предложений спроектированы для максимальной читаемости с палитрой для дальтоников и масштабируемыми компонентами."
       data-b1-en="Full UI system for a fast-paced shooter: HUD, in-game shop, inventory, queue and trade flows. Built for extreme information density and split-second decisions under pressure." data-b1-ru="Полная UI-система для динамичного шутера: HUD, внутриигровой магазин, инвентарь, очереди и торговля. Рассчитана на высокую плотность информации и решения за доли секунды."
-      data-b2-en="Designed icon set, currency loop, rarity language, and animated transitions between states — with a colorblind-safe rarity palette and scalable components for future content drops." data-b2-ru="Спроектированы иконсет, экономика валюты, язык редкости и анимированные переходы — с палитрой редкостей для дальтоников и масштабируемыми компонентами под новые контент-паки."
-      data-b3-en="Accessibility and scanability were treated as core mechanics: contrast, hierarchy, and motion cues so players parse offers without leaving the flow. Outcome highlights: +18% attach rate on bundle offers in A/B, and −0.35s median time to parse the HUD offer strip vs. the previous layout." data-b3-ru="Доступность и сканируемость как часть механики: контраст, иерархия и моушн-подсказки, чтобы игрок читал предложения, не выпадая из флоу. Результаты: +18% к вовлечённости в бандлы (A/B) и −0,35 с к медиане чтения оффер-полосы в HUD относительно прошлой версии.">
+      data-b2-en="Designed icon set, currency loop, rarity language, and animated transitions between states — with a colorblind-safe rarity palette and scalable components for future content drops." data-b2-ru="Спроектированы набор иконок, экономика валюты, язык редкости и анимированные переходы — с палитрой редкостей для дальтоников и масштабируемыми компонентами под новые контент-паки."
+      data-b3-en="Accessibility and scanability were treated as core mechanics: contrast, hierarchy, and motion cues so players parse offers without leaving the flow. Outcome highlights: +18% attach rate on bundle offers in A/B, and −0.35s median time to parse the HUD offer strip vs. the previous layout." data-b3-ru="Доступность и считываемость как часть механики: контраст, иерархия и анимационные подсказки, чтобы игрок воспринимал предложения, не выпадая из процесса. Результаты: +18% к вовлечённости в наборы (A/B) и −0,35 с к медиане чтения полосы предложений в HUD.">
       <div class="cta-glow"></div>
       <div class="proj-img-wrap"><img src="images/project-1.webp" alt="" loading="lazy" width="800" height="800"></div>
       <div class="proj-body">
@@ -306,40 +300,38 @@
     <article class="proj-card proj-card--horiz fade-in" id="project-card-2" data-project-id="2"
       onclick="openPop(this)"
       data-gallery="images/project-2.webp,images/ph-2a.svg,images/ph-2b.svg,images/ph-2c.svg,images/ph-2d.svg,images/ph-2e.svg"
-      data-external-url="https://pnb.agency"
-      data-external-label-en="PNB Agency · ecosystem"
-      data-external-label-ru="PNB Agency · экосистема"
       data-title-en="Gate19" data-title-ru="Gate19"
-      data-sub-en="Affiliate platform · 20+ products · MiraiTech · 2022–2025" data-sub-ru="Аффилиат-платформа · 20+ продуктов · MiraiTech · 2022–2025"
-      data-b1-en="End-to-end design for an affiliate tooling ecosystem — from brand and marketing surfaces to dense dashboard architecture used daily by operations teams." data-b1-ru="Полный цикл дизайна аффилиат-экосистемы — от маркетинговых поверхностей до плотной архитектуры дашбордов для операционных команд."
-      data-b2-en="A unified component library became the backbone for 20+ products: −60% handoff time, launches under one week, and White Label flows that reduced branded site launch to minutes." data-b2-ru="Единая библиотека компонентов стала хребтом для 20+ продуктов: −60% хэндофф, запуски быстрее недели, White Label — запуск брендированного сайта за минуты."
-      data-b3-en="The system also fed an AI landing pipeline — brief to publish moved from days to hours across the portfolio. Live ecosystem: pnb.agency (see link below)." data-b3-ru="Система стала основой AI-пайплайна лендингов — от брифа до публикации за часы вместо дней. Живая экосистема: pnb.agency (ссылка ниже).">
+      data-sub-en="Affiliate platform · 20+ products · MiraiTech · 2022–2025" data-sub-ru="Партнёрская платформа · 20+ продуктов · MiraiTech · 2022–2025"
+      data-skill-en="Business-driven design thinking and a scalable design system came together here. Redesigned the payment format flow from first principles using user interviews and funnel data — A/B tested three formats, and the winner became the default across the entire 20-product platform. The unified component library cut frontend handoff time by 60% and enabled White Label launches in under five minutes."
+      data-skill-ru="Продуктовое мышление и масштабируемая дизайн-система соединились в одном проекте. Переработал сценарии оплаты с нуля на основе интервью и данных воронки — A/B-тест трёх форматов, победитель стал форматом по умолчанию для 20-продуктовой платформы. Единая библиотека компонентов сократила время передачи макетов на 60% и позволила запускать White Label за пять минут."
+      data-b1-en="End-to-end design for an affiliate tooling ecosystem — from brand and marketing surfaces to dense dashboard architecture used daily by operations teams." data-b1-ru="Полный цикл дизайна партнёрской экосистемы — от маркетинговых поверхностей до плотной архитектуры панелей управления для операционных команд."
+      data-b2-en="A unified component library became the backbone for 20+ products: −60% handoff time, launches under one week, and White Label flows that reduced branded site launch to minutes." data-b2-ru="Единая библиотека компонентов стала основой для 20+ продуктов: −60% к времени передачи макетов, запуски быстрее недели, White Label — запуск брендированного сайта за минуты."
+      data-b3-en="The system also fed an AI landing pipeline — brief to publish moved from days to hours across the portfolio." data-b3-ru="Система стала основой AI-конвейера лендингов — от брифа до публикации за часы вместо дней.">
       <div class="cta-glow"></div>
       <div class="proj-img-wrap"><img src="images/project-2.webp" alt="" loading="lazy" width="800" height="800"></div>
       <div class="proj-body">
         <div class="proj-body-inner">
           <div class="proj-name" data-en>Gate19</div><div class="proj-name" data-ru>Gate19</div>
-          <div class="proj-sub" data-en>Affiliate platform · 20+ products · MiraiTech · 2022–2025</div><div class="proj-sub" data-ru>Аффилиат-платформа · 20+ продуктов · MiraiTech · 2022–2025</div>
+          <div class="proj-sub" data-en>Affiliate platform · 20+ products · MiraiTech · 2022–2025</div><div class="proj-sub" data-ru>Партнёрская платформа · 20+ продуктов · MiraiTech · 2022–2025</div>
           <div class="proj-metrics">
-            <span class="proj-metric" data-en>−60% handoff time</span><span class="proj-metric" data-ru>−60% время хэндоффа</span>
+            <span class="proj-metric" data-en>−60% handoff time</span><span class="proj-metric" data-ru>−60% время передачи</span>
             <span class="proj-metric" data-en>&lt;7 days new product UI</span><span class="proj-metric" data-ru>&lt;7 дней UI нового продукта</span>
             <span class="proj-metric" data-en>White Label · 5 min</span><span class="proj-metric" data-ru>White Label · 5 мин</span>
           </div>
-          <div class="proj-desc" data-en>End-to-end design for an affiliate tooling ecosystem — from brand and marketing surfaces to dense dashboard architecture used daily by operations teams.</div><div class="proj-desc" data-ru>Полный цикл дизайна аффилиат-экосистемы — от маркетинговых поверхностей до плотной архитектуры дашбордов для операционных команд.</div>
+          <div class="proj-desc" data-en>End-to-end design for an affiliate tooling ecosystem — from brand and marketing surfaces to dense dashboard architecture used daily by operations teams.</div><div class="proj-desc" data-ru>Полный цикл дизайна партнёрской экосистемы — от маркетинговых поверхностей до плотной архитектуры панелей управления для операционных команд.</div>
         </div>
       </div>
     </article>
     <article class="proj-card proj-card--horiz fade-in" id="project-card-3" data-project-id="3"
       onclick="openPop(this)"
       data-gallery="images/project-3.webp,images/ph-3a.svg,images/ph-3b.svg,images/ph-3c.svg,images/ph-3d.svg,images/ph-3e.svg"
-      data-external-url="https://miraitech.co"
-      data-external-label-en="MiraiTech · company site"
-      data-external-label-ru="MiraiTech · сайт компании"
       data-title-en="JAVHD" data-title-ru="JAVHD"
-      data-sub-en="SaaS video platform · Monetization · MiraiTech · 2022–2025" data-sub-ru="SaaS-видео · Монетизация · MiraiTech · 2022–2025"
-      data-b1-en="UX/UI for a mature SaaS video product: seamless access to core flows, responsive layouts, and monetization surfaces tuned for conversion and retention." data-b1-ru="UX/UI для зрелого SaaS-видеопродукта: бесшовный доступ к ключевым сценариям, адаптив и монетизационные экраны под конверсию и удержание."
-      data-b2-en="Beyond core flows: live streaming and private sessions, chat with tokens and gifts, curated home rails with native ad placements, advanced search and sort, and creator/studio profile pages." data-b2-ru="Помимо базовых сценариев: live и приватные сессии, чат с токенами и подарками, кураторские ленты с рекламой, расширенный поиск и сортировка, страницы создателей и студий."
-      data-b3-en="Gamified tours and motion prototypes (Figma) supported motivation loops; 100+ landing variants with explicit conversion hypotheses fed a templated growth system. Funnel work: +12% trial-to-paid on the winning checkout path vs. control after three A/B cycles." data-b3-ru="Геймифицированные туры и моушн-прототипы в Figma усиливали мотивационные петли; 100+ лендингов с явными гипотезами конверсии стали шаблонной growth-системой. Воронка: +12% trial-to-paid на победившем чекауте против контроля после трёх A/B циклов.">
+      data-sub-en="SaaS video platform · Monetization · MiraiTech · 2022–2025" data-sub-ru="SaaS-видеоплатформа · Монетизация · MiraiTech · 2022–2025"
+      data-skill-en="UX research meets full-funnel ecosystem design. Tested 100+ landing variants, each with a defined conversion hypothesis — top performers became a templated growth system. Designed the complete user journey from acquisition through streaming to retention and re-engagement, with gamified onboarding that drove measurable trial-to-paid conversion growth."
+      data-skill-ru="UX-исследования и проектирование полной воронки. 100+ вариантов лендингов с гипотезами конверсии — лучшие стали шаблонной системой масштабирования. Спроектировал полный путь пользователя от привлечения через стриминг до удержания и реактивации с геймифицированным вводным туром и измеримым ростом конверсии из триала в подписку."
+      data-b1-en="UX/UI for a mature SaaS video product: seamless access to core flows, responsive layouts, and monetization surfaces tuned for conversion and retention." data-b1-ru="UX/UI для зрелого SaaS-видеопродукта: бесшовный доступ к ключевым сценариям, адаптивная вёрстка и монетизационные экраны, настроенные на конверсию и удержание."
+      data-b2-en="Beyond core flows: live streaming and private sessions, chat with tokens and gifts, curated home rails with native ad placements, advanced search and sort, and creator/studio profile pages." data-b2-ru="Помимо базовых сценариев: прямые трансляции и приватные сессии, чат с токенами и подарками, кураторские ленты с нативной рекламой, расширенный поиск и сортировка, страницы авторов и студий."
+      data-b3-en="Gamified tours and motion prototypes (Figma) supported motivation loops; 100+ landing variants with explicit conversion hypotheses fed a templated growth system. Funnel work: +12% trial-to-paid on the winning checkout path vs. control after three A/B cycles." data-b3-ru="Геймифицированные туры и анимированные прототипы в Figma усиливали мотивационные петли; 100+ лендингов с явными гипотезами конверсии стали шаблонной системой масштабирования. Воронка: +12% конверсии из триала в подписку на лучшем варианте оформления заказа после трёх A/B-циклов.">
       <div class="cta-glow"></div>
       <div class="proj-img-wrap"><img src="images/project-3.webp" alt="" loading="lazy" width="800" height="800"></div>
       <div class="proj-body">
@@ -358,10 +350,12 @@
       onclick="openPop(this)"
       data-gallery="images/project-4.webp,images/ph-4a.svg,images/ph-4b.svg,images/ph-4c.svg,images/ph-4d.svg,images/ph-4e.svg"
       data-title-en="Corgday HR CRM" data-title-ru="Corgday HR CRM"
-      data-sub-en="Internal HR tooling · Hill and Company · 2022+" data-sub-ru="Внутренний HR · Hill and Company · 2022+"
+      data-sub-en="Internal HR tooling · Hill and Company · 2022+" data-sub-ru="Внутренний HR-инструмент · Hill and Company · 2022+"
+      data-skill-en="Complex information architecture made navigable. HR specialists were drowning in multi-step forms and nested data — restructured the system around their actual workflow, not the database schema. A Slack alert module cut manual follow-ups by 40% and a payroll exception queue redesign reduced median wait time by 28%."
+      data-skill-ru="Сложная информационная архитектура, ставшая удобной. HR-специалисты тонули в многошаговых формах и вложенных данных — перестроил систему вокруг реальных рабочих процессов, а не схемы базы данных. Модуль уведомлений через Slack сократил ручное отслеживание на 40%, а редизайн очереди исключений по зарплате — медианное время ожидания на 28%."
       data-b1-en="Internal HR CRM to centralize employee data, payroll-related workflows, and performance signals in one calm, legible interface — launched in 2022 for day-to-day HR operations." data-b1-ru="Внутренняя HR CRM для централизации данных сотрудников, зарплатных процессов и сигналов эффективности в одном спокойном, читаемом интерфейсе — запуск в 2022 для ежедневной работы HR."
-      data-b2-en="Complex tables and multi-step forms were reshaped around real HR processes (not the database schema). Org tree, payroll modules, and calendar fill-in patterns reduced manual work." data-b2-ru="Сложные таблицы и многошаговые формы выстроены вокруг реальных HR-процессов, а не схемы БД. Древо оргструктуры, модули расчёта зарплаты и календарные сценарии сократили ручной труд."
-      data-b3-en="A Slack alert module cut manual follow-ups ~40% across the holding. Payroll exception queue: −28% median time-in-queue after IA + notification redesign. Warm, approachable UI paired with optimized paths for the most frequent HR tasks." data-b3-ru="Slack-алерты сократили ручные follow-up ~40% в холдинге. Очередь исключений по зарплате: −28% к медиане времени в очереди после перестройки ИА и уведомлений. Тёплый UI и оптимизированные пути для самых частых HR-задач.">
+      data-b2-en="Complex tables and multi-step forms were reshaped around real HR processes (not the database schema). Org tree, payroll modules, and calendar fill-in patterns reduced manual work." data-b2-ru="Сложные таблицы и многошаговые формы выстроены вокруг реальных HR-процессов, а не схемы базы данных. Древо оргструктуры, модули расчёта зарплаты и календарные сценарии сократили ручной труд."
+      data-b3-en="A Slack alert module cut manual follow-ups ~40% across the holding. Payroll exception queue: −28% median time-in-queue after IA + notification redesign. Warm, approachable UI paired with optimized paths for the most frequent HR tasks." data-b3-ru="Модуль уведомлений через Slack сократил ручное отслеживание на ~40% в холдинге. Очередь исключений по зарплате: −28% к медиане времени ожидания после перестройки информационной архитектуры и уведомлений. Тёплый, дружелюбный интерфейс и оптимизированные сценарии для самых частых HR-задач.">
       <div class="cta-glow"></div>
       <div class="proj-img-wrap"><img src="images/project-4.webp" alt="" loading="lazy" width="800" height="800"></div>
       <div class="proj-body">
@@ -369,7 +363,7 @@
           <div class="proj-name" data-en>Corgday HR CRM</div><div class="proj-name" data-ru>Corgday HR CRM</div>
           <div class="proj-sub" data-en>Internal HR tooling · Hill and Company · 2022+</div><div class="proj-sub" data-ru>Внутренний HR · Hill and Company · 2022+</div>
           <div class="proj-metrics">
-            <span class="proj-metric" data-en>−40% manual follow-ups</span><span class="proj-metric" data-ru>−40% ручных follow-up</span>
+            <span class="proj-metric" data-en>−40% manual follow-ups</span><span class="proj-metric" data-ru>−40% ручное отслеживание</span>
             <span class="proj-metric" data-en>−28% payroll queue wait</span><span class="proj-metric" data-ru>−28% ожидание в очереди ЗП</span>
           </div>
           <div class="proj-desc" data-en>Internal HR CRM to centralize employee data, payroll-related workflows, and performance signals in one calm, legible interface — launched in 2022 for day-to-day HR operations.</div><div class="proj-desc" data-ru>Внутренняя HR CRM для централизации данных сотрудников, зарплатных процессов и сигналов эффективности в одном спокойном, читаемом интерфейсе — запуск в 2022 для ежедневной работы HR.</div>
@@ -379,14 +373,13 @@
     <article class="proj-card proj-card--horiz fade-in" id="project-card-5" data-project-id="5"
       onclick="openPop(this)"
       data-gallery="images/project-5.webp,images/ph-5a.svg,images/ph-5b.svg,images/ph-5c.svg,images/ph-5d.svg,images/ph-5e.svg"
-      data-external-url="https://miraitech.co"
-      data-external-label-en="MiraiTech · company site"
-      data-external-label-ru="MiraiTech · сайт компании"
       data-title-en="ShugarAi" data-title-ru="ShugarAi"
-      data-sub-en="AI characters · Photo/video/audio · MiraiTech · 2023–2025" data-sub-ru="AI-персонажи · фото/видео/аудио · MiraiTech · 2023–2025"
-      data-b1-en="Full-cycle UX for generation flows: landing variants, quizzes, surveys, banner systems for UI and ads — plus a social gallery on the home feed to drive depth of session." data-b1-ru="Полный UX циклов генерации: лендинги, квизы, опросы, баннерные системы для UI и рекламы — плюс социальная галерея на главной для глубины сессии."
-      data-b2-en="Generation path includes sharing back to the feed, likes, comments, and interactive loops. Live chat and tutorial layers onboard users into complex AI tooling without friction." data-b2-ru="Путь генерации включает шаринг в ленту, лайки, комментарии и интерактив. Live-чат и туториал помогают освоить сложный AI-продукт без трения."
-      data-b3-en="Focus on engagement metrics: repeat visits, session length, and return rate — with UI that keeps creative exploration fast and legible. After gallery + tutorial iteration: +27% week-over-week return visits and +19% median session length in the cohort exposed to the new home feed." data-b3-ru="Фокус на метриках вовлечённости: возвраты, длина сессии, удержание — при UI, где творческое исследование остаётся быстрым и читаемым. После итерации галереи и туториала: +27% возвратов неделя к неделе и +19% к медиане длины сессии в когорте с новой лентой.">
+      data-sub-en="AI characters · Photo/video/audio · MiraiTech · 2023–2025" data-sub-ru="AI-персонажи · Фото/видео/аудио · MiraiTech · 2023–2025"
+      data-skill-en="Agentive UX in action — designing for AI that acts on its own. Users direct AI character behavior in real time: the design focused on control clarity, mid-generation intervention, and setting expectations without a wall of instructions. Gallery and tutorial iterations drove +27% return visits and +19% session length."
+      data-skill-ru="Проектирование для автономного AI на практике. Пользователи управляют поведением AI-персонажей в реальном времени: фокус на ясности управления, возможности вмешательства в процесс генерации и формировании ожиданий без стены инструкций. Итерации галереи и обучающих сценариев дали +27% возвратов и +19% длины сессии."
+      data-b1-en="Full-cycle UX for generation flows: landing variants, quizzes, surveys, banner systems for UI and ads — plus a social gallery on the home feed to drive depth of session." data-b1-ru="Полный UX-цикл генерации: лендинги, квизы, опросы, баннерные системы для интерфейса и рекламы — плюс социальная галерея на главной для увеличения глубины сессии."
+      data-b2-en="Generation path includes sharing back to the feed, likes, comments, and interactive loops. Live chat and tutorial layers onboard users into complex AI tooling without friction." data-b2-ru="Путь генерации включает публикацию в ленту, лайки, комментарии и интерактивные петли. Чат в реальном времени и обучающие сценарии помогают освоить сложный AI-продукт без лишних барьеров."
+      data-b3-en="Focus on engagement metrics: repeat visits, session length, and return rate — with UI that keeps creative exploration fast and legible. After gallery + tutorial iteration: +27% week-over-week return visits and +19% median session length in the cohort exposed to the new home feed." data-b3-ru="Фокус на метриках вовлечённости: повторные визиты, длина сессии, возврат — при интерфейсе, где творческое исследование остаётся быстрым и читаемым. После итерации галереи и обучения: +27% возвратов неделя к неделе и +19% к медиане длины сессии в когорте с новой лентой.">
       <div class="cta-glow"></div>
       <div class="proj-img-wrap"><img src="images/project-5.webp" alt="" loading="lazy" width="800" height="800"></div>
       <div class="proj-body">
@@ -406,9 +399,11 @@
       data-gallery="images/project-6.webp,images/ph-6a.svg,images/ph-6b.svg,images/ph-6c.svg,images/ph-6d.svg,images/ph-6e.svg"
       data-title-en="Adbot" data-title-ru="Adbot"
       data-sub-en="Telegram ad placement · 2021" data-sub-ru="Реклама в Telegram · 2021"
-      data-b1-en="End-to-end product for advertisers: create a post, pick channels, pay, then track performance — authors onboard via Telegram bot with cards auto-imported into the service." data-b1-ru="Продукт для рекламодателей: пост → выбор площадок → оплата → аналитика; авторы каналов онбордятся через бота, карточки площадок подтягиваются автоматически."
-      data-b2-en="The centerpiece is dense venue cards: stats, availability, and inline scheduling of publication time — maximum information with minimal friction at selection stage." data-b2-ru="Ключевой элемент — насыщенные карточки площадок: статистика, доступность и выбор времени публикации прямо в карточке — максимум информации при минимуме трения."
-      data-b3-en="Multiple card formats for adaptive layouts, promo surfaces, and quick time-slot selection — logo, flows, web + mobile prototypes shipped as one coherent system. Onboarding redesign: −35% median steps from signup to first paid campaign in usability-instrumented builds." data-b3-ru="Несколько форматов карточек под адаптив, промо-поверхности и быстрый выбор слота — логотип, флоу, веб и мобайл как единая система. Онбординг: −35% к медиане шагов от регистрации до первой платной кампании по инструментированным сборкам.">
+      data-skill-en="End-to-end product design for a Telegram advertising platform. Dense venue cards with stats, availability, and inline scheduling — maximum information with minimal friction. Streamlined the advertiser journey from post creation to campaign analytics with native Telegram patterns, cutting median steps to first paid campaign by 35%."
+      data-skill-ru="Полный цикл дизайна продукта для рекламной платформы в Telegram. Информационно насыщенные карточки площадок со статистикой, доступностью и выбором времени — максимум данных при минимуме барьеров. Оптимизировал путь рекламодателя от создания поста до аналитики кампании с нативными Telegram-паттернами, сократив число шагов до первой платной кампании на 35%."
+      data-b1-en="End-to-end product for advertisers: create a post, pick channels, pay, then track performance — authors onboard via Telegram bot with cards auto-imported into the service." data-b1-ru="Продукт для рекламодателей: пост, выбор площадок, оплата, аналитика; авторы каналов подключаются через бота, карточки площадок подтягиваются автоматически."
+      data-b2-en="The centerpiece is dense venue cards: stats, availability, and inline scheduling of publication time — maximum information with minimal friction at selection stage." data-b2-ru="Ключевой элемент — насыщенные карточки площадок: статистика, доступность и выбор времени публикации прямо в карточке — максимум информации при минимуме барьеров."
+      data-b3-en="Multiple card formats for adaptive layouts, promo surfaces, and quick time-slot selection — logo, flows, web + mobile prototypes shipped as one coherent system. Onboarding redesign: −35% median steps from signup to first paid campaign in usability-instrumented builds." data-b3-ru="Несколько форматов карточек под адаптивные макеты, промо-поверхности и быстрый выбор слота — логотип, пользовательские сценарии, веб и мобильные прототипы как единая система. Редизайн первого запуска: −35% к медиане шагов от регистрации до первой платной кампании.">
       <div class="cta-glow"></div>
       <div class="proj-img-wrap"><img src="images/project-6.webp" alt="" loading="lazy" width="800" height="800"></div>
       <div class="proj-body">
@@ -426,40 +421,38 @@
     <article class="proj-card proj-card--horiz fade-in" id="project-card-7" data-project-id="7"
       onclick="openPop(this)"
       data-gallery="images/project-2.webp,images/ph-7a.svg,images/ph-7b.svg,images/ph-7c.svg,images/ph-7d.svg,images/ph-7e.svg"
-      data-external-url="https://pnb.agency"
-      data-external-label-en="PNB Agency · live site"
-      data-external-label-ru="PNB Agency · сайт"
       data-title-en="MiraiTech · PNB Agency" data-title-ru="MiraiTech · PNB Agency"
-      data-sub-en="Design ops · AI pipelines · 20+ products · 2023–2025" data-sub-ru="Дизайн-операции · AI-пайплайны · 20+ продуктов · 2023–2025"
-      data-b1-en="Three-year design lead across MiraiTech's full product portfolio: 20+ parallel SKUs, white-label flows, shared component library, and cross-team handoff rituals that cut delivery time 60%." data-b1-ru="Три года дизайн-лидерства по всему портфелю MiraiTech: 20+ параллельных SKU, white-label флоу, общая библиотека компонентов и кросс-командные ритуалы, сократившие время поставки на 60%."
-      data-b2-en="Built the PNB Agency ecosystem from the ground up — pnb.agency and its v2 refresh. Partner and alliance web projects including adxad.com and ethics.a-ai.ru/white-book/. ~30 corporate brand styles and ~100 logo directions for the network." data-b2-ru="Построил экосистему PNB Agency с нуля — pnb.agency и v2-обновление. Партнёрские проекты: adxad.com и ethics.a-ai.ru/white-book/. ~30 фирменных стилей и ~100 логонаправлений для сети."
-      data-b3-en="Rolled out AI-generation pipelines for video, photo, and ad creatives at portfolio scale — brief to publish moved from days to hours. Mass AI-generation became a built-in design team competency, not an experiment." data-b3-ru="Внедрил AI-пайплайны генерации видео, фото и рекламных креативов на масштабе портфеля — от брифа до публикации за часы вместо дней. Массовая AI-генерация стала встроенной компетенцией, а не экспериментом.">
+      data-sub-en="Design ops · AI pipelines · 20+ products · 2023–2025" data-sub-ru="Дизайн-процессы · AI-конвейеры · 20+ продуктов · 2023–2025"
+      data-skill-en="Design operations, AI pipelines, and cross-functional leadership across a 20-product portfolio. Built the design team's processes from scratch — standardized library, handoff protocols, quality gates. Rolled out AI-generation workflows as a built-in competency and co-owned the roadmap with PM for three years. Brief to publish moved from days to hours."
+      data-skill-ru="Дизайн-процессы, AI-конвейеры и кросс-функциональное лидерство в портфеле из 20+ продуктов. Построил процессы дизайн-команды с нуля — стандартизированная библиотека, протоколы передачи макетов, контрольные точки качества. Внедрил AI-генерацию как встроенную компетенцию и три года совместно владел дорожной картой продукта. От брифа до публикации — часы вместо дней."
+      data-b1-en="Three-year design lead across MiraiTech's full product portfolio: 20+ parallel SKUs, white-label flows, shared component library, and cross-team handoff rituals that cut delivery time 60%." data-b1-ru="Три года дизайн-лидерства по всему портфелю MiraiTech: 20+ параллельных продуктов, white-label сценарии, общая библиотека компонентов и кросс-командные ритуалы, сократившие время передачи макетов на 60%."
+      data-b2-en="Built the PNB Agency ecosystem from the ground up — pnb.agency and its v2 refresh. Partner and alliance web projects including adxad.com and ethics.a-ai.ru/white-book/. ~30 corporate brand styles and ~100 logo directions for the network." data-b2-ru="Построил экосистему PNB Agency с нуля — pnb.agency и обновление v2. Партнёрские проекты: adxad.com и ethics.a-ai.ru/white-book/. ~30 фирменных стилей и ~100 логонаправлений для сети."
+      data-b3-en="Rolled out AI-generation pipelines for video, photo, and ad creatives at portfolio scale — brief to publish moved from days to hours. Mass AI-generation became a built-in design team competency, not an experiment." data-b3-ru="Внедрил AI-конвейеры генерации видео, фото и рекламных креативов на масштабе портфеля — от брифа до публикации за часы вместо дней. Массовая AI-генерация стала встроенной компетенцией команды, а не экспериментом.">
       <div class="cta-glow"></div>
       <div class="proj-img-wrap"><img src="images/project-2.webp" alt="" loading="lazy" width="800" height="800"></div>
       <div class="proj-body">
         <div class="proj-body-inner">
           <div class="proj-name" data-en>MiraiTech · PNB Agency</div><div class="proj-name" data-ru>MiraiTech · PNB Agency</div>
-          <div class="proj-sub" data-en>Design ops · AI pipelines · 20+ products · 2023–2025</div><div class="proj-sub" data-ru>Дизайн-операции · AI-пайплайны · 20+ продуктов · 2023–2025</div>
+          <div class="proj-sub" data-en>Design ops · AI pipelines · 20+ products · 2023–2025</div><div class="proj-sub" data-ru>Дизайн-процессы · AI-конвейеры · 20+ продуктов · 2023–2025</div>
           <div class="proj-metrics">
-            <span class="proj-metric" data-en>−60% handoff</span><span class="proj-metric" data-ru>−60% хэндофф</span>
+            <span class="proj-metric" data-en>−60% handoff</span><span class="proj-metric" data-ru>−60% передача макетов</span>
             <span class="proj-metric" data-en>20+ SKUs</span><span class="proj-metric" data-ru>20+ SKU</span>
             <span class="proj-metric" data-en>AI pipeline: days → hours</span><span class="proj-metric" data-ru>AI: дни → часы</span>
           </div>
-          <div class="proj-desc" data-en>Three-year design lead: white-label flows, AI landing pipelines, PNB Agency ecosystem, partner projects, and 20+ parallel product surfaces.</div><div class="proj-desc" data-ru>Три года дизайн-лидерства: white-label, AI-пайплайны лендингов, экосистема PNB Agency, партнёрские проекты и 20+ продуктовых поверхностей.</div>
+          <div class="proj-desc" data-en>Three-year design lead: white-label flows, AI landing pipelines, PNB Agency ecosystem, partner projects, and 20+ parallel product surfaces.</div><div class="proj-desc" data-ru>Три года дизайн-лидерства: white-label, AI-конвейеры лендингов, экосистема PNB Agency, партнёрские проекты и 20+ продуктовых поверхностей.</div>
         </div>
       </div>
     </article>
     <article class="proj-card proj-card--horiz fade-in" id="project-card-8" data-project-id="8"
       onclick="openPop(this)"
       data-gallery="images/project-1.webp,images/ph-8a.svg,images/ph-8b.svg,images/ph-8c.svg,images/ph-8d.svg,images/ph-8e.svg"
-      data-external-url="https://contented.ru"
-      data-external-label-en="CONTENTED · school"
-      data-external-label-ru="CONTENTED · школа"
       data-title-en="CONTENTED · Teaching" data-title-ru="CONTENTED · Преподавание"
       data-sub-en="Author · Mentor · Speaker · 2021–2024" data-sub-ru="Автор · Ментор · Спикер · 2021–2024"
+      data-skill-en="Mentorship and design education at scale. Developed curricula for graphic design and UX/UI tracks at two of Russia's largest online design schools, mentored junior mentors, and ran public workshops — reaching thousands of students over four years. Teaching forced precision: naming the principle and showing the fix, every time."
+      data-skill-ru="Менторство и дизайн-образование в масштабе. Разработал программы по графическому и UX/UI-дизайну в двух крупнейших онлайн-школах, менторил начинающих менторов и проводил публичные воркшопы — тысячи студентов за четыре года. Преподавание требует точности: назвать принцип и показать решение — каждый раз."
       data-b1-en="Developed own curricula for Graphic Design and UX/UI Design tracks at one of Russia's largest professional design schools. Online intensives for large audiences, full learning materials, diploma project mentorship." data-b1-ru="Разработал собственные учебные программы по графическому и UX/UI-дизайну в крупнейшей профессиональной школе дизайна. Онлайн-интенсивы на большую аудиторию, полный пакет материалов, менторство дипломных проектов."
-      data-b2-en="Mentored junior mentors at the school — built the mentoring layer itself. Ran student social media. Over 1000 students went through the programs across three years." data-b2-ru="Менторил junior-менторов школы — создавал менторский слой. Вёл студенческие соцсети. Через программы прошло более 1000 студентов за три года."
-      data-b3-en="Teaching forced precision: when a junior asks 'why does this feel wrong?', you have to name the principle and show the fix. That discipline made me a better designer — every portfolio review and critique session sharpened the craft." data-b3-ru="Преподавание требует точности: когда джуниор спрашивает «почему это не работает?», нужно назвать принцип и показать решение. Эта дисциплина сделала меня лучшим дизайнером — каждое ревью и разбор шлифовали мастерство.">
+      data-b2-en="Mentored junior mentors at the school — built the mentoring layer itself. Ran student social media. Over 1000 students went through the programs across three years." data-b2-ru="Менторил начинающих менторов школы — выстроил сам менторский слой. Вёл студенческие соцсети. Через программы прошло более 1000 студентов за три года."
+      data-b3-en="Teaching forced precision: when a junior asks 'why does this feel wrong?', you have to name the principle and show the fix. That discipline made me a better designer — every portfolio review and critique session sharpened the craft." data-b3-ru="Преподавание требует точности: когда начинающий дизайнер спрашивает «почему это не работает?», нужно назвать принцип и показать решение. Эта дисциплина сделала меня лучшим дизайнером — каждый разбор и ревью шлифовали мастерство.">
       <div class="cta-glow"></div>
       <div class="proj-img-wrap"><img src="images/project-1.webp" alt="" loading="lazy" width="800" height="800"></div>
       <div class="proj-body">
@@ -518,7 +511,7 @@
       <div class="sec-tag" data-en>Experience</div>
       <div class="sec-tag" data-ru>Опыт работы</div>
       <h2 class="sec-title scroll-reveal" data-en>From typography to&nbsp;AI&nbsp;pipelines</h2>
-      <h2 class="sec-title scroll-reveal" data-ru>От типографии до&nbsp;AI&#8209;пайплайнов</h2>
+      <h2 class="sec-title scroll-reveal" data-ru>От типографии до&nbsp;AI&#8209;конвейеров</h2>
     </div>
     <button type="button" class="sec-copy-btn" data-section="experience" aria-label="Copy link to this section">
       <span class="material-icons-round" aria-hidden="true">link</span>
@@ -551,7 +544,7 @@
           <div class="exp-item-role" data-en>Senior Product Designer</div>
           <div class="exp-item-role" data-ru>Senior Product Designer</div>
           <div class="exp-item-co"><a href="https://miraitech.co" target="_blank" rel="noopener noreferrer">MiraiTech</a> — Fintech &amp; Affiliate Tech</div>
-          <ul class="exp-bullets"><li data-en>Core products: <a class="proj-ref" href="#projects" onclick="openProjectById(3); return false;">JAVHD</a>, <a class="proj-ref" href="#projects" onclick="openProjectById(2); return false;">Gate19</a>, <a class="proj-ref" href="#projects" onclick="openProjectById(5); return false;">ShugarAi</a>, <a class="proj-ref" href="#projects" onclick="openProjectById(4); return false;">Corgday HR CRM</a> — UX/UI, monetization, growth, internal tooling.</li><li data-en><a class="proj-ref" href="#projects" onclick="openProjectById(7); return false;">PNB Agency ecosystem</a> — <a href="https://pnb.agency" target="_blank" rel="noopener noreferrer">pnb.agency</a> + <a href="https://pnb.agency/v2/" target="_blank" rel="noopener noreferrer">v2 refresh</a>. AI landing pipeline: brief → publish in hours.</li><li data-en>White-label flows and shared component library for 20+ products. Partner work: <a href="https://adxad.com" target="_blank" rel="noopener noreferrer">adxad.com</a>, <a href="https://ethics.a-ai.ru/white-book/" target="_blank" rel="noopener noreferrer">ethics.a-ai.ru/white-book/</a>.</li><li data-en>~30 corporate brand styles, ~100 logo directions. AI-generation pipelines at portfolio scale.</li><li data-en>Unified design system, handoff protocols, −60% delivery time across 20+ parallel SKUs.</li><li data-ru>Ключевые продукты: <a class="proj-ref" href="#projects" onclick="openProjectById(3); return false;">JAVHD</a>, <a class="proj-ref" href="#projects" onclick="openProjectById(2); return false;">Gate19</a>, <a class="proj-ref" href="#projects" onclick="openProjectById(5); return false;">ShugarAi</a>, <a class="proj-ref" href="#projects" onclick="openProjectById(4); return false;">Corgday HR CRM</a> — UX/UI, монетизация, growth, внутренние инструменты.</li><li data-ru><a class="proj-ref" href="#projects" onclick="openProjectById(7); return false;">Экосистема PNB Agency</a> — <a href="https://pnb.agency" target="_blank" rel="noopener noreferrer">pnb.agency</a> + <a href="https://pnb.agency/v2/" target="_blank" rel="noopener noreferrer">v2-обновление</a>. AI-пайплайн лендингов: бриф → публикация за часы.</li><li data-ru>White-label и общая библиотека для 20+ продуктов. Партнёрские проекты: <a href="https://adxad.com" target="_blank" rel="noopener noreferrer">adxad.com</a>, <a href="https://ethics.a-ai.ru/white-book/" target="_blank" rel="noopener noreferrer">ethics.a-ai.ru/white-book/</a>.</li><li data-ru>~30 фирменных стилей, ~100 логонаправлений. AI-генерация на масштабе портфеля.</li><li data-ru>Единая дизайн-система, протоколы хэндоффа, −60% время поставки на 20+ параллельных SKU.</li></ul>
+          <ul class="exp-bullets"><li data-en>Core products: <a class="proj-ref" href="#projects" onclick="openProjectById(3); return false;">JAVHD</a>, <a class="proj-ref" href="#projects" onclick="openProjectById(2); return false;">Gate19</a>, <a class="proj-ref" href="#projects" onclick="openProjectById(5); return false;">ShugarAi</a>, <a class="proj-ref" href="#projects" onclick="openProjectById(4); return false;">Corgday HR CRM</a> — UX/UI, monetization, growth, internal tooling.</li><li data-en><a class="proj-ref" href="#projects" onclick="openProjectById(7); return false;">PNB Agency ecosystem</a> — <a href="https://pnb.agency" target="_blank" rel="noopener noreferrer">pnb.agency</a> + <a href="https://pnb.agency/v2/" target="_blank" rel="noopener noreferrer">v2 refresh</a>. AI landing pipeline: brief → publish in hours.</li><li data-en>White-label flows and shared component library for 20+ products. Partner work: <a href="https://adxad.com" target="_blank" rel="noopener noreferrer">adxad.com</a>, <a href="https://ethics.a-ai.ru/white-book/" target="_blank" rel="noopener noreferrer">ethics.a-ai.ru/white-book/</a>.</li><li data-en>~30 corporate brand styles, ~100 logo directions. AI-generation pipelines at portfolio scale.</li><li data-en>Unified design system, handoff protocols, −60% delivery time across 20+ parallel SKUs.</li><li data-ru>Ключевые продукты: <a class="proj-ref" href="#projects" onclick="openProjectById(3); return false;">JAVHD</a>, <a class="proj-ref" href="#projects" onclick="openProjectById(2); return false;">Gate19</a>, <a class="proj-ref" href="#projects" onclick="openProjectById(5); return false;">ShugarAi</a>, <a class="proj-ref" href="#projects" onclick="openProjectById(4); return false;">Corgday HR CRM</a> — UX/UI, монетизация, рост продукта, внутренние инструменты.</li><li data-ru><a class="proj-ref" href="#projects" onclick="openProjectById(7); return false;">Экосистема PNB Agency</a> — <a href="https://pnb.agency" target="_blank" rel="noopener noreferrer">pnb.agency</a> + <a href="https://pnb.agency/v2/" target="_blank" rel="noopener noreferrer">v2-обновление</a>. AI-конвейер лендингов: бриф → публикация за часы.</li><li data-ru>White-label и общая библиотека для 20+ продуктов. Партнёрские проекты: <a href="https://adxad.com" target="_blank" rel="noopener noreferrer">adxad.com</a>, <a href="https://ethics.a-ai.ru/white-book/" target="_blank" rel="noopener noreferrer">ethics.a-ai.ru/white-book/</a>.</li><li data-ru>~30 фирменных стилей, ~100 логонаправлений. AI-генерация на масштабе портфеля.</li><li data-ru>Единая дизайн-система, протоколы передачи макетов, −60% время поставки на 20+ параллельных SKU.</li></ul>
         </div></div>
     </div>
     <div class="exp-year-group">
@@ -820,42 +813,16 @@ function fillPopupFromEl(el) {
     b2.textContent = '';
     b3.textContent = '';
   }
-  const ext = document.getElementById('pop-external');
-  if (ext) {
-    const u = el.getAttribute('data-external-url');
-    if (u) {
-      ext.href = u;
-      ext.style.display = 'inline-flex';
-      const labEn = el.getAttribute('data-external-label-en') || 'Open link';
-      const labRu = el.getAttribute('data-external-label-ru') || labEn;
-      ext.querySelectorAll('[data-en]').forEach(n => { n.textContent = labEn; });
-      ext.querySelectorAll('[data-ru]').forEach(n => { n.textContent = labRu; });
-    } else {
-      ext.style.display = 'none';
-    }
-  }
-
-  const proj = document.getElementById('pop-project');
-  if (proj) {
-    const pid = el.getAttribute('data-project-id');
-    if (pid) {
-      proj.style.display = 'inline-flex';
-      proj.onclick = (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        closePopDirect();
-        openProjectById(pid);
-      };
-    } else {
-      proj.style.display = 'none';
-      proj.onclick = null;
-    }
+  // Skill description block
+  const skillEl = document.getElementById('pop-skill');
+  if (skillEl) {
+    const sEn = el.getAttribute('data-skill-en') || '';
+    const sRu = el.getAttribute('data-skill-ru') || '';
+    skillEl.textContent = isRu ? sRu : sEn;
   }
 }
 
 function openPop(el) {
-  document.querySelector('.popup-box').classList.remove('popup-box--skill');
-  document.getElementById('pop-skill').textContent = '';
   fillPopupFromEl(el);
   document.getElementById('popup').classList.add('open');
   document.body.style.overflow = 'hidden';
@@ -869,7 +836,6 @@ function openProjectById(pid) {
 function closePop(e) { if (e.target === document.getElementById('popup')) closePopDirect(); }
 function closePopDirect() {
   document.getElementById('popup').classList.remove('open');
-  document.querySelector('.popup-box').classList.remove('popup-box--skill');
   document.body.style.overflow = '';
 }
 document.addEventListener('keydown', function(e) {
@@ -975,13 +941,13 @@ const MATRIX_CHIPS = [
   { cat: '1', proj: '2', en: "Platform analytics literacy", ru: "\u0427\u0442\u0435\u043d\u0438\u0435 \u0430\u043d\u0430\u043b\u0438\u0442\u0438\u043a\u0438 \u043f\u043b\u0430\u0442\u0444\u043e\u0440\u043c\u044b" },
   { cat: '1', proj: '5', en: "Engagement metrics design", ru: "\u041c\u0435\u0442\u0440\u0438\u043a\u0438 \u0432\u043e\u0432\u043b\u0435\u0447\u0451\u043d\u043d\u043e\u0441\u0442\u0438" },
   { cat: '1', proj: '1', en: "Player pain-point research", ru: "\u0418\u0441\u0441\u043b\u0435\u0434\u043e\u0432\u0430\u043d\u0438\u0435 \u0431\u043e\u043b\u0435\u0439 \u0438\u0433\u0440\u043e\u043a\u0430" },
-  { cat: '2', proj: '2', en: "Design tokens & variables", ru: "\u0422\u043e\u043a\u0435\u043d\u044b \u0438 variables" },
+  { cat: '2', proj: '2', en: "Design tokens & variables", ru: "\u0422\u043e\u043a\u0435\u043d\u044b \u0438 \u043f\u0435\u0440\u0435\u043c\u0435\u043d\u043d\u044b\u0435" },
   { cat: '2', proj: '2', en: "Atomic component libraries", ru: "\u0410\u0442\u043e\u043c\u0430\u0440\u043d\u044b\u0435 \u0431\u0438\u0431\u043b\u0438\u043e\u0442\u0435\u043a\u0438" },
   { cat: '2', proj: '2', en: "White-label theming", ru: "White-label \u0442\u0435\u043c\u0438\u0437\u0430\u0446\u0438\u044f" },
-  { cat: '2', proj: '2', en: "Dashboard information density", ru: "\u041f\u043b\u043e\u0442\u043d\u043e\u0441\u0442\u044c \u0434\u0430\u0448\u0431\u043e\u0440\u0434\u043e\u0432" },
+  { cat: '2', proj: '2', en: "Dashboard information density", ru: "\u041f\u043b\u043e\u0442\u043d\u043e\u0441\u0442\u044c \u043f\u0430\u043d\u0435\u043b\u0435\u0439 \u0443\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u044f" },
   { cat: '2', proj: '3', en: "Landing system at scale", ru: "\u041b\u0435\u043d\u0434\u0438\u043d\u0433\u0438 \u0432 \u043c\u0430\u0441\u0448\u0442\u0430\u0431\u0435" },
   { cat: '2', proj: '3', en: "Paywall & checkout UX", ru: "\u041f\u0435\u0439\u0432\u043e\u043b\u043b \u0438 \u0447\u0435\u043a\u0430\u0443\u0442" },
-  { cat: '2', proj: '2', en: "Checkout microcopy", ru: "\u041c\u0438\u043a\u0440\u043e\u043a\u043e\u043f\u0438\u0440\u0430\u0439\u0442 \u043e\u043f\u043b\u0430\u0442\u044b" },
+  { cat: '2', proj: '2', en: "Checkout microcopy", ru: "\u041c\u0438\u043a\u0440\u043e\u0442\u0435\u043a\u0441\u0442\u044b \u043e\u043f\u043b\u0430\u0442\u044b" },
   { cat: '2', proj: '5', en: "Generative UI patterns", ru: "\u0413\u0435\u043d\u0435\u0440\u0430\u0442\u0438\u0432\u043d\u044b\u0435 UI-\u043f\u0430\u0442\u0442\u0435\u0440\u043d\u044b" },
   { cat: '2', proj: '5', en: "Gallery & social proof UI", ru: "\u0413\u0430\u043b\u0435\u0440\u0435\u044f \u0438 \u0441\u043e\u0446.\u0434\u043e\u043a\u0430\u0437\u0430\u0442\u0435\u043b\u044c\u0441\u0442\u0432\u0430" },
   { cat: '2', proj: '4', en: "Warm enterprise UI", ru: "\u0422\u0451\u043f\u043b\u044b\u0439 enterprise UI" },
@@ -993,18 +959,18 @@ const MATRIX_CHIPS = [
   { cat: '2', proj: '3', en: "Streaming & live UI", ru: "\u0421\u0442\u0440\u0438\u043c\u0438\u043d\u0433 \u0438 live UI" },
   { cat: '2', proj: '2', en: "Icon systems at scale", ru: "\u0418\u043a\u043e\u043d\u0441\u0438\u0441\u0442\u0435\u043c\u044b \u0432 \u043c\u0430\u0441\u0448\u0442\u0430\u0431\u0435" },
   { cat: '2', proj: '5', en: "Onboarding tutorials", ru: "\u041e\u043d\u0431\u043e\u0440\u0434\u0438\u043d\u0433-\u0442\u0443\u0442\u043e\u0440\u0438\u0430\u043b\u044b" },
-  { cat: '2', proj: '3', en: "Upsell & cross-sell patterns", ru: "\u0410\u043f\u0441\u0435\u043b\u043b \u0438 \u043a\u0440\u043e\u0441\u0441-\u0441\u0435\u043b\u043b" },
+  { cat: '2', proj: '3', en: "Upsell & cross-sell patterns", ru: "\u0414\u043e\u043f\u0440\u043e\u0434\u0430\u0436\u0438 \u0438 \u043f\u0435\u0440\u0435\u043a\u0440\u0451\u0441\u0442\u043d\u044b\u0435 \u043f\u0440\u043e\u0434\u0430\u0436\u0438" },
   { cat: '3', proj: '2', en: "Cross-functional rituals", ru: "\u041a\u0440\u043e\u0441\u0441-\u0444\u0443\u043d\u043a\u0446\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u044b\u0435 \u0440\u0438\u0442\u0443\u0430\u043b\u044b" },
-  { cat: '3', proj: '2', en: "Handoff protocols", ru: "\u041f\u0440\u043e\u0442\u043e\u043a\u043e\u043b\u044b \u0445\u044d\u043d\u0434\u043e\u0444\u0444\u0430" },
+  { cat: '3', proj: '2', en: "Handoff protocols", ru: "\u041f\u0440\u043e\u0442\u043e\u043a\u043e\u043b\u044b \u043f\u0435\u0440\u0435\u0434\u0430\u0447\u0438 \u043c\u0430\u043a\u0435\u0442\u043e\u0432" },
   { cat: '3', proj: '2', en: "Design QA with dev", ru: "\u0414\u0438\u0437\u0430\u0439\u043d-QA \u0441 \u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u043e\u0439" },
   { cat: '3', proj: '3', en: "Roadmap alignment with PM", ru: "\u0421\u043e\u0433\u043b\u0430\u0441\u043e\u0432\u0430\u043d\u0438\u0435 \u0440\u043e\u0430\u0434\u043c\u0430\u043f\u0430 \u0441 PM" },
   { cat: '3', proj: '4', en: "Stakeholder demos", ru: "\u0414\u0435\u043c\u043e \u0434\u043b\u044f \u0441\u0442\u0435\u0439\u043a\u0445\u043e\u043b\u0434\u0435\u0440\u043e\u0432" },
   { cat: '3', proj: '5', en: "AI pipeline rollout", ru: "\u0412\u043d\u0435\u0434\u0440\u0435\u043d\u0438\u0435 AI-\u043f\u0430\u0439\u043f\u043b\u0430\u0439\u043d\u043e\u0432" },
-  { cat: '3', proj: '1', en: "Live-ops design cadence", ru: "\u041a\u0430\u0434\u0435\u043d\u0446\u0438\u044f live-ops" },
+  { cat: '3', proj: '1', en: "Live-ops design cadence", ru: "\u0420\u0438\u0442\u043c live-ops \u043e\u0431\u043d\u043e\u0432\u043b\u0435\u043d\u0438\u0439" },
   { cat: '3', proj: '6', en: "MVP scope negotiation", ru: "\u0421\u043e\u0433\u043b\u0430\u0441\u043e\u0432\u0430\u043d\u0438\u0435 MVP" },
   { cat: '3', proj: '2', en: "Multi-product prioritization", ru: "\u041f\u0440\u0438\u043e\u0440\u0438\u0442\u0438\u0437\u0430\u0446\u0438\u044f \u043f\u0440\u043e\u0434\u0443\u043a\u0442\u043e\u0432" },
-  { cat: '3', proj: '3', en: "Retention loop design", ru: "\u041f\u0435\u0442\u043b\u0438 retention" },
-  { cat: '3', proj: '3', en: "Win-back flows", ru: "\u0424\u043b\u043e\u0443 \u0432\u043e\u0437\u0432\u0440\u0430\u0442\u0430" },
+  { cat: '3', proj: '3', en: "Retention loop design", ru: "\u041f\u0435\u0442\u043b\u0438 \u0443\u0434\u0435\u0440\u0436\u0430\u043d\u0438\u044f" },
+  { cat: '3', proj: '3', en: "Win-back flows", ru: "\u0421\u0446\u0435\u043d\u0430\u0440\u0438\u0438 \u0432\u043e\u0437\u0432\u0440\u0430\u0442\u0430" },
   { cat: '4', proj: '1', en: "Composition & visual rhythm", ru: "\u041a\u043e\u043c\u043f\u043e\u0437\u0438\u0446\u0438\u044f \u0438 \u0440\u0438\u0442\u043c" },
   { cat: '4', proj: '1', en: "Color scripting for mood", ru: "\u0426\u0432\u0435\u0442 \u0438 \u043d\u0430\u0441\u0442\u0440\u043e\u0435\u043d\u0438\u0435" },
   { cat: '4', proj: '5', en: "Character-driven layouts", ru: "\u041b\u0435\u0439\u0430\u0443\u0442\u044b \u0441 \u043f\u0435\u0440\u0441\u043e\u043d\u0430\u0436\u0430\u043c\u0438" },
@@ -1012,7 +978,7 @@ const MATRIX_CHIPS = [
   { cat: '4', proj: '4', en: "Friendly data visualization", ru: "\u0414\u0440\u0443\u0436\u0435\u043b\u044e\u0431\u043d\u0430\u044f \u0432\u0438\u0437\u0443\u0430\u043b\u0438\u0437\u0430\u0446\u0438\u044f" },
   { cat: '4', proj: '2', en: "Brand stretch across 20+ SKUs", ru: "\u0411\u0440\u0435\u043d\u0434 \u043d\u0430 20+ SKU" },
   { cat: '4', proj: '3', en: "Cinematic promo layouts", ru: "\u041a\u0438\u043d\u0435\u043c\u0430\u0442\u043e\u0433\u0440\u0430\u0444\u0438\u0447\u043d\u044b\u0435 \u043f\u0440\u043e\u043c\u043e" },
-  { cat: '4', proj: '5', en: "Motion storyboards", ru: "\u041c\u043e\u0443\u0448\u043d-\u0441\u0442\u043e\u0440\u0438\u0431\u043e\u0440\u0434\u044b" },
+  { cat: '4', proj: '5', en: "Motion storyboards", ru: "\u0420\u0430\u0441\u043a\u0430\u0434\u0440\u043e\u0432\u043a\u0438 \u0430\u043d\u0438\u043c\u0430\u0446\u0438\u0438" },
   { cat: '4', proj: '1', en: "Texture & material language", ru: "\u0422\u0435\u043a\u0441\u0442\u0443\u0440\u044b \u0438 \u043c\u0430\u0442\u0435\u0440\u0438\u0430\u043b\u044b" },
   { cat: '4', proj: '3', en: "Thumbnail & cover systems", ru: "\u0421\u0438\u0441\u0442\u0435\u043c\u044b \u043f\u0440\u0435\u0432\u044c\u044e \u0438 \u043e\u0431\u043b\u043e\u0436\u0435\u043a" },
   { cat: '2', proj: '4', en: "Slack-first notification UX", ru: "UX \u0443\u0432\u0435\u0434\u043e\u043c\u043b\u0435\u043d\u0438\u0439 Slack" },
@@ -1026,104 +992,6 @@ const MATRIX_CHIPS = [
   { cat: '3', proj: '8', en: "Mentor onboarding system", ru: "\u0421\u0438\u0441\u0442\u0435\u043c\u0430 \u043e\u043d\u0431\u043e\u0440\u0434\u0438\u043d\u0433\u0430 \u043c\u0435\u043d\u0442\u043e\u0440\u043e\u0432" }
 ];
 
-var SKILL_DESCS = {
-  '1': {
-    en: "Applied deep visual language\u00a0\u2014 composition, color scripting, and texture systems\u00a0\u2014 to build a game UI that players parse in split seconds. Every rarity gradient, HUD element, and offer strip was designed for maximum readability under pressure, with a colorblind-safe palette and scalable components for future content drops.",
-    ru: "\u041f\u0440\u0438\u043c\u0435\u043d\u0438\u043b \u0432\u0438\u0437\u0443\u0430\u043b\u044c\u043d\u044b\u0439 \u044f\u0437\u044b\u043a\u00a0\u2014 \u043a\u043e\u043c\u043f\u043e\u0437\u0438\u0446\u0438\u044e, \u0446\u0432\u0435\u0442\u043e\u0432\u043e\u0435 \u0441\u0446\u0435\u043d\u0430\u0440\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435 \u0438 \u0442\u0435\u043a\u0441\u0442\u0443\u0440\u043d\u044b\u0435 \u0441\u0438\u0441\u0442\u0435\u043c\u044b\u00a0\u2014 \u0434\u043b\u044f \u0441\u043e\u0437\u0434\u0430\u043d\u0438\u044f \u0438\u0433\u0440\u043e\u0432\u043e\u0433\u043e UI, \u0441\u0447\u0438\u0442\u044b\u0432\u0430\u0435\u043c\u043e\u0433\u043e \u0437\u0430 \u0434\u043e\u043b\u0438 \u0441\u0435\u043a\u0443\u043d\u0434\u044b. \u041a\u0430\u0436\u0434\u044b\u0439 \u0433\u0440\u0430\u0434\u0438\u0435\u043d\u0442 \u0440\u0435\u0434\u043a\u043e\u0441\u0442\u0438, \u044d\u043b\u0435\u043c\u0435\u043d\u0442 HUD \u0438 \u043e\u0444\u0444\u0435\u0440-\u043f\u043e\u043b\u043e\u0441\u0430 \u0441\u043f\u0440\u043e\u0435\u043a\u0442\u0438\u0440\u043e\u0432\u0430\u043d\u044b \u0434\u043b\u044f \u043c\u0430\u043a\u0441\u0438\u043c\u0430\u043b\u044c\u043d\u043e\u0439 \u0447\u0438\u0442\u0430\u0435\u043c\u043e\u0441\u0442\u0438 \u0441 \u043f\u0430\u043b\u0438\u0442\u0440\u043e\u0439 \u0434\u043b\u044f \u0434\u0430\u043b\u044c\u0442\u043e\u043d\u0438\u043a\u043e\u0432 \u0438 \u043c\u0430\u0441\u0448\u0442\u0430\u0431\u0438\u0440\u0443\u0435\u043c\u044b\u043c\u0438 \u043a\u043e\u043c\u043f\u043e\u043d\u0435\u043d\u0442\u0430\u043c\u0438."
-  },
-  '2': {
-    en: "Business-driven design thinking and a scalable design system came together here. Redesigned the payment format flow from first principles using user interviews and funnel data\u00a0\u2014 A/B\u00a0tested three formats, and the winner became the default across the entire 20-product platform. The unified component library cut frontend handoff time by 60\u00a0% and enabled White\u00a0Label launches in under five minutes.",
-    ru: "\u041f\u0440\u043e\u0434\u0443\u043a\u0442\u043e\u0432\u043e\u0435 \u043c\u044b\u0448\u043b\u0435\u043d\u0438\u0435 \u0438 \u043c\u0430\u0441\u0448\u0442\u0430\u0431\u0438\u0440\u0443\u0435\u043c\u0430\u044f \u0434\u0438\u0437\u0430\u0439\u043d-\u0441\u0438\u0441\u0442\u0435\u043c\u0430 \u0441\u043e\u0448\u043b\u0438\u0441\u044c \u0432 \u043e\u0434\u043d\u043e\u043c \u043f\u0440\u043e\u0435\u043a\u0442\u0435. \u041f\u0435\u0440\u0435\u0440\u0430\u0431\u043e\u0442\u0430\u043b \u0444\u043b\u043e\u0443 \u0444\u043e\u0440\u043c\u0430\u0442\u043e\u0432 \u043e\u043f\u043b\u0430\u0442\u044b \u0441 \u043d\u0443\u043b\u044f \u043d\u0430 \u043e\u0441\u043d\u043e\u0432\u0435 \u0438\u043d\u0442\u0435\u0440\u0432\u044c\u044e \u0438 \u0434\u0430\u043d\u043d\u044b\u0445 \u0432\u043e\u0440\u043e\u043d\u043a\u0438\u00a0\u2014 A/B-\u0442\u0435\u0441\u0442 \u0442\u0440\u0451\u0445 \u0444\u043e\u0440\u043c\u0430\u0442\u043e\u0432, \u043f\u043e\u0431\u0435\u0434\u0438\u0442\u0435\u043b\u044c \u0441\u0442\u0430\u043b \u0434\u0435\u0444\u043e\u043b\u0442\u043d\u044b\u043c \u0434\u043b\u044f 20-\u043f\u0440\u043e\u0434\u0443\u043a\u0442\u043e\u0432\u043e\u0439 \u043f\u043b\u0430\u0442\u0444\u043e\u0440\u043c\u044b. \u0415\u0434\u0438\u043d\u0430\u044f \u0431\u0438\u0431\u043b\u0438\u043e\u0442\u0435\u043a\u0430 \u0441\u043e\u043a\u0440\u0430\u0442\u0438\u043b\u0430 \u0445\u044d\u043d\u0434\u043e\u0444\u0444 \u043d\u0430 60\u00a0% \u0438 \u043f\u043e\u0437\u0432\u043e\u043b\u0438\u043b\u0430 \u0437\u0430\u043f\u0443\u0441\u043a\u0430\u0442\u044c White\u00a0Label \u0437\u0430 \u043f\u044f\u0442\u044c \u043c\u0438\u043d\u0443\u0442."
-  },
-  '3': {
-    en: "UX research meets full-funnel ecosystem design. Tested 100+ landing variants, each with a defined conversion hypothesis\u00a0\u2014 top performers became a templated growth system. Designed the complete user journey from acquisition through streaming to retention and re-engagement, with gamified onboarding that drove measurable trial-to-paid conversion growth.",
-    ru: "UX-\u0438\u0441\u0441\u043b\u0435\u0434\u043e\u0432\u0430\u043d\u0438\u044f \u0438 \u043f\u0440\u043e\u0435\u043a\u0442\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435 \u043f\u043e\u043b\u043d\u043e\u0439 \u0432\u043e\u0440\u043e\u043d\u043a\u0438. 100+ \u0432\u0430\u0440\u0438\u0430\u043d\u0442\u043e\u0432 \u043b\u0435\u043d\u0434\u0438\u043d\u0433\u043e\u0432 \u0441 \u0433\u0438\u043f\u043e\u0442\u0435\u0437\u0430\u043c\u0438 \u043a\u043e\u043d\u0432\u0435\u0440\u0441\u0438\u0438\u00a0\u2014 \u043b\u0443\u0447\u0448\u0438\u0435 \u0441\u0442\u0430\u043b\u0438 \u0448\u0430\u0431\u043b\u043e\u043d\u043d\u043e\u0439 growth-\u0441\u0438\u0441\u0442\u0435\u043c\u043e\u0439. \u0421\u043f\u0440\u043e\u0435\u043a\u0442\u0438\u0440\u043e\u0432\u0430\u043b \u043f\u043e\u043b\u043d\u044b\u0439 \u043f\u0443\u0442\u044c \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f \u043e\u0442 \u043f\u0440\u0438\u0432\u043b\u0435\u0447\u0435\u043d\u0438\u044f \u0447\u0435\u0440\u0435\u0437 \u0441\u0442\u0440\u0438\u043c\u0438\u043d\u0433 \u0434\u043e retention \u0438 \u0440\u0435\u0430\u043a\u0442\u0438\u0432\u0430\u0446\u0438\u0438, \u0441 \u0433\u0435\u0439\u043c\u0438\u0444\u0438\u0446\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u044b\u043c \u043e\u043d\u0431\u043e\u0440\u0434\u0438\u043d\u0433\u043e\u043c \u0438 \u0438\u0437\u043c\u0435\u0440\u0438\u043c\u044b\u043c \u0440\u043e\u0441\u0442\u043e\u043c trial-to-paid."
-  },
-  '4': {
-    en: "Complex information architecture made navigable. HR specialists were drowning in multi-step forms and nested data\u00a0\u2014 restructured the system around their actual workflow, not the database schema. A Slack-alert module cut manual follow-ups by 40\u00a0% and a payroll exception queue redesign reduced median wait time by 28\u00a0%.",
-    ru: "\u0421\u043b\u043e\u0436\u043d\u0430\u044f \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u043e\u043d\u043d\u0430\u044f \u0430\u0440\u0445\u0438\u0442\u0435\u043a\u0442\u0443\u0440\u0430, \u0441\u0442\u0430\u0432\u0448\u0430\u044f \u0443\u0434\u043e\u0431\u043d\u043e\u0439. HR-\u0441\u043f\u0435\u0446\u0438\u0430\u043b\u0438\u0441\u0442\u044b \u0442\u043e\u043d\u0443\u043b\u0438 \u0432 \u043c\u043d\u043e\u0433\u043e\u0448\u0430\u0433\u043e\u0432\u044b\u0445 \u0444\u043e\u0440\u043c\u0430\u0445 \u0438 \u0432\u043b\u043e\u0436\u0435\u043d\u043d\u044b\u0445 \u0434\u0430\u043d\u043d\u044b\u0445\u00a0\u2014 \u043f\u0435\u0440\u0435\u0441\u0442\u0440\u043e\u0438\u043b \u0441\u0438\u0441\u0442\u0435\u043c\u0443 \u0432\u043e\u043a\u0440\u0443\u0433 \u0440\u0435\u0430\u043b\u044c\u043d\u044b\u0445 \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u043e\u0432, \u0430 \u043d\u0435 \u0441\u0445\u0435\u043c\u044b \u0411\u0414. Slack-\u0430\u043b\u0435\u0440\u0442\u044b \u0441\u043e\u043a\u0440\u0430\u0442\u0438\u043b\u0438 \u0440\u0443\u0447\u043d\u044b\u0435 follow-up \u043d\u0430 40\u00a0%, \u043e\u0447\u0435\u0440\u0435\u0434\u044c \u0438\u0441\u043a\u043b\u044e\u0447\u0435\u043d\u0438\u0439 \u043f\u043e \u0437\u0430\u0440\u043f\u043b\u0430\u0442\u0435\u00a0\u2014 \u043d\u0430 28\u00a0%."
-  },
-  '5': {
-    en: "Agentive UX in action\u00a0\u2014 designing for AI that acts on its own. Users direct AI character behavior in real time: the design focused on control clarity, mid-generation intervention, and setting expectations without a wall of instructions. Gallery and tutorial iterations drove +27\u00a0% return visits and +19\u00a0% session length.",
-    ru: "Agentive UX \u043d\u0430 \u043f\u0440\u0430\u043a\u0442\u0438\u043a\u0435\u00a0\u2014 \u0434\u0438\u0437\u0430\u0439\u043d \u0434\u043b\u044f AI, \u043a\u043e\u0442\u043e\u0440\u044b\u0439 \u0434\u0435\u0439\u0441\u0442\u0432\u0443\u0435\u0442 \u0441\u0430\u043c\u043e\u0441\u0442\u043e\u044f\u0442\u0435\u043b\u044c\u043d\u043e. \u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u0438 \u0443\u043f\u0440\u0430\u0432\u043b\u044f\u044e\u0442 \u043f\u043e\u0432\u0435\u0434\u0435\u043d\u0438\u0435\u043c AI-\u043f\u0435\u0440\u0441\u043e\u043d\u0430\u0436\u0435\u0439 \u0432 \u0440\u0435\u0430\u043b\u044c\u043d\u043e\u043c \u0432\u0440\u0435\u043c\u0435\u043d\u0438: \u0444\u043e\u043a\u0443\u0441 \u043d\u0430 \u044f\u0441\u043d\u043e\u0441\u0442\u0438 \u0443\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u044f, \u0432\u043c\u0435\u0448\u0430\u0442\u0435\u043b\u044c\u0441\u0442\u0432\u0435 \u0432 \u043f\u0440\u043e\u0446\u0435\u0441\u0441 \u0433\u0435\u043d\u0435\u0440\u0430\u0446\u0438\u0438 \u0438 \u0444\u043e\u0440\u043c\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0438 \u043e\u0436\u0438\u0434\u0430\u043d\u0438\u0439. \u0418\u0442\u0435\u0440\u0430\u0446\u0438\u0438 \u0433\u0430\u043b\u0435\u0440\u0435\u0438 \u0438 \u0442\u0443\u0442\u043e\u0440\u0438\u0430\u043b\u043e\u0432 \u0434\u0430\u043b\u0438 +27\u00a0% \u0432\u043e\u0437\u0432\u0440\u0430\u0442\u043e\u0432 \u0438 +19\u00a0% \u0434\u043b\u0438\u043d\u044b \u0441\u0435\u0441\u0441\u0438\u0438."
-  },
-  '6': {
-    en: "End-to-end product design for a Telegram advertising platform. Dense venue cards with stats, availability, and inline scheduling\u00a0\u2014 maximum information with minimal friction. Streamlined the advertiser journey from post creation to campaign analytics with native Telegram patterns, cutting median steps to first paid campaign by 35\u00a0%.",
-    ru: "\u041f\u043e\u043b\u043d\u044b\u0439 \u0446\u0438\u043a\u043b \u0434\u0438\u0437\u0430\u0439\u043d\u0430 \u043f\u0440\u043e\u0434\u0443\u043a\u0442\u0430 \u0434\u043b\u044f \u0440\u0435\u043a\u043b\u0430\u043c\u044b \u0432 Telegram. \u041f\u043b\u043e\u0442\u043d\u044b\u0435 \u043a\u0430\u0440\u0442\u043e\u0447\u043a\u0438 \u043f\u043b\u043e\u0449\u0430\u0434\u043e\u043a \u0441\u043e \u0441\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u043a\u043e\u0439, \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u043e\u0441\u0442\u044c\u044e \u0438 \u0432\u044b\u0431\u043e\u0440\u043e\u043c \u0432\u0440\u0435\u043c\u0435\u043d\u0438\u00a0\u2014 \u043c\u0430\u043a\u0441\u0438\u043c\u0443\u043c \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u0438 \u043f\u0440\u0438 \u043c\u0438\u043d\u0438\u043c\u0443\u043c\u0435 \u0442\u0440\u0435\u043d\u0438\u044f. \u041e\u043f\u0442\u0438\u043c\u0438\u0437\u0438\u0440\u043e\u0432\u0430\u043b \u043f\u0443\u0442\u044c \u0440\u0435\u043a\u043b\u0430\u043c\u043e\u0434\u0430\u0442\u0435\u043b\u044f \u0441 \u043d\u0430\u0442\u0438\u0432\u043d\u044b\u043c\u0438 Telegram-\u043f\u0430\u0442\u0442\u0435\u0440\u043d\u0430\u043c\u0438, \u0441\u043e\u043a\u0440\u0430\u0442\u0438\u0432 \u0448\u0430\u0433\u0438 \u0434\u043e \u043f\u0435\u0440\u0432\u043e\u0439 \u043a\u0430\u043c\u043f\u0430\u043d\u0438\u0438 \u043d\u0430 35\u00a0%."
-  },
-  '7': {
-    en: "Design operations, AI pipelines, and cross-functional leadership across a 20-product portfolio. Built the design team\u2019s processes from scratch\u00a0\u2014 standardized library, handoff protocols, quality gates. Rolled out AI-generation workflows as a built-in competency and co-owned the roadmap with PM for three years. Brief to publish moved from days to hours.",
-    ru: "\u0414\u0438\u0437\u0430\u0439\u043d-\u043e\u043f\u0435\u0440\u0430\u0446\u0438\u0438, AI-\u043f\u0430\u0439\u043f\u043b\u0430\u0439\u043d\u044b \u0438 \u043a\u0440\u043e\u0441\u0441-\u0444\u0443\u043d\u043a\u0446\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u043e\u0435 \u043b\u0438\u0434\u0435\u0440\u0441\u0442\u0432\u043e \u0432 \u043f\u043e\u0440\u0442\u0444\u0435\u043b\u0435 \u0438\u0437 20+ \u043f\u0440\u043e\u0434\u0443\u043a\u0442\u043e\u0432. \u041f\u043e\u0441\u0442\u0440\u043e\u0438\u043b \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u044b \u0434\u0438\u0437\u0430\u0439\u043d-\u043a\u043e\u043c\u0430\u043d\u0434\u044b \u0441 \u043d\u0443\u043b\u044f\u00a0\u2014 \u0441\u0442\u0430\u043d\u0434\u0430\u0440\u0442\u0438\u0437\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u0430\u044f \u0431\u0438\u0431\u043b\u0438\u043e\u0442\u0435\u043a\u0430, \u043f\u0440\u043e\u0442\u043e\u043a\u043e\u043b\u044b \u0445\u044d\u043d\u0434\u043e\u0444\u0444\u0430, quality gates. \u0412\u043d\u0435\u0434\u0440\u0438\u043b AI-\u0433\u0435\u043d\u0435\u0440\u0430\u0446\u0438\u044e \u043a\u0430\u043a \u0432\u0441\u0442\u0440\u043e\u0435\u043d\u043d\u0443\u044e \u043a\u043e\u043c\u043f\u0435\u0442\u0435\u043d\u0446\u0438\u044e \u0438 \u0442\u0440\u0438 \u0433\u043e\u0434\u0430 \u0441\u043e\u0432\u043c\u0435\u0441\u0442\u043d\u043e \u0432\u043b\u0430\u0434\u0435\u043b \u0440\u043e\u0430\u0434\u043c\u0430\u043f\u043e\u043c. \u041e\u0442 \u0431\u0440\u0438\u0444\u0430 \u0434\u043e \u043f\u0443\u0431\u043b\u0438\u043a\u0430\u0446\u0438\u0438\u00a0\u2014 \u0447\u0430\u0441\u044b \u0432\u043c\u0435\u0441\u0442\u043e \u0434\u043d\u0435\u0439."
-  },
-  '8': {
-    en: "Mentorship and design education at scale. Developed curricula for graphic design and UX/UI tracks at two of Russia\u2019s largest online design schools, mentored junior mentors, and ran public workshops\u00a0\u2014 reaching thousands of students over four years. Teaching forced precision: naming the principle and showing the fix, every time.",
-    ru: "\u041c\u0435\u043d\u0442\u043e\u0440\u0441\u0442\u0432\u043e \u0438 \u0434\u0438\u0437\u0430\u0439\u043d-\u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435 \u0432 \u043c\u0430\u0441\u0448\u0442\u0430\u0431\u0435. \u0420\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u0430\u043b \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u044b \u043f\u043e \u0433\u0440\u0430\u0444\u0438\u0447\u0435\u0441\u043a\u043e\u043c\u0443 \u0438 UX/UI-\u0434\u0438\u0437\u0430\u0439\u043d\u0443 \u0432 \u0434\u0432\u0443\u0445 \u043a\u0440\u0443\u043f\u043d\u0435\u0439\u0448\u0438\u0445 \u043e\u043d\u043b\u0430\u0439\u043d-\u0448\u043a\u043e\u043b\u0430\u0445, \u043c\u0435\u043d\u0442\u043e\u0440\u0438\u043b junior-\u043c\u0435\u043d\u0442\u043e\u0440\u043e\u0432 \u0438 \u043f\u0440\u043e\u0432\u043e\u0434\u0438\u043b \u043f\u0443\u0431\u043b\u0438\u0447\u043d\u044b\u0435 \u0432\u043e\u0440\u043a\u0448\u043e\u043f\u044b\u00a0\u2014 \u0442\u044b\u0441\u044f\u0447\u0438 \u0441\u0442\u0443\u0434\u0435\u043d\u0442\u043e\u0432 \u0437\u0430 \u0447\u0435\u0442\u044b\u0440\u0435 \u0433\u043e\u0434\u0430. \u041f\u0440\u0435\u043f\u043e\u0434\u0430\u0432\u0430\u043d\u0438\u0435 \u0442\u0440\u0435\u0431\u0443\u0435\u0442 \u0442\u043e\u0447\u043d\u043e\u0441\u0442\u0438: \u043d\u0430\u0437\u0432\u0430\u0442\u044c \u043f\u0440\u0438\u043d\u0446\u0438\u043f \u0438 \u043f\u043e\u043a\u0430\u0437\u0430\u0442\u044c \u0440\u0435\u0448\u0435\u043d\u0438\u0435\u00a0\u2014 \u043a\u0430\u0436\u0434\u044b\u0439 \u0440\u0430\u0437."
-  }
-};
-
-function openSkillPopup(projId) {
-  var el = document.getElementById('project-card-' + projId);
-  if (!el) return;
-  var box = document.querySelector('.popup-box');
-  box.classList.add('popup-box--skill');
-
-  var isRu = document.body.classList.contains('lang-ru');
-  document.getElementById('pop-title').textContent = isRu ? el.dataset.titleRu : el.dataset.titleEn;
-  document.getElementById('pop-meta').textContent = isRu ? el.dataset.subRu : el.dataset.subEn;
-
-  // Single cover image
-  var galleryStr = el.getAttribute('data-gallery');
-  var coverImg = '';
-  if (galleryStr) {
-    coverImg = galleryStr.split(',')[0].trim();
-  } else {
-    var cardImg = el.querySelector('img');
-    if (cardImg && cardImg.src) coverImg = cardImg.src;
-  }
-  buildGallery(coverImg ? [coverImg] : []);
-
-  // Skill description
-  var desc = SKILL_DESCS[projId];
-  var skillEl = document.getElementById('pop-skill');
-  skillEl.textContent = desc ? (isRu ? desc.ru : desc.en) : '';
-
-  // Clear body blocks (hidden via CSS, but also clear)
-  document.getElementById('pop-b1').textContent = '';
-  document.getElementById('pop-b2').textContent = '';
-  document.getElementById('pop-b3').textContent = '';
-
-  // External link
-  var ext = document.getElementById('pop-external');
-  if (ext) {
-    var u = el.getAttribute('data-external-url');
-    if (u) {
-      ext.href = u;
-      ext.style.display = 'inline-flex';
-      var labEn = el.getAttribute('data-external-label-en') || 'Open link';
-      var labRu = el.getAttribute('data-external-label-ru') || labEn;
-      ext.querySelectorAll('[data-en]').forEach(function(n) { n.textContent = labEn; });
-      ext.querySelectorAll('[data-ru]').forEach(function(n) { n.textContent = labRu; });
-    } else {
-      ext.style.display = 'none';
-    }
-  }
-
-  // View project link
-  var proj = document.getElementById('pop-project');
-  if (proj) {
-    proj.style.display = 'inline-flex';
-    proj.onclick = function(e) {
-      e.preventDefault();
-      e.stopPropagation();
-      closePopDirect();
-      openProjectById(projId);
-    };
-  }
-
-  document.getElementById('popup').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-
 (function buildMatrix(){
   const grid = document.getElementById('matrixGrid');
   if (!grid) return;
@@ -1134,7 +1002,7 @@ function openSkillPopup(projId) {
     el.dataset.cat = row.cat;
     el.dataset.project = row.proj;
     el.innerHTML = '<span data-en>' + row.en + '</span><span data-ru>' + row.ru + '</span>';
-    el.addEventListener('click', () => openSkillPopup(row.proj));
+    el.addEventListener('click', () => openProjectById(row.proj));
     grid.appendChild(el);
   });
 })();
