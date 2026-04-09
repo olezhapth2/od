@@ -141,6 +141,22 @@ body {
 .hdr-dot {
   opacity: 0.8;
 }
+.site-header-mid {
+  display: flex;
+  gap: 6px;
+}
+.hdr-btn--fun {
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.hdr-btn--fun:hover {
+  border-color: var(--accent1);
+  transform: scale(1.05);
+}
+.hdr-btn--fun:active {
+  transform: scale(0.95);
+}
 .site-header-right {
   display: flex;
   justify-content: flex-end;
@@ -1047,6 +1063,12 @@ section:nth-child(even) {
   border-color: var(--accent1);
   transform: translateY(-4px) perspective(800px) rotateX(2deg) rotateY(-2deg);
 }
+.proj-card:hover .proj-name,
+.proj-card:hover .proj-sub,
+.proj-card:hover .proj-desc,
+.proj-card:hover .proj-metric {
+  color: #fff;
+}
 .proj-card:hover::after {
   opacity: 1;
 }
@@ -1417,6 +1439,51 @@ section:nth-child(even) {
 }
 .matrix-wrap.cat-4.is-active .mc.mc-lit {
   box-shadow: 0 0 30px rgba(158, 196, 196, 0.2);
+}
+
+/* Tools */
+.tools-section {
+  padding: 60px 0;
+  max-height: 600px;
+  overflow: hidden;
+}
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+.tool-group-title {
+  font-family: var(--font-mono);
+  font-size: var(--fs-min);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 12px;
+}
+.tool-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.tool-chip {
+  font-family: var(--font-card);
+  font-size: var(--fs-min);
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  color: var(--text-main);
+  background: rgba(255,255,255,0.02);
+  transition: border-color 0.2s, color 0.2s;
+}
+.tool-chip:hover {
+  border-color: var(--accent1);
+  color: var(--text-hi);
+}
+@media (max-width: 640px) {
+  .tools-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Footer */
@@ -2083,8 +2150,13 @@ footer.site-footer {
 .popup-skill-block:empty { display: none; }
 
 
+.popup-cta-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+}
 .popup-cta {
-  width: 100%;
+  flex: 1;
   justify-content: center;
 }
 

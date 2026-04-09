@@ -48,6 +48,16 @@
       </a>
     </div>
 
+    <div class="site-header-mid">
+      <button type="button" class="hdr-btn hdr-btn--fun" id="btnFont" aria-label="Change font" title="Random font">
+        <span class="material-icons-round" aria-hidden="true">text_fields</span>
+        <span class="hdr-btn-label">Aa</span>
+      </button>
+      <button type="button" class="hdr-btn hdr-btn--fun" id="btnPalette" aria-label="Change palette" title="Random palette">
+        <span class="material-icons-round" aria-hidden="true">palette</span>
+        <span class="hdr-btn-label" data-en>Color</span><span class="hdr-btn-label" data-ru>Цвет</span>
+      </button>
+    </div>
     <div class="site-header-right lang-bar" aria-label="Language">
       <button type="button" class="lang-btn active" onclick="setLang('en')">EN</button>
       <button type="button" class="lang-btn" onclick="setLang('ru')">RU</button>
@@ -83,7 +93,11 @@
         <div class="popup-block" id="pop-b5"></div>
       </div>
 
-      <a class="pill primary popup-cta" id="pop-cta" href="mailto:olegdevyatow@gmail.com"><span class="material-icons-round">mail</span><span data-en>olegdevyatow@gmail.com</span><span data-ru>olegdevyatow@gmail.com</span></a>
+      <div class="popup-cta-row">
+        <a class="pill popup-cta" href="mailto:olegdevyatow@gmail.com"><span class="material-icons-round">mail</span>Email</a>
+        <a class="pill popup-cta" href="https://t.me/olegdevyatow" target="_blank" rel="noopener noreferrer"><span class="material-icons-round">send</span>Telegram</a>
+        <a class="pill popup-cta" href="https://www.linkedin.com/in/oleg-devyatow-653584367/" target="_blank" rel="noopener noreferrer"><span class="material-icons-round">work</span>LinkedIn</a>
+      </div>
     </div>
   </div>
 </div>
@@ -742,6 +756,67 @@
 
   </div></div></section>
 
+<section id="tools" class="tools-section">
+<div class="container">
+  <div class="sec-header">
+    <div class="sec-header-main">
+      <div class="sec-tag" data-en>Toolbox</div>
+      <div class="sec-tag" data-ru>Инструменты</div>
+      <h2 class="sec-title scroll-reveal" data-en>Tools I work&nbsp;with</h2>
+      <h2 class="sec-title scroll-reveal" data-ru>Инструменты, с которыми&nbsp;работаю</h2>
+    </div>
+  </div>
+  <div class="tools-grid">
+    <div class="tool-group">
+      <div class="tool-group-title" data-en>Design</div><div class="tool-group-title" data-ru>Дизайн</div>
+      <div class="tool-chips">
+        <span class="tool-chip">Figma</span>
+        <span class="tool-chip">Photoshop</span>
+        <span class="tool-chip">Illustrator</span>
+        <span class="tool-chip">After Effects</span>
+        <span class="tool-chip">Principle</span>
+        <span class="tool-chip">ProtoPie</span>
+      </div>
+    </div>
+    <div class="tool-group">
+      <div class="tool-group-title" data-en>Research & Analytics</div><div class="tool-group-title" data-ru>Исследования и аналитика</div>
+      <div class="tool-chips">
+        <span class="tool-chip">Amplitude</span>
+        <span class="tool-chip">Mixpanel</span>
+        <span class="tool-chip">Hotjar</span>
+        <span class="tool-chip">Google Analytics</span>
+        <span class="tool-chip">Maze</span>
+        <span class="tool-chip">Optimal Workshop</span>
+      </div>
+    </div>
+    <div class="tool-group">
+      <div class="tool-group-title" data-en>AI & Automation</div><div class="tool-group-title" data-ru>AI и автоматизация</div>
+      <div class="tool-chips">
+        <span class="tool-chip">Cursor</span>
+        <span class="tool-chip">Claude</span>
+        <span class="tool-chip">ChatGPT</span>
+        <span class="tool-chip">Midjourney</span>
+        <span class="tool-chip">n8n</span>
+        <span class="tool-chip">ComfyUI</span>
+        <span class="tool-chip">Runway</span>
+      </div>
+    </div>
+    <div class="tool-group">
+      <div class="tool-group-title" data-en>Dev & Handoff</div><div class="tool-group-title" data-ru>Разработка и передача</div>
+      <div class="tool-chips">
+        <span class="tool-chip">HTML/CSS</span>
+        <span class="tool-chip">Git</span>
+        <span class="tool-chip">Storybook</span>
+        <span class="tool-chip">Notion</span>
+        <span class="tool-chip">Linear</span>
+        <span class="tool-chip">Jira</span>
+        <span class="tool-chip">Miro</span>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
 <footer id="contact" class="site-footer">
   <div class="container footer-split">
     <div class="footer-left">
@@ -910,7 +985,14 @@ function openPop(el) {
 
 function openProjectById(pid) {
   const el = document.getElementById('project-card-' + pid);
-  if (el) openPop(el);
+  if (!el) return;
+  var sect = document.getElementById('projects');
+  if (sect) {
+    sect.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    setTimeout(function() { openPop(el); }, 400);
+  } else {
+    openPop(el);
+  }
 }
 
 function closePop(e) { if (e.target === document.getElementById('popup')) closePopDirect(); }
@@ -1075,6 +1157,11 @@ const MATRIX_CHIPS = [
 (function buildMatrix(){
   const grid = document.getElementById('matrixGrid');
   if (!grid) return;
+  // Shuffle chips
+  for (var i = MATRIX_CHIPS.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var t = MATRIX_CHIPS[i]; MATRIX_CHIPS[i] = MATRIX_CHIPS[j]; MATRIX_CHIPS[j] = t;
+  }
   MATRIX_CHIPS.forEach((row) => {
     const el = document.createElement('button');
     el.type = 'button';
@@ -1422,6 +1509,49 @@ const MATRIX_CHIPS = [
   }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
 
   els.forEach(function(el){ revealObs.observe(el); });
+})();
+
+/* --- Fun buttons: cycle fonts & palettes --- */
+(function funButtons(){
+  var fontIdx = 0;
+  var palIdx = 0;
+  var FONTS = [
+    { hero: '"Playfair Display", Georgia, serif', body: '"IBM Plex Sans", sans-serif', mono: '"IBM Plex Mono", monospace' },
+    { hero: '"Space Grotesk", sans-serif', body: '"Outfit", sans-serif', mono: '"DM Mono", monospace' },
+    { hero: '"Georgia", serif', body: '"Space Grotesk", sans-serif', mono: '"IBM Plex Mono", monospace' },
+    { hero: '"Outfit", sans-serif', body: '"IBM Plex Sans", sans-serif', mono: '"DM Mono", monospace' }
+  ];
+  var PALS = [
+    { bg: '#0f0f0f', card: '#262626', hi: '#f5f5f5', main: '#a3a3a3', dim: '#525252', line: '#333', g1: '126,200,200', g2: '200,155,126', g3: '200,126,180' },
+    { bg: '#0d1117', card: '#1c2333', hi: '#e6edf3', main: '#8b949e', dim: '#484f58', line: '#30363d', g1: '130,180,220', g2: '220,170,100', g3: '180,130,210' },
+    { bg: '#141218', card: '#2b2930', hi: '#e8def8', main: '#a89db8', dim: '#524b60', line: '#3a3540', g1: '168,133,248', g2: '240,180,120', g3: '220,120,160' },
+    { bg: '#0f1410', card: '#1e2a20', hi: '#e8f5e9', main: '#a0b8a2', dim: '#506052', line: '#2e3e30', g1: '130,200,140', g2: '200,180,120', g3: '180,140,200' }
+  ];
+  var btnF = document.getElementById('btnFont');
+  var btnP = document.getElementById('btnPalette');
+  if (btnF) btnF.addEventListener('click', function() {
+    fontIdx = (fontIdx + 1) % FONTS.length;
+    var f = FONTS[fontIdx];
+    var r = document.documentElement.style;
+    r.setProperty('--font-hero', f.hero);
+    r.setProperty('--font-body', f.body);
+    r.setProperty('--font-card', f.body);
+    r.setProperty('--font-mono', f.mono);
+  });
+  if (btnP) btnP.addEventListener('click', function() {
+    palIdx = (palIdx + 1) % PALS.length;
+    var p = PALS[palIdx];
+    var r = document.documentElement.style;
+    r.setProperty('--bg', p.bg);
+    r.setProperty('--bg-card', p.card);
+    r.setProperty('--text-hi', p.hi);
+    r.setProperty('--text-main', p.main);
+    r.setProperty('--text-dim', p.dim);
+    r.setProperty('--line', p.line);
+    r.setProperty('--glow-1', p.g1);
+    r.setProperty('--glow-2', p.g2);
+    r.setProperty('--glow-3', p.g3);
+  });
 })();
 
 </script>
