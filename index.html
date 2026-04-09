@@ -63,7 +63,14 @@
 
 <div class="popup-ov" id="popup" onclick="closePop(event)">
   <div class="popup-box popup-box--wide" onclick="event.stopPropagation()">
-    <button type="button" class="popup-close" onclick="closePopDirect()" aria-label="Close"><span class="material-icons-round">close</span></button>
+    <!-- Sticky header: title + meta + close -->
+    <div class="popup-header">
+      <div class="popup-header-text">
+        <div class="popup-title" id="pop-title"></div>
+        <div class="popup-meta" id="pop-meta"></div>
+      </div>
+      <button type="button" class="popup-close" onclick="closePopDirect()" aria-label="Close"><span class="material-icons-round">close</span></button>
+    </div>
 
     <!-- Gallery carousel -->
     <div class="pop-gallery" id="pop-gallery">
@@ -74,9 +81,6 @@
     </div>
 
     <div class="popup-content-wrap">
-      <div class="popup-title" id="pop-title"></div>
-      <div class="popup-meta" id="pop-meta"></div>
-
       <div class="popup-skill-block" id="pop-skill"></div>
 
       <div class="popup-scroll" id="pop-scroll">
