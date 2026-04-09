@@ -2262,18 +2262,20 @@ footer.site-footer {
 .lb-zoom-wrap {
   flex: 1;
   min-height: 0;
-  overflow-x: auto;
+  overflow-x: scroll;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
+  position: relative;
 }
 .lb-zoom-wrap::-webkit-scrollbar { display: none; }
 .lb-zoom-img {
-  width: 200%;
+  width: auto;
   height: 100%;
-  object-fit: cover;
+  min-width: 200%;
+  max-width: none;
+  object-fit: contain;
   display: block;
-  flex-shrink: 0;
 }
 .lb-bottom {
   flex: none;
