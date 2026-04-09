@@ -99,10 +99,15 @@
 <!-- Fullscreen lightbox -->
 <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
   <button type="button" class="lightbox-close" onclick="closeLightbox()" aria-label="Close"><span class="material-icons-round">close</span></button>
-  <button type="button" class="lightbox-btn lightbox-prev" id="lb-prev" aria-label="Previous"><span class="material-icons-round">chevron_left</span></button>
-  <button type="button" class="lightbox-btn lightbox-next" id="lb-next" aria-label="Next"><span class="material-icons-round">chevron_right</span></button>
-  <img class="lightbox-img" id="lb-img" src="" alt="">
-  <div class="lightbox-counter" id="lb-counter"></div>
+  <div class="lb-zoom-wrap" id="lb-zoom-wrap" onclick="event.stopPropagation()">
+    <img class="lb-zoom-img" id="lb-img" src="" alt="">
+  </div>
+  <div class="lb-bottom" onclick="event.stopPropagation()">
+    <button type="button" class="lightbox-btn lightbox-prev" id="lb-prev" aria-label="Previous"><span class="material-icons-round">chevron_left</span></button>
+    <img class="lb-preview-img" id="lb-preview" src="" alt="">
+    <button type="button" class="lightbox-btn lightbox-next" id="lb-next" aria-label="Next"><span class="material-icons-round">chevron_right</span></button>
+    <div class="lightbox-counter" id="lb-counter"></div>
+  </div>
 </div>
 
 <section id="hero">
@@ -869,12 +874,18 @@ document.getElementById('pop-gallery-prev').addEventListener('click', function(e
 document.getElementById('pop-gallery-next').addEventListener('click', function(e) { e.stopPropagation(); goGallery(galleryIdx + 1); });
 
 // Lightbox
-function openLightbox(i) {
+function setLbImage(i) {
   galleryIdx = i;
-  var lb = document.getElementById('lightbox');
-  document.getElementById('lb-img').src = galleryImages[i];
+  var src = galleryImages[i];
+  document.getElementById('lb-img').src = src;
+  document.getElementById('lb-preview').src = src;
   document.getElementById('lb-counter').textContent = (i + 1) + ' / ' + galleryImages.length;
-  lb.classList.add('open');
+  var wrap = document.getElementById('lb-zoom-wrap');
+  if (wrap) wrap.scrollLeft = 0;
+}
+function openLightbox(i) {
+  setLbImage(i);
+  document.getElementById('lightbox').classList.add('open');
 }
 function closeLightbox(e) {
   if (e && e.target !== document.getElementById('lightbox') && e.target !== document.querySelector('.lightbox-close')) return;
@@ -882,17 +893,11 @@ function closeLightbox(e) {
 }
 document.getElementById('lb-prev').addEventListener('click', function(e) {
   e.stopPropagation();
-  var i = (galleryIdx - 1 + galleryImages.length) % galleryImages.length;
-  galleryIdx = i;
-  document.getElementById('lb-img').src = galleryImages[i];
-  document.getElementById('lb-counter').textContent = (i + 1) + ' / ' + galleryImages.length;
+  setLbImage((galleryIdx - 1 + galleryImages.length) % galleryImages.length);
 });
 document.getElementById('lb-next').addEventListener('click', function(e) {
   e.stopPropagation();
-  var i = (galleryIdx + 1) % galleryImages.length;
-  galleryIdx = i;
-  document.getElementById('lb-img').src = galleryImages[i];
-  document.getElementById('lb-counter').textContent = (i + 1) + ' / ' + galleryImages.length;
+  setLbImage((galleryIdx + 1) % galleryImages.length);
 });
 
 function fillPopupFromEl(el) {
