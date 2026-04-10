@@ -2200,6 +2200,17 @@ footer.site-footer {
   margin-bottom: 15px;
 }
 .popup-block:empty { display: none; }
+.popup-block a {
+  color: var(--text-hi);
+  text-decoration: underline;
+  text-decoration-color: rgba(var(--glow-1), 0.5);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.2s, color 0.2s;
+}
+.popup-block a:hover {
+  color: #fff;
+  text-decoration-color: rgba(var(--glow-1), 1);
+}
 
 /* Skill description block */
 .popup-skill-block {
